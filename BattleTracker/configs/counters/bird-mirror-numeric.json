@@ -1,0 +1,29 @@
+{
+  "version": "bird-mirror-2800x1280-numeric-v1",
+  "source_asset": "detailed-220552",
+  "width": 2800,
+  "height": 1280,
+  "coordinate_grid": "half_resolution",
+  "template_bounds": {
+    "round": [4, 6, 108, 87],
+    "medicine": [32, 3, 89, 31],
+    "pet": [33, 2, 67, 36]
+  },
+  "round": [672, 7, 727, 53],
+  "formations": {
+    "left": {"expected": "niao_xiang", "region": [566, 0, 656, 78]},
+    "right": {"expected": "niao_xiang", "region": [744, 0, 835, 78]}
+  },
+  "players": {
+    "L1": [410, 196, 466, 234],
+    "L2": [255, 196, 311, 234],
+    "L3": [427, 92, 483, 130],
+    "L4": [238, 300, 294, 338],
+    "L5": [575, 97, 631, 135],
+    "R1": [946, 329, 1002, 367],
+    "R2": [1112, 330, 1168, 368],
+    "R3": [946, 436, 1002, 474],
+    "R4": [1112, 221, 1168, 259],
+    "R5": [780, 434, 836, 472]
+  }
+}

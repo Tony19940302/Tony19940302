@@ -1,0 +1,191 @@
+{
+  "version": "human-review-02",
+  "battle_id": "replay-2026-11-15-thunder-tiger",
+  "source_video_id": "clean-221332_859",
+  "source_sha256": "23f38b58ee4272e72f5504b09d4f9c7f714a5df2fc7e4ddaa68839f02641bc25",
+  "dataset_split": "train",
+  "alignment_version": "thunder-tiger-alignment-v1",
+  "source_review_version": "thunder-tiger-review-v4",
+  "cases": [
+    {
+      "id": "M1",
+      "sample_id": "L3:126010:USE_MEDICINE",
+      "event_type": "USE_MEDICINE",
+      "round": 5,
+      "owner_id": "L3",
+      "owner_formation_slot": "雷绝阵 4 号",
+      "owner_position": "左队靠外偏下的人物",
+      "candidate_actor_ids": [
+        "L3",
+        "L3_PET"
+      ],
+      "actor_id": "L3_PET",
+      "target_id": null,
+      "official_counter_before": "0/10",
+      "official_counter_after": "1/10",
+      "counter_interval_ms": [
+        133231,
+        133487
+      ],
+      "official_reference": {
+        "asset_id": "detailed-221754_520",
+        "source_sha256": "a140064a4e5b5c01b05edc3a5b70871c9285befa3a1a5d1578887887a73c835d",
+        "line": 16,
+        "change_id": "L3:126010:USE_MEDICINE",
+        "events_file": "official_events.jsonl",
+        "events_sha256": "120c560ad1c26aac5b392687401f082f06e2e37a08f8a13183514f1a32a2295e",
+        "detailed_interval_ms": [
+          125760,
+          126010
+        ]
+      },
+      "clip_interval_ms": [
+        132350,
+        134050
+      ],
+      "review_media": "outputs/phase-06/review-02/M1.mp4",
+      "review_media_frames": 51,
+      "review_media_seconds": 3.4,
+      "review_playback_relative_to_source": 0.5,
+      "review_media_sha256": "8f202f24d82a1b47087d861c79dfb6462e77bdc08fc8b2cfcc7e7277dd7ccf1f",
+      "status": "reviewed",
+      "question": "普通版约 133.231–133.487 秒对应左队雷绝阵 4 号加一药次。请判断是该人物施药还是其宠物施药。受药者能看清时也可指出。",
+      "counter_visual_interval_detailed_ms": [
+        125710,
+        125810
+      ],
+      "counter_visual_interval_mapped_ms": [
+        133180,
+        133282
+      ],
+      "counter_evidence": "outputs/phase-06/review-02-triage/L3-126010-detail.jpg",
+      "action_frame_sheet": "outputs/phase-06/review-02-triage/L3-126010.jpg",
+      "review_note": "普通画面约 133.1 秒出现绿色 870，随后有水漫金山施法。",
+      "actor_kind": "pet",
+      "feedback": "4 号的宠物",
+      "feedback_source": "用户在本次对话的逐段复核答复",
+      "resolved_sample_id": "L3:126010:USE_MEDICINE",
+      "resolution": "用户确认左队雷绝阵 4 号的宠物施药，药次计到主人（L3）。受药者待核。"
+    },
+    {
+      "id": "M2",
+      "sample_id": "L5:109511:USE_MEDICINE",
+      "event_type": "USE_MEDICINE",
+      "round": 5,
+      "owner_id": "L5",
+      "owner_formation_slot": "雷绝阵 5 号",
+      "owner_position": "左队靠中线的人物",
+      "candidate_actor_ids": [
+        "L5",
+        "L5_PET"
+      ],
+      "actor_id": "L5_PET",
+      "target_id": null,
+      "official_counter_before": "3/10",
+      "official_counter_after": "4/10",
+      "counter_interval_ms": [
+        116302,
+        116803
+      ],
+      "official_reference": {
+        "asset_id": "detailed-221754_520",
+        "source_sha256": "a140064a4e5b5c01b05edc3a5b70871c9285befa3a1a5d1578887887a73c835d",
+        "line": 15,
+        "change_id": "L5:109511:USE_MEDICINE",
+        "events_file": "official_events.jsonl",
+        "events_sha256": "120c560ad1c26aac5b392687401f082f06e2e37a08f8a13183514f1a32a2295e",
+        "detailed_interval_ms": [
+          109011,
+          109511
+        ]
+      },
+      "clip_interval_ms": [
+        115850,
+        117550
+      ],
+      "review_media": "outputs/phase-06/review-02/M2.mp4",
+      "review_media_frames": 51,
+      "review_media_seconds": 3.4,
+      "review_playback_relative_to_source": 0.5,
+      "review_media_sha256": "982147343b537ac581295cf1f43b6aff5ab4637026f2ce2f8d63031d94f450ad",
+      "status": "reviewed",
+      "question": "普通版约 116.302–116.803 秒对应左队雷绝阵 5 号加一药次。请判断是该人物施药还是其宠物施药。受药者能看清时也可指出。",
+      "counter_visual_interval_detailed_ms": [
+        109027,
+        109127
+      ],
+      "counter_visual_interval_mapped_ms": [
+        116318,
+        116419
+      ],
+      "counter_evidence": "outputs/phase-06/review-02-triage/L5-109511-detail.jpg",
+      "action_frame_sheet": "outputs/phase-06/review-02-triage/L5-109511.jpg",
+      "review_note": "片头绿色 1857 属于相邻的雷绝阵 2 号上一笔已复核用药。本次关注雷绝阵 5 号。",
+      "actor_kind": "pet",
+      "feedback": "5 号的宠物",
+      "feedback_source": "用户在本次对话的逐段复核答复",
+      "resolved_sample_id": "L5:109511:USE_MEDICINE",
+      "resolution": "用户确认左队雷绝阵 5 号的宠物施药，药次计到主人（L5）。受药者待核。"
+    },
+    {
+      "id": "M3",
+      "sample_id": "L5:81014:USE_MEDICINE",
+      "event_type": "USE_MEDICINE",
+      "round": 4,
+      "owner_id": "L5",
+      "owner_formation_slot": "雷绝阵 5 号",
+      "owner_position": "左队靠中线的人物",
+      "candidate_actor_ids": [
+        "L5",
+        "L5_PET"
+      ],
+      "actor_id": "L5_PET",
+      "target_id": null,
+      "official_counter_before": "2/10",
+      "official_counter_after": "3/10",
+      "counter_interval_ms": [
+        87992,
+        89218
+      ],
+      "official_reference": {
+        "asset_id": "detailed-221754_520",
+        "source_sha256": "a140064a4e5b5c01b05edc3a5b70871c9285befa3a1a5d1578887887a73c835d",
+        "line": 10,
+        "change_id": "L5:81014:USE_MEDICINE",
+        "events_file": "official_events.jsonl",
+        "events_sha256": "120c560ad1c26aac5b392687401f082f06e2e37a08f8a13183514f1a32a2295e",
+        "detailed_interval_ms": [
+          79764,
+          81014
+        ]
+      },
+      "clip_interval_ms": [
+        86900,
+        89700
+      ],
+      "review_media": "outputs/phase-06/review-02/M3.mp4",
+      "review_media_frames": 84,
+      "review_media_seconds": 5.6,
+      "review_playback_relative_to_source": 0.5,
+      "review_media_sha256": "4c8cf7ae5941a19f278b1246b74a52ed2f1cd496e56dfeeefce44a2fc15744ac",
+      "status": "reviewed",
+      "question": "普通版约 87.992–89.218 秒对应左队雷绝阵 5 号加一药次。请判断是该人物施药还是其宠物施药。受药者能看清时也可指出。",
+      "counter_visual_interval_detailed_ms": [
+        80630,
+        80730
+      ],
+      "counter_visual_interval_mapped_ms": [
+        88841,
+        88939
+      ],
+      "counter_evidence": "outputs/phase-06/review-02-triage/L5-81014-detail.jpg",
+      "action_frame_sheet": "outputs/phase-06/review-02-triage/L5-81014.jpg",
+      "review_note": "左队 5 号的宠位与人物相继出现特效。右队后续召唤属于另一事件。",
+      "actor_kind": "pet",
+      "feedback": "5 号的宠物",
+      "feedback_source": "用户在本次对话的逐段复核答复",
+      "resolved_sample_id": "L5:81014:USE_MEDICINE",
+      "resolution": "用户确认左队雷绝阵 5 号的宠物施药，药次计到主人（L5）。受药者待核。"
+    }
+  ]
+}

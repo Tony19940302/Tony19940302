@@ -1,0 +1,9 @@
+{
+  "experiment_id": "temporal-linear-v1",
+  "seed": 42,
+  "steps": 300,
+  "rate": 0.1,
+  "regularization": 0.01,
+  "minimum_confidence": 0.6,
+  "onnx_atol": 0.00001
+}

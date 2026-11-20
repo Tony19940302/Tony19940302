@@ -1,0 +1,44 @@
+{
+  "version": "dragon-tiger-reviewed-windows-v1",
+  "battle_id": "user-20261118-dragon-tiger-01",
+  "clean_asset": "clean-001110",
+  "detailed_asset": "detailed-001815",
+  "scope": "Sparse reviewed windows, not exhaustive whole-battle labels. Each recording has its own timestamps.",
+  "changes": [
+    {
+      "sample_id": "DT-M01", "round": 2, "event_type": "USE_MEDICINE",
+      "owner_id": "R4", "actor_id": null, "target_id": null,
+      "clip_start_ms": 30500, "clip_end_ms": 33250,
+      "mapped_counter_interval_ms": [31000, 32500],
+      "detailed_interval_ms": [31000, 32000],
+      "before": "0/10", "after": "1/10",
+      "note": "阿金额度从0/10变1/10。起手实体及受药目标保留未知。",
+      "evidence": ["right-bottom-medicine.jpg", "001110-medicine-31.jpg"]
+    },
+    {
+      "sample_id": "DT-S01", "round": 4, "event_type": "SUMMON_PET",
+      "owner_id": "R4", "actor_id": "R4", "target_id": "R4_PET",
+      "clip_start_ms": 88200, "clip_end_ms": 91700,
+      "mapped_counter_interval_ms": [88400, 91000],
+      "detailed_interval_ms": [88000, 91000],
+      "before": "1/6", "after": "2/6",
+      "note": "白发持杖阿金抬杖、黄金光圈后对应宠位出现新宠。详细计数1/6变2/6。伴随浮云神马及套装字样。",
+      "evidence": ["summon-actor.jpg", "001110-89.5.jpg", "001815-88.jpg", "001815-91.jpg"]
+    },
+    {
+      "sample_id": "DT-S02", "round": 4, "event_type": "SUMMON_PET",
+      "owner_id": "R2", "actor_id": "R2", "target_id": "R2_PET",
+      "clip_start_ms": 93800, "clip_end_ms": 98000,
+      "mapped_counter_interval_ms": [94300, 96500],
+      "detailed_interval_ms": [94000, 96000],
+      "before": "1/6", "after": "2/6",
+      "note": "右外排中间林先生武器动作后，上方第二宠位金色宠物入场。详细画面96秒R2为2/6，91秒为1/6。",
+      "evidence": ["001110-94.jpg", "001110-95.jpg", "001110-96.jpg", "001815-91.jpg", "001815-96.jpg"]
+    }
+  ],
+  "hard_negatives": [
+    {"sample_id":"DT-N01", "round":2, "clip_start_ms":39500, "clip_end_ms":40500, "event_type":"NON_MEDICINE_SKILL", "actor_id":null, "note":"左上方死亡召唤飘字与攻击结算。召唤检测的困难负样本。"},
+    {"sample_id":"DT-N02", "round":6, "clip_start_ms":140700, "clip_end_ms":142200, "event_type":"NON_MEDICINE_SKILL", "actor_id":"R4", "note":"阿金笑里藏刀飘字及动作。"},
+    {"sample_id":"DT-N03", "round":6, "clip_start_ms":143700, "clip_end_ms":145500, "event_type":"NON_MEDICINE_SKILL", "actor_id":"R2", "note":"右外排中间人物罗汉金钟飘字及群体光效。"}
+  ]
+}

@@ -1,0 +1,172 @@
+{
+  "version": "thunder-tiger-alignment-v1",
+  "detailed_asset_id": "detailed-221754_520",
+  "clean_asset_id": "clean-221332_859",
+  "timestamp_basis": "milliseconds_from_first_presentation_timestamp",
+  "review_tolerance_ms": 500,
+  "anchors": [
+    {
+      "anchor_id": "A01",
+      "detailed_ms": 508,
+      "clean_ms": 8604,
+      "round": 1,
+      "cue": "右上单位显示飞砂走石，左侧有同一蓝色结算特效"
+    },
+    {
+      "anchor_id": "A02",
+      "detailed_ms": 15806,
+      "clean_ms": 24009,
+      "round": 1,
+      "cue": "双星爆及左上 195、2254 两个叠加伤害值"
+    },
+    {
+      "anchor_id": "A03",
+      "detailed_ms": 31904,
+      "clean_ms": 40101,
+      "round": 2,
+      "cue": "右上宠位超级神虎入场，随后出现不屈"
+    },
+    {
+      "anchor_id": "A04",
+      "detailed_ms": 43003,
+      "clean_ms": 51206,
+      "round": 2,
+      "cue": "回合末同时出现 200、5460、3116"
+    },
+    {
+      "anchor_id": "A05",
+      "detailed_ms": 66015,
+      "clean_ms": 74201,
+      "round": 3,
+      "cue": "右外排上方凤舞九天"
+    },
+    {
+      "anchor_id": "A06",
+      "detailed_ms": 76514,
+      "clean_ms": 84807,
+      "round": 4,
+      "cue": "回合数字进入第 4 回合"
+    },
+    {
+      "anchor_id": "A07",
+      "detailed_ms": 91212,
+      "clean_ms": 99213,
+      "round": 4,
+      "cue": "右上宠位高级神佑复生及 2087 伤害值"
+    },
+    {
+      "anchor_id": "A08",
+      "detailed_ms": 99812,
+      "clean_ms": 107616,
+      "round": 4,
+      "cue": "第 4 回合右半边岩柱特效，六个右侧血条位置一致"
+    },
+    {
+      "anchor_id": "A09",
+      "detailed_ms": 104812,
+      "clean_ms": 111700,
+      "round": 5,
+      "cue": "回合数字进入第 5 回合"
+    },
+    {
+      "anchor_id": "A10",
+      "detailed_ms": 108011,
+      "clean_ms": 115302,
+      "round": 5,
+      "cue": "右上 492 恢复和右下 1000 恢复叠现"
+    },
+    {
+      "anchor_id": "A11",
+      "detailed_ms": 118710,
+      "clean_ms": 126006,
+      "round": 5,
+      "cue": "地狱烈火及右上 659 恢复"
+    },
+    {
+      "anchor_id": "A12",
+      "detailed_ms": 127010,
+      "clean_ms": 134512,
+      "round": 5,
+      "cue": "水法结算的 583、495、812 同时飘出，普通画面左上录屏状态开始出现"
+    }
+  ],
+  "checkpoints": [
+    {
+      "anchor_id": "C01",
+      "detailed_ms": 3608,
+      "clean_ms": 11805,
+      "round": 1,
+      "cue": "右侧 1352、625、892 伤害与岩柱"
+    },
+    {
+      "anchor_id": "C02",
+      "detailed_ms": 9007,
+      "clean_ms": 17207,
+      "round": 1,
+      "cue": "右方发光圆形结算特效"
+    },
+    {
+      "anchor_id": "C03",
+      "detailed_ms": 21406,
+      "clean_ms": 29612,
+      "round": 2,
+      "cue": "左上 1838 恢复和右侧失心符"
+    },
+    {
+      "anchor_id": "C04",
+      "detailed_ms": 45003,
+      "clean_ms": 53207,
+      "round": 3,
+      "cue": "右下人物番天印"
+    },
+    {
+      "anchor_id": "C05",
+      "detailed_ms": 59734,
+      "clean_ms": 68014,
+      "round": 3,
+      "cue": "右侧 811、545、761、650 等成组伤害"
+    },
+    {
+      "anchor_id": "C06",
+      "detailed_ms": 70015,
+      "clean_ms": 78203,
+      "round": 3,
+      "cue": "右上宠位大圣佑"
+    },
+    {
+      "anchor_id": "C07",
+      "detailed_ms": 82014,
+      "clean_ms": 90210,
+      "round": 4,
+      "cue": "右侧蓝色召唤灵在同一宠位完成入场"
+    },
+    {
+      "anchor_id": "C08",
+      "detailed_ms": 103612,
+      "clean_ms": 111001,
+      "round": 4,
+      "cue": "第 4 回合末岩柱及右底蓝色伤害"
+    },
+    {
+      "anchor_id": "C09",
+      "detailed_ms": 113510,
+      "clean_ms": 120804,
+      "round": 5,
+      "cue": "右外排上方 638 与绿色持续特效"
+    },
+    {
+      "anchor_id": "C10",
+      "detailed_ms": 124410,
+      "clean_ms": 131807,
+      "round": 5,
+      "cue": "右方岩柱与底部 162 恢复"
+    },
+    {
+      "anchor_id": "C11",
+      "detailed_ms": 125810,
+      "clean_ms": 133208,
+      "round": 5,
+      "cue": "左内侧 870 和水漫金山提示"
+    }
+  ]
+}

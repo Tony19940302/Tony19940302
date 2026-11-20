@@ -1,0 +1,52 @@
+{
+  "version": "human-review-03",
+  "battle_id": "replay-2026-11-19-wind-cloud",
+  "source_video_id": "clean-223619",
+  "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+  "dataset_split": "test",
+  "alignment_version": "wind-cloud-alignment-v1",
+  "source_case_index": "outputs/phase-06/action-review/review-case-index.json",
+  "source_review_version": "wind-cloud-reviewed-events-v1",
+  "feedback_source": "用户在本次对话的 A、B 复核答复及附图",
+  "cases": [
+    {
+      "id": "A",
+      "sample_id": "WC-R4-child-01",
+      "basis_prediction_id": 170,
+      "owner_id": "R4",
+      "owner_formation_slot": "云垂阵 4 号",
+      "display_name": "小星星",
+      "unit_kind": "child",
+      "event_type": "SUMMON_CHILD",
+      "source_window_ms": [432000, 437100],
+      "first_visible_entry_ms": 434412,
+      "review_media": "outputs/phase-06/action-review/summon/R4-entry.mp4",
+      "review_media_sha256": "32c9d4b286fba04f8e62badc50b13c542371014a9d5461822fca2246bf5dcc81",
+      "official_pet_count_before": "1/6",
+      "official_pet_count_after": "1/6",
+      "official_counter_evidence": "outputs/phase-06/pet-vacancy-multicue/report/wind-cloud-fp-170-detailed.jpg",
+      "appearance_asset_ids": ["child-front-red", "child-front-white", "child-front-green"],
+      "status": "reviewed",
+      "feedback": "小星星是孩子。每人一场只能出一次孩子，单独计算，宠物出战次数没有增加。战斗录像中看到的是背面，模型很矮。",
+      "annotation_note": "本案例以用户确认的单位类别与详细回放计次共同核实。三张截图仅作造型参考。"
+    },
+    {
+      "id": "B",
+      "sample_id": "WC-M02",
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L4",
+      "owner_formation_slot": "风扬阵 4 号",
+      "actor_id": "L4_PET",
+      "target_id": "L1",
+      "source_window_ms": [38700, 41700],
+      "mapped_counter_interval_ms": [40283, 40332],
+      "review_media": "outputs/phase-06/action-review/medicine/WC-M02.mp4",
+      "review_media_sha256": "19c3ebf3a3059eb0d7a80d301ac296bc3fbc4b6ca44e2b611661f13c6a3fec3a",
+      "distractor_actor_id": "L2_PET",
+      "distractor_animation": "idle_sway",
+      "status": "reviewed",
+      "feedback": "2 号宠物没有施法动作，只是待机时的身体摆动动画。",
+      "annotation_note": "原有的施药者和受药者归属核对记录保留。反馈细化了第二候选宠位的动作标签。"
+    }
+  ]
+}

@@ -1,0 +1,485 @@
+{
+  "version": "bird-mirror-reviewed-events-v2",
+  "battle_id": "replay-2026-11-19-bird-mirror",
+  "clean_asset_id": "clean-221123",
+  "detailed_asset_id": "detailed-220552",
+  "alignment_version": "bird-mirror-alignment-v2",
+  "changes": [
+    {
+      "sample_id": "BM-M03",
+      "round": 3,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 65714,
+      "clip_end_ms": 66914,
+      "mapped_counter_interval_ms": [
+        66332,
+        66366
+      ],
+      "detailed_interval_ms": [
+        66878,
+        66912
+      ],
+      "before": "0/10",
+      "after": "1/10",
+      "note": "详细版 L1 药次由 0/10 变为 1/10，处于第 2 到第 3 回合切换处。普通版同时有多单位受伤和回复，施药者和受药者欠缺独立证据。",
+      "evidence": [
+        "outputs/phase-06/bird-review/L1-early-clean.jpg",
+        "outputs/phase-06/bird-review/L1-early-detail.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-S01",
+      "round": 4,
+      "event_type": "SUMMON_PET",
+      "owner_id": "R5",
+      "actor_id": "R5",
+      "target_id": "R5_PET",
+      "clip_start_ms": 96506,
+      "clip_end_ms": 97556,
+      "mapped_counter_interval_ms": [
+        97072,
+        97155
+      ],
+      "detailed_interval_ms": [
+        97547,
+        97630
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "R5 人物起手，普通版约 96.923 秒空宠位出现入场金环，随后出现新宠及不屈飘字。详细版对应主人宠次从 1/6 变 2/6。",
+      "evidence": [
+        "outputs/phase-06/bird-review/right5-summon.jpg",
+        "outputs/phase-06/bird-review/right5-summon-detailed.jpg",
+        "outputs/phase-06/bird-review/reviewed-count-transitions.jpg",
+        "outputs/phase-06/bird-visual-evidence/R5-summon-clean.jpg",
+        "outputs/phase-06/bird-visual-evidence/R5-summon-detail.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-S02",
+      "round": 4,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L4",
+      "actor_id": "L4",
+      "target_id": "L4_PET",
+      "clip_start_ms": 99300,
+      "clip_end_ms": 101088,
+      "mapped_counter_interval_ms": [
+        99664,
+        99747
+      ],
+      "detailed_interval_ms": [
+        100147,
+        100230
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "普通版约 99.622 秒左下宠位出现入场金环，随后该位出现新宠。详细版 L4 宠次从 1/6 变 2/6，主人和宠位由该同步变化确认。",
+      "evidence": [
+        "outputs/phase-06/bird-review/left4-summon.jpg",
+        "outputs/phase-06/bird-review/left4-summon-detailed.jpg",
+        "outputs/phase-06/bird-review/reviewed-count-transitions.jpg",
+        "outputs/phase-06/bird-visual-evidence/L4-summon-clean.jpg",
+        "outputs/phase-06/bird-visual-evidence/L4-summon-detail.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-M01",
+      "round": 4,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R1",
+      "actor_id": null,
+      "target_id": "R1",
+      "clip_start_ms": 106554,
+      "clip_end_ms": 108620,
+      "mapped_counter_interval_ms": [
+        107431,
+        107514
+      ],
+      "detailed_interval_ms": [
+        107948,
+        108031
+      ],
+      "before": "1/10",
+      "after": "2/10",
+      "note": "详细版 R1 药次从 1/10 变 2/10。普通版约 107.503 秒 R1 出现绿色 822，随后另一动作显示高级先发和水漫金山。R1 的宠物「集火黄皮」此前跳起并出现金光，同屏邻宠也有明显动作，施药者身份留空。",
+      "evidence": [
+        "outputs/phase-06/bird-review/medicine-round4-third.jpg",
+        "outputs/phase-06/bird-review/reviewed-count-transitions.jpg",
+        "outputs/phase-06/bird-visual-evidence/R1-medicine-clean.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-M02",
+      "round": 5,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "actor_id": null,
+      "target_id": "L1",
+      "clip_start_ms": 115702,
+      "clip_end_ms": 117235,
+      "mapped_counter_interval_ms": [
+        116493,
+        116576
+      ],
+      "detailed_interval_ms": [
+        117049,
+        117132
+      ],
+      "before": "3/10",
+      "after": "4/10",
+      "note": "详细版 L1 药次从 3/10 变 4/10。普通版约 116.585 秒左中 L1 的橙光和绿色 405 对应结算。L1 的宠物「超级神马」此前跳起并出现白金光，画面还有相邻特效，施药者身份留空。",
+      "evidence": [
+        "outputs/phase-06/bird-review/medicine-round4-fifth.jpg",
+        "outputs/phase-06/bird-review/reviewed-count-transitions.jpg",
+        "outputs/phase-06/bird-visual-evidence/L1-medicine-clean.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-M04",
+      "round": 6,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R2",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 138699,
+      "clip_end_ms": 139899,
+      "mapped_counter_interval_ms": [
+        139494,
+        139527
+      ],
+      "detailed_interval_ms": [
+        140149,
+        140182
+      ],
+      "before": "1/10",
+      "after": "2/10",
+      "note": "详细版 R2 药次由 1/10 变为 2/10，普通版同时可见多处持续特效及绿色 445 飘字，施药者和受药者欠缺独立证据。",
+      "evidence": [
+        "outputs/phase-06/bird-review/R2-r6-clean.jpg",
+        "outputs/phase-06/bird-review/R2-r6-detail.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-S04",
+      "round": 6,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L5",
+      "actor_id": "L5",
+      "target_id": "L5_PET",
+      "clip_start_ms": 149648,
+      "clip_end_ms": 150698,
+      "mapped_counter_interval_ms": [
+        150381,
+        150397
+      ],
+      "detailed_interval_ms": [
+        151083,
+        151099
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "固定宠位先出现入场金环和「王十二」，随后宠物和血条落定。详细版 L5 宠次同步加一。",
+      "evidence": [
+        "outputs/phase-06/bird-review/counters-agent-L5-clean-contact.jpg",
+        "outputs/phase-06/bird-review/counters-agent-L5-detailed-contact.jpg",
+        "outputs/phase-06/bird-review/counters-agent-L5-counter-boundary.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-S05",
+      "round": 7,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L1",
+      "actor_id": "L1",
+      "target_id": "L1_PET",
+      "clip_start_ms": 161962,
+      "clip_end_ms": 162895,
+      "mapped_counter_interval_ms": [
+        162671,
+        162688
+      ],
+      "detailed_interval_ms": [
+        163449,
+        163466
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "左中白发人物约 162.079 秒起手，关联宠位出现金环及「打我队友」，随后出现宠物血条。",
+      "evidence": [
+        "outputs/phase-06/bird-review/counters-agent-L1-clean-contact.jpg",
+        "outputs/phase-06/bird-review/counters-agent-L1-detailed-contact.jpg",
+        "outputs/phase-06/bird-review/counters-agent-L1-counter-boundary.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-S06",
+      "round": 10,
+      "event_type": "SUMMON_PET",
+      "owner_id": "R4",
+      "actor_id": "R4",
+      "target_id": "R4_PET",
+      "clip_start_ms": 248635,
+      "clip_end_ms": 249568,
+      "mapped_counter_interval_ms": [
+        249346,
+        249363
+      ],
+      "detailed_interval_ms": [
+        250514,
+        250531
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "右上人物挥动蓝色武器，关联空宠位出现金环和「雅典娜」，随后出现宠体。",
+      "evidence": [
+        "outputs/phase-06/bird-review/counters-agent-R4-clean-contact.jpg",
+        "outputs/phase-06/bird-review/counters-agent-R4-detailed-contact.jpg",
+        "outputs/phase-06/bird-review/counters-agent-R4-counter-boundary.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-S07",
+      "round": 11,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L2",
+      "actor_id": "L2",
+      "target_id": "L2_PET",
+      "clip_start_ms": 267097,
+      "clip_end_ms": 268780,
+      "mapped_counter_interval_ms": [
+        268022,
+        268039
+      ],
+      "detailed_interval_ms": [
+        269230,
+        269247
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "L2 抬手并有金光，关联空宠位随即出现入场金环，超级神龙入场并显示套装飘字。",
+      "evidence": [
+        "outputs/phase-06/bird-review/summon-l2-269-clean.jpg",
+        "outputs/phase-06/bird-review/summon-l2-269-clean-full.jpg",
+        "outputs/phase-06/bird-review/summon-l2-269-detail.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-M05",
+      "round": 11,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 275862,
+      "clip_end_ms": 277062,
+      "mapped_counter_interval_ms": [
+        276668,
+        276702
+      ],
+      "detailed_interval_ms": [
+        277896,
+        277930
+      ],
+      "before": "1/10",
+      "after": "2/10",
+      "note": "详细版 L5 药次由 1/10 变为 2/10，普通版先有其固定宠位蓝光，再有绿色 778 飘字。施药者和受药者欠缺独立证据。",
+      "evidence": [
+        "outputs/phase-06/bird-review/L5-r11-clean.jpg",
+        "outputs/phase-06/bird-review/L5-r11-detail.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-S08",
+      "round": 12,
+      "event_type": "SUMMON_PET",
+      "owner_id": "R3",
+      "actor_id": "R3",
+      "target_id": "R3_PET",
+      "clip_start_ms": 285559,
+      "clip_end_ms": 287192,
+      "mapped_counter_interval_ms": [
+        286280,
+        286297
+      ],
+      "detailed_interval_ms": [
+        287529,
+        287546
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "R3_PET 位先空，随后出现新宠、红色血条和蝶斓套装。人物动作被遮挡，主人由固定宠位和详细版宠次同步增加确认。",
+      "evidence": [
+        "outputs/phase-06/bird-review/summon-r3-287-clean.jpg",
+        "outputs/phase-06/bird-review/summon-r3-287-clean-full.jpg",
+        "outputs/phase-06/bird-review/summon-r3-287-detail.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-S09",
+      "round": 12,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L2",
+      "actor_id": "L2",
+      "target_id": "L2_PET",
+      "clip_start_ms": 290791,
+      "clip_end_ms": 292423,
+      "mapped_counter_interval_ms": [
+        291649,
+        291666
+      ],
+      "detailed_interval_ms": [
+        292911,
+        292928
+      ],
+      "before": "2/6",
+      "after": "3/6",
+      "note": "原超级神龙消失，L2 俯身，固定宠位出现金环，随后换成蚌仙子及新血条并出现不屈飘字。",
+      "evidence": [
+        "outputs/phase-06/bird-review/summon-l2-292-clean.jpg",
+        "outputs/phase-06/bird-review/summon-l2-292-clean-full.jpg",
+        "outputs/phase-06/bird-review/summon-l2-292-detail.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-S03",
+      "round": 13,
+      "event_type": "SUMMON_PET",
+      "owner_id": "R3",
+      "actor_id": "R3",
+      "target_id": "R3_PET",
+      "clip_start_ms": 302303,
+      "clip_end_ms": 303269,
+      "mapped_counter_interval_ms": [
+        303006,
+        303140
+      ],
+      "detailed_interval_ms": [
+        304293,
+        304427
+      ],
+      "before": "2/6",
+      "after": "3/6",
+      "note": "R3 起手改变朝向，空宠位出现并保留新宠，随后触发蝶斓套装。",
+      "evidence": [
+        "outputs/phase-06/bird-visual-evidence/R3-summon-clean.jpg",
+        "outputs/phase-06/bird-visual-evidence/R3-summon-detail.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-S10",
+      "round": 13,
+      "event_type": "SUMMON_PET",
+      "owner_id": "R2",
+      "actor_id": "R2",
+      "target_id": "R2_PET",
+      "clip_start_ms": 305769,
+      "clip_end_ms": 307401,
+      "mapped_counter_interval_ms": [
+        306531,
+        306548
+      ],
+      "detailed_interval_ms": [
+        307826,
+        307843
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "右侧 R2 挥动武器，关联空宠位出现金环，新青绿宠随后出现并有不屈飘字。",
+      "evidence": [
+        "outputs/phase-06/bird-review/summon-r2-307-clean.jpg",
+        "outputs/phase-06/bird-review/summon-r2-307-clean-full.jpg",
+        "outputs/phase-06/bird-review/summon-r2-307-detail.jpg"
+      ]
+    }
+  ],
+  "verified_empty_windows_ms": [
+    [
+      3500,
+      19500
+    ]
+  ],
+  "verified_empty_window_evidence": [
+    {
+      "detailed_endpoints_ms": [
+        3505,
+        20501
+      ],
+      "clean_aligned_endpoints_ms": [
+        2912,
+        19908
+      ],
+      "clean_window_ms": [
+        3500,
+        19500
+      ],
+      "note": "两端帧十个人物均为药 0/10、宠 1/6，位于同一连续第 1 回合。区间已扣除对齐误差裕量。",
+      "evidence": [
+        "outputs/phase-06/bird-visual-evidence/detailed-no-resource-3.5.jpg",
+        "outputs/phase-06/bird-visual-evidence/detailed-no-resource-20.5.jpg"
+      ]
+    },
+    {
+      "detailed_endpoints_ms": [
+        10007,
+        20009
+      ],
+      "clean_aligned_endpoints_ms": [
+        9414,
+        19416
+      ],
+      "note": "两张详细版边界帧，十人的药次均为 0/10，宠次均为 1/6。在计次不减少的同一连续回合内，两端之间没有计次用药或成功召唤。窗口两端向内收缩，留出至少 500 毫秒对齐余量。",
+      "evidence": [
+        "outputs/phase-06/bird-review/negative-counter-endpoints.jpg"
+      ],
+      "clean_window_ms": [
+        10000,
+        18000
+      ]
+    }
+  ],
+  "hard_negatives": [
+    {
+      "sample_id": "BM-N01",
+      "round": 1,
+      "event_type": "NON_RESOURCE_SKILL",
+      "actor_id": null,
+      "clip_start_ms": 19444,
+      "clip_end_ms": 20493,
+      "note": "普通版左方宠物飘出高级先发和力劈华山，右侧出现伤害结果。仅标技能干扰案例，计次负例评分以 verified_empty_windows_ms 为准。",
+      "evidence": [
+        "outputs/phase-06/bird-review/negative-clean.jpg",
+        "outputs/phase-06/bird-review/negative-detailed.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-N02",
+      "round": 1,
+      "event_type": "NON_RESOURCE_SKILL",
+      "actor_id": "L2",
+      "clip_start_ms": 8013,
+      "clip_end_ms": 8013,
+      "observed_clean_ms": 8013,
+      "note": "笑里藏刀。技能飘字在左侧 2 号位上方，位于十人资源计数无增量的已验证窗口。",
+      "evidence": [
+        "outputs/phase-06/bird-visual-evidence/skill-8.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-N03",
+      "round": 1,
+      "event_type": "NON_RESOURCE_SKILL",
+      "actor_id": "L3",
+      "clip_start_ms": 12012,
+      "clip_end_ms": 12012,
+      "observed_clean_ms": 12012,
+      "note": "灵动九天。左侧 3 号位上方有技能飘字，附近多单位出现同色光效，位于十人资源计数无增量的已验证窗口。",
+      "evidence": [
+        "outputs/phase-06/bird-visual-evidence/skill-12.jpg"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "version": "bird-mirror-visual-review-v1",
+  "battle_id": "replay-2026-11-19-bird-mirror",
+  "clean_asset_id": "clean-221123",
+  "detailed_asset_id": "detailed-220552",
+  "calibration": "bird-mirror-clean-v1",
+  "verified_empty_windows_ms": [[3500, 19500]],
+  "verified_empty_window_evidence": [
+    {
+      "clean_window_ms": [3500, 19500],
+      "detailed_boundary_ms": [3507, 20509],
+      "note": "两端帧十个人物均为药 0/10、宠 1/6，位于同一连续第 1 回合。区间已扣除对齐误差裕量。",
+      "evidence": [
+        "outputs/phase-06/bird-visual-evidence/detailed-no-resource-3.5.jpg",
+        "outputs/phase-06/bird-visual-evidence/detailed-no-resource-20.5.jpg"
+      ]
+    }
+  ],
+  "changes": [
+    {
+      "sample_id": "bird-R5-summon-01",
+      "event_type": "SUMMON_PET",
+      "round": 4,
+      "owner_id": "R5",
+      "actor_id": "R5",
+      "target_id": "R5_PET",
+      "detailed_interval_ms": [97531, 97663],
+      "mapped_counter_interval_ms": [97056, 97188],
+      "clean_action_interval_ms": [96590, 97306],
+      "counter_before": "1/6",
+      "counter_after": "2/6",
+      "note": "R5 手中武器抬起后对应空宠位出现金色光圈，宠物出现，然后飘出不屈。",
+      "evidence": [
+        "outputs/phase-06/bird-visual-evidence/R5-summon-clean.jpg",
+        "outputs/phase-06/bird-visual-evidence/R5-summon-detail.jpg"
+      ]
+    },
+    {
+      "sample_id": "bird-L4-summon-01",
+      "event_type": "SUMMON_PET",
+      "round": 4,
+      "owner_id": "L4",
+      "actor_id": "L4",
+      "target_id": "L4_PET",
+      "detailed_interval_ms": [100147, 100281],
+      "mapped_counter_interval_ms": [99664, 99797],
+      "clean_action_interval_ms": [99206, 100889],
+      "counter_before": "1/6",
+      "counter_after": "2/6",
+      "note": "L4 人物起手时另有绿色回血数字，随后空宠位出现光圈及新宠。正式召唤由对应宠次增加确认。",
+      "evidence": [
+        "outputs/phase-06/bird-visual-evidence/L4-summon-clean.jpg",
+        "outputs/phase-06/bird-visual-evidence/L4-summon-detail.jpg"
+      ]
+    },
+    {
+      "sample_id": "bird-R3-summon-02",
+      "event_type": "SUMMON_PET",
+      "round": 13,
+      "owner_id": "R3",
+      "actor_id": "R3",
+      "target_id": "R3_PET",
+      "detailed_interval_ms": [304293, 304427],
+      "mapped_counter_interval_ms": [303006, 303140],
+      "clean_action_interval_ms": [302303, 303269],
+      "counter_before": "2/6",
+      "counter_after": "3/6",
+      "note": "R3 起手改变朝向，空宠位出现并保留新宠，随后触发蝶斓套装。",
+      "evidence": [
+        "outputs/phase-06/bird-visual-evidence/R3-summon-clean.jpg",
+        "outputs/phase-06/bird-visual-evidence/R3-summon-detail.jpg"
+      ]
+    }
+  ],
+  "hard_negatives": [
+    {
+      "sample_id": "bird-L2-laughing-dagger",
+      "event_type": "SKILL",
+      "round": 1,
+      "actor_id": "L2",
+      "observed_clean_ms": 8013,
+      "skill": "笑里藏刀",
+      "note": "技能飘字在左侧 2 号位上方，位于十人资源计数无增量的已验证窗口。",
+      "evidence": ["outputs/phase-06/bird-visual-evidence/skill-8.jpg"]
+    },
+    {
+      "sample_id": "bird-L3-spirit-movement",
+      "event_type": "SKILL",
+      "round": 1,
+      "actor_id": "L3",
+      "observed_clean_ms": 12012,
+      "skill": "灵动九天",
+      "note": "左侧 3 号位上方有技能飘字，附近多单位出现同色光效，位于十人资源计数无增量的已验证窗口。",
+      "evidence": ["outputs/phase-06/bird-visual-evidence/skill-12.jpg"]
+    }
+  ]
+}

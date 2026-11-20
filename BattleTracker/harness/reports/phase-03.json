@@ -1,0 +1,336 @@
+{
+  "profile": "phase-03",
+  "status": "PASS",
+  "checks": [
+    {
+      "check_name": "unit_and_integration",
+      "command": [
+        "D:\\AICodingProject\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 4.222,
+      "result_summary": ".........................................                                [100%]\n============================== warnings summary ===============================\ntests/test_temporal_models.py::test_cnn_repeated_fit_and_dynamic_batch_export\n  D:\\AICodingProject\\src\\battletracker\\temporal_models.py:66: DeprecationWarning: You are using the legacy TorchScript-based ONNX export. Starting in PyTorch 2.9, the new torch.export-based ONNX exporter will be the default. To switch now, set dynamo=True in torch.onnx.export. This new exporter supports features like exporting LLMs with DynamicCache. We encourage you to try it and share feedback to help improve the experience. Learn more about the new export logic: https://pytorch.org/docs/stable/onnx_dynamo.html. For exporting control flow: https://pytorch.org/tutorials/beginner/onnx/export_control_flow_model_to_onnx_tutorial.html.\n    torch.onnx.export(model, (sample,), str(path), dynamo=False, opset_version=13,\n\ntests/test_temporal_models.py::test_cnn_repeated_fit_and_dynamic_batch_export\n  D:\\AICodingProject\\.venv\\Lib\\site-packages\\torch\\onnx\\utils.py:179: DeprecationWarning: The feature will be removed. Please remove usage of this function\n    setup_onnx_logging(verbose) as log_ctx,\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n41 passed, 2 warnings in 3.23s",
+      "artifact_paths": [],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "environment_dependencies",
+      "command": [
+        "D:\\AICodingProject\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.423,
+      "result_summary": "No broken requirements found.",
+      "artifact_paths": [],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:prior-spectator-screenshot",
+      "command": [
+        "sha256",
+        "C:\\Users\\codexuser\\AppData\\Local\\Temp\\codex-clipboard-d35a3a33-b9bc-4456-b816-507809be0898.png"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.004,
+      "result_summary": "SHA-256 66beaf9ef1e8ca1b6d21eb0e9ae53feea0296d3d45888708c6aea3d1c72fd519",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:prior-desktop-reference",
+      "command": [
+        "sha256",
+        "C:\\Users\\codexuser\\Desktop\\c6597302055081d1f799a8c1a543178b.mp4"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.01,
+      "result_summary": "SHA-256 2ebf913eff9f11f5a90260aba422b24315b08ccc6ff28afeffd4f4b28b4f700f",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:detailed-221754_520",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\raw\\detailed\\微信视频2026-11-15_221754_520.mp4"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.131,
+      "result_summary": "SHA-256 a140064a4e5b5c01b05edc3a5b70871c9285befa3a1a5d1578887887a73c835d",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:clean-221332_859",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\raw\\clean\\微信视频2026-11-15_221332_859.mp4"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.114,
+      "result_summary": "SHA-256 23f38b58ee4272e72f5504b09d4f9c7f714a5df2fc7e4ddaa68839f02641bc25",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:formation-feng_yang",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\screenshots\\formations\\feng_yang.png"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.0,
+      "result_summary": "SHA-256 a015439fbe704ae814a3e69bfda830e7fc785da8136a649a70a2174dc2877346",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:formation-hu_yi",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\screenshots\\formations\\hu_yi.png"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.001,
+      "result_summary": "SHA-256 e2c05bae78e7977d634eb431f47e826a332ad8fc9c749e7ccbacd3ee1bcaf83b",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:formation-niao_xiang",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\screenshots\\formations\\niao_xiang.png"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.0,
+      "result_summary": "SHA-256 1a662e94987301ae1053ebaad6828f47d701a99456addc1ceb07189de57c06fe",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:formation-di_zai",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\screenshots\\formations\\di_zai.png"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.0,
+      "result_summary": "SHA-256 5aeb9f63fd272336607a5f014a7a1995227a4bfb84f80ed0e297e42681b5faf1",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:formation-yun_chui",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\screenshots\\formations\\yun_chui.png"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.0,
+      "result_summary": "SHA-256 1e4bed16de7073163ae240d855bd4ccc77cd63624c558656fef82c79cb7542da",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:formation-she_pan",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\screenshots\\formations\\she_pan.png"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.0,
+      "result_summary": "SHA-256 a3367545be38b169de529d6474dba8d5dc2579a812b2a4a781866c9024b6dec0",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:formation-ying_xiao",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\screenshots\\formations\\ying_xiao.png"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.0,
+      "result_summary": "SHA-256 3068a8bcadd726faa6c11cff24a3b84eb166b0d78e6a958625c551e91f2ae80f",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:formation-lei_jue",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\screenshots\\formations\\lei_jue.png"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.0,
+      "result_summary": "SHA-256 d8f0477836d62d21a86b2ec55791ca6f5950d7eadbcdbf3368c79b62365eda7a",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:formation-long_fei",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\screenshots\\formations\\long_fei.png"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.0,
+      "result_summary": "SHA-256 d1df5ea6b7d2c8086d1201a1c9c42b2031347d2c10444996885d1624f2eaa406",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:clean-001110",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\raw\\clean\\SVID_20261118_001110_1.mp4"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.334,
+      "result_summary": "SHA-256 d7f2600d3ce78676b046fe110756fe37bc836542bee02ea07b209b6ab32ed0ed",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "asset:detailed-001815",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\raw\\detailed\\SVID_20261118_001815_1.mp4"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.33,
+      "result_summary": "SHA-256 166eca48caa6ce9e8b200dea2792599a5b8cef7504cb06768996650b7d7f68b9",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "detailed_replay_counter_extraction",
+      "command": [
+        "D:\\AICodingProject\\.venv\\Scripts\\python.exe",
+        "tools/extract_counters.py",
+        "--output",
+        "D:\\AICodingProject\\outputs\\phase-02",
+        "--verify-reference"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 78.764,
+      "result_summary": "{\n  \"samples\": 630,\n  \"metrics\": {\n    \"round\": {\n      \"correct\": 7,\n      \"readable_reference\": 7,\n      \"precision_on_readable\": 1.0,\n      \"reference_unknown_rate\": 0.0,\n      \"raw_unknown_rate\": 0.023809523809523808,\n      \"stable_unknown_rate\": 0.0380952380952381\n    },\n    \"medicine\": {\n      \"correct\": 57,\n      \"obscured\": 7,\n      \"unknown\": 6,\n      \"readable_reference\": 63,\n      \"precision_on_readable\": 1.0,\n      \"reference_unknown_rate\": 0.09523809523809523,\n      \"raw_unknown_rate\": 0.1573015873015873,\n      \"stable_unknown_rate\": 0.16126984126984126\n    },\n    \"pet\": {\n      \"correct\": 62,\n      \"unknown\": 3,\n      \"read_on_obscured\": 2,\n      \"obscured\": 3,\n      \"readable_reference\": 65,\n      \"precision_on_readable\": 1.0,\n      \"reference_unknown_rate\": 0.046153846153846156,\n      \"raw_unknown_rate\": 0.12746031746031747,\n      \"stable_unknown_rate\": 0.13015873015873017\n    }\n  },\n  \"event_types\": {\n    \"PET_LIMIT_CHANGE\": 1,\n    \"USE_MEDICINE\": 13,\n    \"SUMMON_PET\": 5\n  },\n  \"observed_rounds\": [\n    1,\n    2,\n    3,\n    4,\n    5,\n    6\n  ],\n  \"stable_coverage\": {\n    \"round\": 606,\n    \"L1.medicine\": 560,\n    \"L1.pet\": 490,\n    \"L2.medicine\": 553,\n    \"L2.pet\": 538,\n    \"L3.medicine\": 574,\n    \"L3.pet\": 515,\n    \"L4.medicine\": 141,\n    \"L4.pet\": 381,\n    \"L5.medicine\": 475,\n    \"L5.pet\": 597,\n    \"R1.medicine\": 617,\n    \"R1.pet\": 581,\n    \"R2.medicine\": 597,\n    \"R2.pet\": 590,\n    \"R3.medicine\": 593,\n    \"R3.pet\": 588,\n    \"R4.medicine\": 554,\n    \"R4.pet\": 582,\n    \"R5.medicine\": 620,\n    \"R5.pet\": 618\n  }\n}",
+      "artifact_paths": [
+        "D:\\AICodingProject\\outputs\\phase-02\\official_snapshots.jsonl",
+        "D:\\AICodingProject\\outputs\\phase-02\\official_events.jsonl",
+        "D:\\AICodingProject\\outputs\\phase-02\\raw_reads.jsonl",
+        "D:\\AICodingProject\\outputs\\phase-02\\counter_extraction_report.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "paired_replay_alignment",
+      "command": [
+        "D:\\AICodingProject\\.venv\\Scripts\\python.exe",
+        "tools/align_videos.py"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.351,
+      "result_summary": "12 fitted anchors, 11 checkpoints, maximum error 281 ms",
+      "artifact_paths": [
+        "D:\\AICodingProject\\outputs\\phase-03\\alignment_report.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    },
+    {
+      "check_name": "clean_replay_dataset",
+      "command": [
+        "D:\\AICodingProject\\.venv\\Scripts\\python.exe",
+        "tools/build_dataset.py",
+        "--export-clips"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 41.535,
+      "result_summary": "{\"battle_id\": \"replay-2026-11-15-thunder-tiger\", \"source_events\": 19, \"matched_changes\": 16, \"unmatched_changes\": 3, \"label_status\": {\"candidate\": 9, \"reviewed\": 7, \"reviewed_hard_negative\": 5}, \"dataset_groups\": {\"replay-2026-11-15-thunder-tiger\": \"train\", \"user-20261118-dragon-tiger-01\": \"validation\"}, \"development_battles\": 0, \"data_leakage_check\": \"PASS\", \"exported_clips\": 21}",
+      "artifact_paths": [
+        "D:\\AICodingProject\\outputs\\phase-03\\clip_index.jsonl",
+        "D:\\AICodingProject\\outputs\\phase-03\\unmatched_changes.jsonl",
+        "D:\\AICodingProject\\outputs\\phase-03\\dataset_report.json",
+        "D:\\AICodingProject\\outputs\\phase-03\\clips"
+      ],
+      "failure_reason": null,
+      "profile": "phase-03"
+    }
+  ]
+}

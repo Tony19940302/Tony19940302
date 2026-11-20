@@ -1,0 +1,28 @@
+{
+  "version": "thunder-tiger-review-v2",
+  "changes": {
+    "L1:18506:PET_LIMIT_CHANGE": {"note":"跨回合，普通画面有结算和特技提示。额度增加的触发原因未知。"},
+    "L5:21506:USE_MEDICINE": {"actor_id":"L5_PET","target_id":"L1","kind":"pet","note":"普通回放 28.7–29.2 秒蓝宠快乐加倍做动作，约 29.5 秒 L1 跳 1838，随后右侧放失心符。"},
+    "L1:27756:USE_MEDICINE": {"actor_id":"L1","target_id":"L5","kind":"player","note":"普通回放约 35.1 秒 L1 人物挥动金色武器，约 35.6 秒左内侧较低人物跳 1645，之后才显示月刃。"},
+    "R1:32005:SUMMON_PET": {"actor_id":"R1","kind":"player","note":"约 39.5 秒右上人物起手，约 40 秒相邻上方空宠位出现超级神虎及不屈。"},
+    "L2:39504:USE_MEDICINE": {"actor_id":"L2_PET","target_id":"L1","kind":"pet","note":"普通回放 46.9–47.2 秒左侧中前绿色宠物先动，约 47.5 秒 L1 跳 1857，随后另一个宠位显示泰山压顶。"},
+    "R4:43253:USE_MEDICINE": {"note":"回合边界前后有套装及多段伤害同屏，无法确认施药单位。"},
+    "R4:46502:USE_MEDICINE": {"note":"右下区域出现 267 恢复，蓝宠也有动作。起手到受药结算的归属不清。"},
+    "L5:47502:USE_MEDICINE": {"actor_id":"L5_PET","target_id":"L1","kind":"pet","note":"人工反馈 human-review-01 A 指认快乐加倍施药及主人。源约 54.59–55.17 秒快乐加倍施法，55.36 秒左上 L1 出现 1838，与 L5 的独立药次窗口对应。"},
+    "R3:54253:SUMMON_PET": {"actor_id":"R3","kind":"player","note":"普通回放约 62 秒右下人物出现紫色动作，右侧中部由空宠位变为金色新宠，详细回放 R3 的计数同步增加。"},
+    "L5:81014:USE_MEDICINE": {"note":"多个恢复数字出现，动作靠近下一次出宠，无法单独锁定施药者。"},
+    "R2:81764:SUMMON_PET": {"actor_id":"R2","kind":"player","note":"普通回放约 89.2 秒右外排中间人物举武器，金圈出现后在对应区域看到蓝色新宠。"},
+    "L2:82763:SUMMON_PET": {"actor_id":"L2","kind":"player","note":"普通回放约 90.4 秒左中人物动作后出现本侧金圈和红色新宠，发生在右侧出宠之后。"},
+    "R4:104761:USE_MEDICINE": {"note":"岩柱与跨回合结算重叠，普通画面无法确认施药者。"},
+    "L2:109011:USE_MEDICINE": {"actor_id":"L2_PET","target_id":"L1","kind":"pet","note":"人工反馈 human-review-01 B 确认宠物施法用药。L2 官方药次增加，源约 115.67 秒左上 L1 出现 1857。"},
+    "L5:109511:USE_MEDICINE": {"note":"见到左内侧与蓝宠动作，右侧封印提示接续出现，施药者保留未知。"},
+    "L3:126010:USE_MEDICINE": {"note":"约 133.2 秒左内侧跳 870，随后覆盖水漫金山提示，暂不确认施药者。"}
+  },
+  "hard_negatives": [
+    {"id":"N01","round":1,"start_ms":8604,"end_ms":9310,"event_type":"NON_MEDICINE_SKILL","actor_id":"R1","cue":"飞砂走石及左侧金色结算。"},
+    {"id":"N02","round":3,"start_ms":52800,"end_ms":53600,"event_type":"NON_MEDICINE_ARTIFACT","actor_id":"R4","cue":"右底排中间人物头顶番天印。"},
+    {"id":"N03","round":3,"start_ms":73800,"end_ms":74700,"event_type":"NON_MEDICINE_SKILL","actor_id":"R1","cue":"右外排上方人物显示凤舞九天。"},
+    {"id":"N04","round":4,"start_ms":98900,"end_ms":99800,"event_type":"PET_REVIVAL","actor_id":null,"cue":"右上召唤灵被击后显示高级神佑复生，右侧宠位原实例恢复。"},
+    {"id":"N05","round":5,"start_ms":125650,"end_ms":126450,"event_type":"NON_MEDICINE_SKILL","actor_id":null,"cue":"地狱烈火群体火焰，右上同时出现 659 恢复。"}
+  ]
+}

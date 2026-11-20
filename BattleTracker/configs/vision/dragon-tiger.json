@@ -1,0 +1,19 @@
+{
+  "version": "dragon-tiger-clean-v1",
+  "source_asset": "clean-001110",
+  "template_layout": "configs/vision/thunder-tiger.json",
+  "formations": {"L":"long_fei", "R":"hu_yi"},
+  "width":700, "height":320, "sample_ms":80,
+  "players": {
+    "L1":[145,43], "L2":[184,60], "L3":[219,88], "L4":[256,60], "L5":[134,137],
+    "R1":[570,98], "R2":[571,152], "R3":[574,206], "R4":[486,205], "R5":[405,204]
+  },
+  "pets": {
+    "L1":[180,166], "L2":[220,135], "L3":[265,114], "L4":[308,89], "L5":[349,65],
+    "R1":[520,66], "R2":[478,94], "R3":[436,120], "R4":[394,148], "R5":[354,168]
+  },
+  "unverified_pet_owners":["L1","L2","L3","L4","L5"],
+  "calibration_note":"Screen identity anchors. Right-side pet ownership retained across matching tiger formation; left ownership remains unverified.",
+  "portal_centers":{}, "portal_templates":[], "skill_templates":[],
+  "thresholds":{"portal":0.65,"skill":0.74,"pet_change":0.075,"heal_area":120}
+}

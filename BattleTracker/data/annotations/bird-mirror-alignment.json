@@ -1,0 +1,116 @@
+{
+  "version": "bird-mirror-alignment-v2",
+  "detailed_asset_id": "detailed-220552",
+  "clean_asset_id": "clean-221123",
+  "timestamp_basis": "milliseconds_from_first_presentation_timestamp",
+  "review_tolerance_ms": 240,
+  "anchors": [
+    {
+      "anchor_id": "A01",
+      "detailed_ms": 3007,
+      "clean_ms": 2414,
+      "round": 1,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "A02",
+      "detailed_ms": 47044,
+      "clean_ms": 46452,
+      "round": 2,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "A03",
+      "detailed_ms": 98047,
+      "clean_ms": 97573,
+      "round": 4,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "A04",
+      "detailed_ms": 155049,
+      "clean_ms": 154330,
+      "round": 6,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "A05",
+      "detailed_ms": 205083,
+      "clean_ms": 204013,
+      "round": 8,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "A06",
+      "detailed_ms": 265080,
+      "clean_ms": 263881,
+      "round": 11,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "A07",
+      "detailed_ms": 314042,
+      "clean_ms": 312733,
+      "round": 13,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "A08",
+      "detailed_ms": 315606,
+      "clean_ms": 314284,
+      "round": 14,
+      "cue": "Matched battle-area sequence at the start of round 14 with counter regions masked"
+    }
+  ],
+  "checkpoints": [
+    {
+      "anchor_id": "C01",
+      "detailed_ms": 25093,
+      "clean_ms": 24492,
+      "round": 1,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "C02",
+      "detailed_ms": 73095,
+      "clean_ms": 72496,
+      "round": 3,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "C03",
+      "detailed_ms": 126016,
+      "clean_ms": 125401,
+      "round": 5,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "C04",
+      "detailed_ms": 180017,
+      "clean_ms": 179169,
+      "round": 7,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "C05",
+      "detailed_ms": 237015,
+      "clean_ms": 235688,
+      "round": 9,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "C06",
+      "detailed_ms": 295094,
+      "clean_ms": 293772,
+      "round": 12,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    },
+    {
+      "anchor_id": "C07",
+      "detailed_ms": 312009,
+      "clean_ms": 310684,
+      "round": 13,
+      "cue": "Matched nine-frame battle-area sequence with official counter regions masked"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "version": "human-review-01",
+  "battle_id": "replay-2026-11-15-thunder-tiger",
+  "source_video_id": "clean-221332_859",
+  "source_sha256": "23f38b58ee4272e72f5504b09d4f9c7f714a5df2fc7e4ddaa68839f02641bc25",
+  "dataset_split": "train",
+  "cases": [
+    {
+      "id": "A",
+      "sample_id": "R4:46502:USE_MEDICINE",
+      "round": 3,
+      "clip_interval_ms": [53353, 55202],
+      "counter_interval_ms": [54453, 54702],
+      "owner_id": "R4",
+      "owner_position": "右侧底排中间的白发持杖人物",
+      "counter_before": "1/10",
+      "counter_after": "2/10",
+      "review_media": "outputs/phase-03/clips/clip-009.mp4",
+      "frame_sheet": "outputs/phase-06/review-01/A-frames.jpg",
+      "question": "请判断是人物还是他的宠物用药。受药者能看清时也可指出。",
+      "status": "reviewed",
+      "feedback": "如果指的是快乐加倍，就是宠物用药。快乐加倍属于好好想想后面的人物，药次计到主人。",
+      "resolution": "虎翼阵 3 号位（画面 R4）的宠物施药，药次计到 R4。虎翼阵 5 号位（画面 R5）是受药人物，源约 54.45 秒出现绿色 267。",
+      "resolved_sample_id": "R4:46502:USE_MEDICINE",
+      "history": [
+        {
+          "status": "feedback_mapped_to_adjacent_event",
+          "resolution": "快乐加倍约 54.59 秒起手，约 55.36 秒左上 L1 出现 1838。对应相邻的 L5:47502:USE_MEDICINE。当时原提问中的 R4 施药者仍未知。",
+          "resolved_sample_id": "L5:47502:USE_MEDICINE"
+        }
+      ],
+      "followup_feedback": "右下人物另有一次独立药次增加。虎翼阵 3 号位人物的宠物给虎翼阵 5 号位的人物用药。",
+      "additional_evidence": "outputs/phase-06/review-01/A-context.jpg"
+    },
+    {
+      "id": "B",
+      "sample_id": "L2:109011:USE_MEDICINE",
+      "round": 5,
+      "clip_interval_ms": [114202, 116802],
+      "counter_interval_ms": [115302, 116302],
+      "owner_id": "L2",
+      "owner_position": "左侧外排中间的人物",
+      "counter_before": "1/10",
+      "counter_after": "2/10",
+      "review_media": "outputs/phase-03/clips/clip-018.mp4",
+      "frame_sheet": "outputs/phase-06/review-01/B-frames.jpg",
+      "question": "请判断是人物还是他的宠物用药。约 115.7 秒可见左上角色出现绿色 1857。",
+      "status": "reviewed",
+      "feedback": "宠物用药，宠物用药都会有施法动作。",
+      "resolution": "L2_PET 施药，计到 L2。约 115.67 秒 L1 头顶出现 1857。",
+      "resolved_sample_id": "L2:109011:USE_MEDICINE",
+      "additional_evidence": "outputs/phase-06/review-01/B-context.jpg"
+    }
+  ]
+}

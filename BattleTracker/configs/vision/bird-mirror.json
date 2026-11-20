@@ -1,0 +1,38 @@
+{
+  "version": "bird-mirror-clean-v1",
+  "source_asset": "clean-221123",
+  "template_layout": "configs/vision/thunder-tiger.json",
+  "formations": {"L": "niao_xiang", "R": "niao_xiang"},
+  "width": 700,
+  "height": 320,
+  "sample_ms": 80,
+  "players": {
+    "L1": [219, 86],
+    "L2": [142, 85],
+    "L3": [228, 33],
+    "L4": [134, 137],
+    "L5": [302, 36],
+    "R1": [487, 152],
+    "R2": [571, 152],
+    "R3": [488, 205],
+    "R4": [571, 98],
+    "R5": [405, 204]
+  },
+  "pets": {
+    "L1": [267, 114],
+    "L2": [222, 140],
+    "L3": [308, 89],
+    "L4": [182, 166],
+    "L5": [349, 64],
+    "R1": [437, 121],
+    "R2": [477, 94],
+    "R3": [395, 148],
+    "R4": [520, 66],
+    "R5": [354, 173]
+  },
+  "portal_centers": {},
+  "portal_templates": [],
+  "skill_templates": [],
+  "thresholds": {"portal": 0.65, "skill": 0.74, "pet_change": 0.075, "heal_area": 120},
+  "calibration_note": "IDs use logical bird-formation slots; coordinates are first-round real replay health-bar centers in the 700 x 320 frame. Pet slot owners follow the team-relative 5,3,1,2,4 order. Portal templates and all thresholds are frozen from the training replay; there are no calibrated skill text regions."
+}

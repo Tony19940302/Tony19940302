@@ -1,0 +1,51 @@
+{
+  "version": "human-review-04",
+  "source_case_index": "outputs/phase-06/action-review-next/review-case-index.json",
+  "feedback_source": "用户在本次对话对两段短片的复核",
+  "cases": [
+    {
+      "id": "A",
+      "sample_id": "TT-R1-dashengyou-77686",
+      "battle_id": "replay-2026-11-15-thunder-tiger",
+      "dataset_split": "train",
+      "source_video_id": "clean-221332_859",
+      "source_sha256": "23f38b58ee4272e72f5504b09d4f9c7f714a5df2fc7e4ddaa68839f02641bc25",
+      "review_media": "outputs/phase-06/action-review-next/A-summon.mp4",
+      "review_media_sha256": "0bc5714cea992b97a10f23f61a2e741cc071f9412996492cacf914686aaea4cb",
+      "source_window_ms": [75800, 79300],
+      "owner_id": "R1",
+      "owner_formation_slot": "右队虎翼阵 4 号",
+      "summon_candidate_ms": 77686,
+      "actions": [
+        {"kind": "PET_HIT_SKILL_TRIGGER", "affected_pet_id": "R1_PET", "pet_name": "超级神虎", "skill_name": "大圣佑", "visible_skill_near_ms": 77468},
+        {"kind": "PET_ATTACK", "actor_id": "R1_PET", "target_id": "L2_PET", "visible_attack_at_ms": 78520}
+      ],
+      "counter_review": {"event_type": "SUMMON_PET", "status": "confirmed_no_increment", "before": "2/6", "after": "2/6"},
+      "status": "reviewed",
+      "feedback": "超级神虎受击，打出大圣佑。随后原来的超级神虎出击，打左边 2 号位置的宠物。整段没有出宠。",
+      "counter_evidence": "outputs/phase-06/action-training/summon/thunder-full-mine.json",
+      "action_evidence": "outputs/phase-06/feedback-shengyou-group/entry/attack-continuity.jpg"
+    },
+    {
+      "id": "B",
+      "sample_id": "BM-L3-revival-and-group-heal-98723",
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "source_video_id": "clean-221123",
+      "source_sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "review_media": "outputs/phase-06/action-review-next/B-medicine.mp4",
+      "review_media_sha256": "02e2dd91a61506af796bba2b2165ae4f45c9ebf8c0a8c9c66a123bc49d08433a",
+      "source_window_ms": [97000, 100800],
+      "actions": [
+        {"kind": "PLAYER_REVIVAL_SKILL", "actor_id": "L3", "target_id": "L4", "skill_name": "杨柳甘露", "recovery_track_start_ms": 97923, "reviewed_heal_number": 2320},
+        {"kind": "GROUP_MEDICINE", "actor_id": "L3_PET", "owner_id": "L3", "observed_recipients": ["L4"], "recovery_track_start_ms": 98723, "reviewed_heal_number": 314}
+      ],
+      "counter_review": {"event_type": "USE_MEDICINE", "owner_id": "L3", "status": "unresolved", "observed_before": "0/10", "observed_after": "0/10", "last_unchanged_detailed_ms": 111831},
+      "status": "reviewed",
+      "feedback": "3 号人物先用技能复活 4 号，随后 3 号宠物用群体加血药品，4 号也收到治疗。",
+      "annotation_note": "用户复核动作的先后及施放者，正式计次暂保持未知。收录已核实受药者，其他受药者待确认。",
+      "counter_evidence": "outputs/phase-06/feedback-shengyou-group/counter/B-counter-audit.json",
+      "paired_frame_evidence": "outputs/phase-06/feedback-shengyou-group/counter/B-revive-multiheal-and-later.jpg"
+    }
+  ]
+}

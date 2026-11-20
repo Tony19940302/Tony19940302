@@ -1,0 +1,38 @@
+{
+  "version": "wind-cloud-clean-v1",
+  "source_asset": "clean-223619",
+  "template_layout": "configs/vision/thunder-tiger.json",
+  "formations": {"L": "feng_yang", "R": "yun_chui"},
+  "width": 700,
+  "height": 320,
+  "sample_ms": 80,
+  "players": {
+    "L1": [184, 60],
+    "L2": [142, 85],
+    "L3": [228, 33],
+    "L4": [174, 112],
+    "L5": [260, 60],
+    "R1": [574, 206],
+    "R2": [528, 126],
+    "R3": [445, 180],
+    "R4": [571, 98],
+    "R5": [405, 205]
+  },
+  "pets": {
+    "L1": [267, 115],
+    "L2": [222, 141],
+    "L3": [308, 89],
+    "L4": [182, 166],
+    "L5": [349, 64],
+    "R1": [436, 121],
+    "R2": [477, 94],
+    "R3": [394, 148],
+    "R4": [520, 66],
+    "R5": [354, 173]
+  },
+  "portal_centers": {},
+  "portal_templates": [],
+  "skill_templates": [],
+  "thresholds": {"portal": 0.65, "skill": 0.74, "pet_change": 0.075, "heal_area": 120},
+  "calibration_note": "Logical formation slots mapped from first-round health-bar centers. Pet ownership checked against owner counter increases and fixed-slot entrances; R4's unchanged pet slot follows by elimination. Visual templates and thresholds are inherited from the training replay."
+}

@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "assets": [
+    {
+      "asset_id": "prior-spectator-screenshot",
+      "role": "battle_screenshot_reference",
+      "path_base": "user_profile",
+      "path": "AppData/Local/Temp/codex-clipboard-d35a3a33-b9bc-4456-b816-507809be0898.png",
+      "status": "available",
+      "source": "User-provided spectator screenshot from this chat",
+      "sha256": "66beaf9ef1e8ca1b6d21eb0e9ae53feea0296d3d45888708c6aea3d1c72fd519",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 2997,
+        "height": 1575
+      }
+    },
+    {
+      "asset_id": "prior-desktop-reference",
+      "role": "unclassified_battle_replay_reference",
+      "path_base": "user_profile",
+      "path": "Desktop/c6597302055081d1f799a8c1a543178b.mp4",
+      "status": "available",
+      "source": "User-provided video in the previous turn",
+      "sha256": "2ebf913eff9f11f5a90260aba422b24315b08ccc6ff28afeffd4f4b28b4f700f",
+      "asset_version": 1,
+      "battle_id": "replay-2026-11-15-thunder-tiger",
+      "dataset_split": "train",
+      "inspection": {
+        "width": 720,
+        "height": 330,
+        "codec": "h264",
+        "average_frame_rate": "14172000/472399",
+        "stream_time_base": "1/90000",
+        "decoded_frames": 4724,
+        "stream_duration_seconds": 157.46633333333332,
+        "frames_without_timestamp": 0,
+        "corrupt_frames": 0
+      },
+      "grouping_evidence": "Earlier low-resolution variant matches the detailed replay opening 飞砂走石, round progression and duration."
+    },
+    {
+      "asset_id": "detailed-221754_520",
+      "role": "detailed_match_replay",
+      "path_base": "workspace",
+      "path": "data/raw/detailed/微信视频2026-11-15_221754_520.mp4",
+      "status": "available",
+      "source": "微信视频2026-11-15_221754_520.mp4",
+      "sha256": "a140064a4e5b5c01b05edc3a5b70871c9285befa3a1a5d1578887887a73c835d",
+      "asset_version": 1,
+      "battle_id": "replay-2026-11-15-thunder-tiger",
+      "dataset_split": "train",
+      "inspection": {
+        "width": 2800,
+        "height": 1280,
+        "codec": "h264",
+        "average_frame_rate": "169506000/2834119",
+        "stream_time_base": "1/90000",
+        "decoded_frames": 9417,
+        "stream_duration_seconds": 157.45105555555557,
+        "frames_without_timestamp": 0,
+        "corrupt_frames": 0
+      }
+    },
+    {
+      "asset_id": "clean-221332_859",
+      "role": "clean_match_replay",
+      "path_base": "workspace",
+      "path": "data/raw/clean/微信视频2026-11-15_221332_859.mp4",
+      "status": "available",
+      "source": "微信视频2026-11-15_221332_859.mp4",
+      "sha256": "23f38b58ee4272e72f5504b09d4f9c7f714a5df2fc7e4ddaa68839f02641bc25",
+      "asset_version": 1,
+      "battle_id": "replay-2026-11-15-thunder-tiger",
+      "dataset_split": "train",
+      "inspection": {
+        "width": 2800,
+        "height": 1280,
+        "codec": "h264",
+        "average_frame_rate": "739440000/12336227",
+        "stream_time_base": "1/90000",
+        "decoded_frames": 8216,
+        "stream_duration_seconds": 137.0691888888889,
+        "frames_without_timestamp": 0,
+        "corrupt_frames": 0
+      }
+    },
+    {
+      "asset_id": "formation-feng_yang",
+      "role": "formation_configuration_image",
+      "formation_id": "feng_yang",
+      "path_base": "workspace",
+      "path": "data/screenshots/formations/feng_yang.png",
+      "status": "available",
+      "source": "codex-clipboard-8d408141-06dc-479a-b036-48056d6c01e5.png",
+      "sha256": "a015439fbe704ae814a3e69bfda830e7fc785da8136a649a70a2174dc2877346",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 768,
+        "height": 1080
+      }
+    },
+    {
+      "asset_id": "formation-hu_yi",
+      "role": "formation_configuration_image",
+      "formation_id": "hu_yi",
+      "path_base": "workspace",
+      "path": "data/screenshots/formations/hu_yi.png",
+      "status": "available",
+      "source": "codex-clipboard-ca321c7e-90f0-49b1-97b6-7d66a1943395.png",
+      "sha256": "e2c05bae78e7977d634eb431f47e826a332ad8fc9c749e7ccbacd3ee1bcaf83b",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 753,
+        "height": 1091
+      }
+    },
+    {
+      "asset_id": "formation-niao_xiang",
+      "role": "formation_configuration_image",
+      "formation_id": "niao_xiang",
+      "path_base": "workspace",
+      "path": "data/screenshots/formations/niao_xiang.png",
+      "status": "available",
+      "source": "codex-clipboard-a05e281d-27e3-4e58-b473-8a675e41c927.png",
+      "sha256": "1a662e94987301ae1053ebaad6828f47d701a99456addc1ceb07189de57c06fe",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 756,
+        "height": 1073
+      }
+    },
+    {
+      "asset_id": "formation-di_zai",
+      "role": "formation_configuration_image",
+      "formation_id": "di_zai",
+      "path_base": "workspace",
+      "path": "data/screenshots/formations/di_zai.png",
+      "status": "available",
+      "source": "codex-clipboard-7a904d8c-aa90-46cd-aec0-673ecbd2fe64.png",
+      "sha256": "5aeb9f63fd272336607a5f014a7a1995227a4bfb84f80ed0e297e42681b5faf1",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 747,
+        "height": 1085
+      },
+      "additional_sources": [
+        "codex-clipboard-1cc8b781-baad-47a5-92c7-5ea2b40db2f9.png"
+      ]
+    },
+    {
+      "asset_id": "formation-yun_chui",
+      "role": "formation_configuration_image",
+      "formation_id": "yun_chui",
+      "path_base": "workspace",
+      "path": "data/screenshots/formations/yun_chui.png",
+      "status": "available",
+      "source": "codex-clipboard-712fba40-6b9d-4831-b659-de0bded08329.png",
+      "sha256": "1e4bed16de7073163ae240d855bd4ccc77cd63624c558656fef82c79cb7542da",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 756,
+        "height": 1089
+      }
+    },
+    {
+      "asset_id": "formation-she_pan",
+      "role": "formation_configuration_image",
+      "formation_id": "she_pan",
+      "path_base": "workspace",
+      "path": "data/screenshots/formations/she_pan.png",
+      "status": "available",
+      "source": "codex-clipboard-49aac419-bf21-4693-8f28-332e7605dd74.png",
+      "sha256": "a3367545be38b169de529d6474dba8d5dc2579a812b2a4a781866c9024b6dec0",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 759,
+        "height": 1076
+      }
+    },
+    {
+      "asset_id": "formation-ying_xiao",
+      "role": "formation_configuration_image",
+      "formation_id": "ying_xiao",
+      "path_base": "workspace",
+      "path": "data/screenshots/formations/ying_xiao.png",
+      "status": "available",
+      "source": "codex-clipboard-f04e4e8f-a129-448e-a2aa-b0108aa9aaa5.png",
+      "sha256": "3068a8bcadd726faa6c11cff24a3b84eb166b0d78e6a958625c551e91f2ae80f",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 756,
+        "height": 1083
+      }
+    },
+    {
+      "asset_id": "formation-lei_jue",
+      "role": "formation_configuration_image",
+      "formation_id": "lei_jue",
+      "path_base": "workspace",
+      "path": "data/screenshots/formations/lei_jue.png",
+      "status": "available",
+      "source": "codex-clipboard-191eb86b-7800-4aef-b073-14c4463211e8.png",
+      "sha256": "d8f0477836d62d21a86b2ec55791ca6f5950d7eadbcdbf3368c79b62365eda7a",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 768,
+        "height": 1116
+      }
+    },
+    {
+      "asset_id": "formation-long_fei",
+      "role": "formation_configuration_image",
+      "formation_id": "long_fei",
+      "path_base": "workspace",
+      "path": "data/screenshots/formations/long_fei.png",
+      "status": "available",
+      "source": "codex-clipboard-7ba15561-c65f-4c21-96b5-de9599a1b782.png",
+      "sha256": "d1df5ea6b7d2c8086d1201a1c9c42b2031347d2c10444996885d1624f2eaa406",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 792,
+        "height": 1080
+      }
+    },
+    {
+      "asset_id": "clean-001110",
+      "role": "clean_match_replay",
+      "path_base": "workspace",
+      "path": "data/raw/clean/SVID_20261118_001110_1.mp4",
+      "status": "available",
+      "source": "User-provided paired replay, 2026-11-18",
+      "sha256": "d7f2600d3ce78676b046fe110756fe37bc836542bee02ea07b209b6ab32ed0ed",
+      "asset_version": 1,
+      "battle_id": "user-20261118-dragon-tiger-01",
+      "dataset_split": "validation",
+      "inspection": {
+        "filename": "SVID_20261118_001110_1.mp4",
+        "sha256": "d7f2600d3ce78676b046fe110756fe37bc836542bee02ea07b209b6ab32ed0ed",
+        "size_bytes": 601473029,
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "codec": "h264",
+        "stream_index": 1,
+        "width": 2800,
+        "height": 1280,
+        "average_frame_rate": "214047000/3578963",
+        "base_frame_rate": "240",
+        "stream_time_base": "1/90000",
+        "stream_start_pts": 0,
+        "declared_frames": 23783,
+        "decoded_frames": 23783,
+        "stream_duration_seconds": 397.66255555555557,
+        "container_duration_seconds": 397.694625,
+        "first_pts_seconds": 0.0,
+        "last_pts_seconds": 397.64632222222224,
+        "frames_without_timestamp": 0,
+        "corrupt_frames": 0,
+        "samples": [],
+        "unmatched_request_seconds": []
+      }
+    },
+    {
+      "asset_id": "detailed-001815",
+      "role": "detailed_match_replay",
+      "path_base": "workspace",
+      "path": "data/raw/detailed/SVID_20261118_001815_1.mp4",
+      "status": "available",
+      "source": "User-provided paired replay, 2026-11-18",
+      "sha256": "166eca48caa6ce9e8b200dea2792599a5b8cef7504cb06768996650b7d7f68b9",
+      "asset_version": 1,
+      "battle_id": "user-20261118-dragon-tiger-01",
+      "dataset_split": "validation",
+      "inspection": {
+        "filename": "SVID_20261118_001815_1.mp4",
+        "sha256": "166eca48caa6ce9e8b200dea2792599a5b8cef7504cb06768996650b7d7f68b9",
+        "size_bytes": 601193189,
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "codec": "h264",
+        "stream_index": 1,
+        "width": 2800,
+        "height": 1280,
+        "average_frame_rate": "59502500/994339",
+        "base_frame_rate": "90000",
+        "stream_time_base": "1/90000",
+        "stream_start_pts": 0,
+        "declared_frames": 23801,
+        "decoded_frames": 23801,
+        "stream_duration_seconds": 397.7356,
+        "container_duration_seconds": 397.758667,
+        "first_pts_seconds": 0.0,
+        "last_pts_seconds": 397.7183111111111,
+        "frames_without_timestamp": 0,
+        "corrupt_frames": 0,
+        "samples": [],
+        "unmatched_request_seconds": []
+      }
+    },
+    {
+      "asset_id": "clean-221123",
+      "role": "clean_match_replay",
+      "path_base": "workspace",
+      "path": "data/raw/clean/SVID_20261119_221123_1.mp4",
+      "status": "available",
+      "source": "User-provided paired replay, 2026-11-19",
+      "sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "asset_version": 1,
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "inspection": {
+        "width": 2800,
+        "height": 1280,
+        "decoded_frames": 19713,
+        "corrupt_frames": 0,
+        "frames_without_timestamp": 0,
+        "stream_duration_seconds": 329.1098333333333
+      }
+    },
+    {
+      "asset_id": "detailed-220552",
+      "role": "detailed_match_replay",
+      "path_base": "workspace",
+      "path": "data/raw/detailed/SVID_20261119_220552_1.mp4",
+      "status": "available",
+      "source": "User-provided paired replay, 2026-11-19",
+      "sha256": "be93535fb34ed705498de7b879f3df4603b664834cc3e7ec6421f9f0ec9f726d",
+      "asset_version": 1,
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "inspection": {
+        "width": 2800,
+        "height": 1280,
+        "decoded_frames": 18997,
+        "corrupt_frames": 0,
+        "frames_without_timestamp": 0,
+        "stream_duration_seconds": 317.2002777777778
+      }
+    },
+    {
+      "asset_id": "clean-223619",
+      "role": "clean_match_replay",
+      "path_base": "workspace",
+      "path": "data/raw/clean/SVID_20261119_223619_1.mp4",
+      "status": "available",
+      "source": "User-provided paired replay, 2026-11-19",
+      "sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "asset_version": 1,
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "inspection": {
+        "filename": "SVID_20261119_223619_1.mp4",
+        "sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+        "size_bytes": 725343879,
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "codec": "h264",
+        "stream_index": 1,
+        "width": 2800,
+        "height": 1280,
+        "average_frame_rate": "1593217327/26610398",
+        "base_frame_rate": "90000",
+        "stream_time_base": "1/90000",
+        "stream_start_pts": 0,
+        "declared_frames": 28759,
+        "decoded_frames": 28759,
+        "stream_duration_seconds": 480.34152222222224,
+        "container_duration_seconds": 480.361292,
+        "first_pts_seconds": 0.0,
+        "last_pts_seconds": 480.3243444444444,
+        "frames_without_timestamp": 0,
+        "corrupt_frames": 0,
+        "samples": [],
+        "unmatched_request_seconds": []
+      }
+    },
+    {
+      "asset_id": "detailed-224507",
+      "role": "detailed_match_replay",
+      "path_base": "workspace",
+      "path": "data/raw/detailed/SVID_20261119_224507_1.mp4",
+      "status": "available",
+      "source": "User-provided paired replay, 2026-11-19",
+      "sha256": "6ca3e1b7ae59512122682889e0bbbc0b2b08d2d2b76c490bf70b6ac1c133213b",
+      "asset_version": 1,
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "inspection": {
+        "filename": "SVID_20261119_224507_1.mp4",
+        "sha256": "6ca3e1b7ae59512122682889e0bbbc0b2b08d2d2b76c490bf70b6ac1c133213b",
+        "size_bytes": 722546251,
+        "format": "mov,mp4,m4a,3gp,3g2,mj2",
+        "codec": "h264",
+        "stream_index": 1,
+        "width": 2800,
+        "height": 1280,
+        "average_frame_rate": "2119997527/35431642",
+        "base_frame_rate": "60",
+        "stream_time_base": "1/90000",
+        "stream_start_pts": 0,
+        "declared_frames": 28630,
+        "decoded_frames": 28630,
+        "stream_duration_seconds": 478.49485555555555,
+        "container_duration_seconds": 478.526625,
+        "first_pts_seconds": 0.0,
+        "last_pts_seconds": 478.4778111111111,
+        "frames_without_timestamp": 0,
+        "corrupt_frames": 0,
+        "samples": [],
+        "unmatched_request_seconds": []
+      }
+    },
+    {
+      "asset_id": "child-front-red",
+      "role": "child_appearance_reference",
+      "path_base": "workspace",
+      "path": "data/raw/child-appearance/child-front-red.png",
+      "status": "available",
+      "source": "User-provided child appearance screenshot in human-review-03",
+      "sha256": "813969afabbd93e72bb3cc412bdf4b291015a2cb38add7eb6fe91955adabec80",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 480,
+        "height": 297
+      }
+    },
+    {
+      "asset_id": "child-front-white",
+      "role": "child_appearance_reference",
+      "path_base": "workspace",
+      "path": "data/raw/child-appearance/child-front-white.png",
+      "status": "available",
+      "source": "User-provided child appearance screenshot in human-review-03",
+      "sha256": "2d1f72a1cac0d4c4db38ee80dc415a652f068603a18c1f1935643756741499c4",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 547,
+        "height": 373
+      }
+    },
+    {
+      "asset_id": "child-front-green",
+      "role": "child_appearance_reference",
+      "path_base": "workspace",
+      "path": "data/raw/child-appearance/child-front-green.png",
+      "status": "available",
+      "source": "User-provided child appearance screenshot in human-review-03",
+      "sha256": "174447cadb1e3fd791237ad8ba40d83bb59c29ce2567601cdfa2ef1239746bef",
+      "asset_version": 1,
+      "battle_id": null,
+      "dataset_split": null,
+      "inspection": {
+        "width": 424,
+        "height": 288
+      }
+    }
+  ]
+}

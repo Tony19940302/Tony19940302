@@ -1,0 +1,25 @@
+{
+  "version": "thunder-tiger-phase-02-baseline-v1",
+  "source_asset": "detailed-221754_520",
+  "reference_frames": 7,
+  "step_seconds": 0.25,
+  "metrics": {
+    "round": {"readable_reference": 7, "minimum_correct": 7, "maximum_incorrect": 0, "maximum_read_on_obscured": 0},
+    "medicine": {"readable_reference": 63, "minimum_correct": 57, "maximum_incorrect": 0, "maximum_read_on_obscured": 0},
+    "pet": {"readable_reference": 65, "minimum_correct": 62, "maximum_incorrect": 0, "maximum_read_on_obscured": 2}
+  },
+  "minimum_stable_coverage": {
+    "round": 606,
+    "L1.medicine": 560, "L1.pet": 490,
+    "L2.medicine": 553, "L2.pet": 538,
+    "L3.medicine": 574, "L3.pet": 515,
+    "L4.medicine": 141, "L4.pet": 381,
+    "L5.medicine": 475, "L5.pet": 597,
+    "R1.medicine": 617, "R1.pet": 581,
+    "R2.medicine": 597, "R2.pet": 590,
+    "R3.medicine": 593, "R3.pet": 588,
+    "R4.medicine": 554, "R4.pet": 582,
+    "R5.medicine": 620, "R5.pet": 618
+  }
+}
+

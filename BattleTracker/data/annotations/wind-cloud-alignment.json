@@ -1,0 +1,320 @@
+{
+  "version": "wind-cloud-alignment-v1",
+  "detailed_asset_id": "detailed-224507",
+  "clean_asset_id": "clean-223619",
+  "timestamp_basis": "milliseconds_from_first_presentation_timestamp",
+  "review_tolerance_ms": 160,
+  "anchors": [
+    {
+      "anchor_id": "A01",
+      "detailed_ms": 0,
+      "clean_ms": 0,
+      "round": 1,
+      "cue": "First frames show the same opening effects while all starting units remain on their slots."
+    },
+    {
+      "anchor_id": "A02",
+      "detailed_ms": 20025,
+      "clean_ms": 19972,
+      "round": 1,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A03",
+      "detailed_ms": 50016,
+      "clean_ms": 49936,
+      "round": 2,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A04",
+      "detailed_ms": 80021,
+      "clean_ms": 80134,
+      "round": 3,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A05",
+      "detailed_ms": 110028,
+      "clean_ms": 110165,
+      "round": 4,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A06",
+      "detailed_ms": 140021,
+      "clean_ms": 140063,
+      "round": 6,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A07",
+      "detailed_ms": 185021,
+      "clean_ms": 185140,
+      "round": 7,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A08",
+      "detailed_ms": 215026,
+      "clean_ms": 215068,
+      "round": 8,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A09",
+      "detailed_ms": 245013,
+      "clean_ms": 245130,
+      "round": 9,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A10",
+      "detailed_ms": 275014,
+      "clean_ms": 275208,
+      "round": 11,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A11",
+      "detailed_ms": 305014,
+      "clean_ms": 305165,
+      "round": 12,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A12",
+      "detailed_ms": 320024,
+      "clean_ms": 320196,
+      "round": 12,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A13",
+      "detailed_ms": 335016,
+      "clean_ms": 335043,
+      "round": 13,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A14",
+      "detailed_ms": 365026,
+      "clean_ms": 364973,
+      "round": 14,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A15",
+      "detailed_ms": 395024,
+      "clean_ms": 394835,
+      "round": 15,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A16",
+      "detailed_ms": 425024,
+      "clean_ms": 424831,
+      "round": 16,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A17",
+      "detailed_ms": 455023,
+      "clean_ms": 454806,
+      "round": 18,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "A18",
+      "detailed_ms": 478010,
+      "clean_ms": 477732,
+      "round": 18,
+      "cue": "Last in-battle frame before both replays transition to player information and the comparison button."
+    }
+  ],
+  "checkpoints": [
+    {
+      "anchor_id": "C01",
+      "detailed_ms": 414,
+      "clean_ms": 407,
+      "round": 1,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C02",
+      "detailed_ms": 1014,
+      "clean_ms": 973,
+      "round": 1,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C03",
+      "detailed_ms": 2013,
+      "clean_ms": 1973,
+      "round": 1,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C04",
+      "detailed_ms": 5012,
+      "clean_ms": 4972,
+      "round": 1,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C05",
+      "detailed_ms": 10027,
+      "clean_ms": 10005,
+      "round": 1,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C06",
+      "detailed_ms": 35022,
+      "clean_ms": 34937,
+      "round": 2,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C07",
+      "detailed_ms": 65027,
+      "clean_ms": 65001,
+      "round": 3,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C08",
+      "detailed_ms": 95016,
+      "clean_ms": 95066,
+      "round": 4,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C09",
+      "detailed_ms": 125023,
+      "clean_ms": 125098,
+      "round": 5,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C10",
+      "detailed_ms": 155015,
+      "clean_ms": 155077,
+      "round": 6,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C11",
+      "detailed_ms": 170026,
+      "clean_ms": 170109,
+      "round": 7,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C12",
+      "detailed_ms": 200015,
+      "clean_ms": 200038,
+      "round": 8,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C13",
+      "detailed_ms": 230019,
+      "clean_ms": 230132,
+      "round": 9,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C14",
+      "detailed_ms": 260023,
+      "clean_ms": 260077,
+      "round": 10,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C15",
+      "detailed_ms": 290022,
+      "clean_ms": 290139,
+      "round": 11,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C16",
+      "detailed_ms": 350023,
+      "clean_ms": 350074,
+      "round": 14,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C17",
+      "detailed_ms": 380017,
+      "clean_ms": 379871,
+      "round": 15,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C18",
+      "detailed_ms": 410016,
+      "clean_ms": 409800,
+      "round": 16,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C19",
+      "detailed_ms": 440015,
+      "clean_ms": 439777,
+      "round": 17,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C20",
+      "detailed_ms": 467016,
+      "clean_ms": 466769,
+      "round": 18,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C21",
+      "detailed_ms": 473014,
+      "clean_ms": 472734,
+      "round": 18,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C22",
+      "detailed_ms": 475013,
+      "clean_ms": 474733,
+      "round": 18,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C23",
+      "detailed_ms": 476512,
+      "clean_ms": 476267,
+      "round": 18,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    },
+    {
+      "anchor_id": "C24",
+      "detailed_ms": 477112,
+      "clean_ms": 476866,
+      "round": 18,
+      "cue": "Matched masked battle-area motion sequence near each time; counter areas and replay UI excluded."
+    }
+  ],
+  "replay_coverage": {
+    "starting_round": 1,
+    "terminal_round": 18,
+    "terminal_state_evidence_detailed_ms": 477128,
+    "last_combat_detailed_ms": 478010,
+    "last_combat_clean_ms": 477732,
+    "detailed_exit_ms": 478027,
+    "clean_exit_ms": 477749,
+    "notes": "Starting action partially under way at video opening; all ten official starting counters visible before any count increment. Last blow leaves all five left player bars empty, with surviving right units. Both versions then leave the battle arena for the same outside-battle screen. Winner text is not visible.",
+    "evidence": [
+      "outputs/phase-06/final-intake/224507-boundary-477128.jpg",
+      "outputs/phase-06/final-intake/223619-terminal-boundary.jpg",
+      "outputs/phase-06/final-intake/224507-terminal-boundary.jpg"
+    ]
+  }
+}

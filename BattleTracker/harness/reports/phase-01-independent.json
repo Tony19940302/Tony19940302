@@ -1,0 +1,118 @@
+{
+  "profile": "phase-01",
+  "status": "PASS",
+  "checks": [
+    {
+      "check_name": "unit_and_integration",
+      "command": [
+        "D:\\AICodingProject\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "-q"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 1.127,
+      "result_summary": "..........................                                               [100%]\n26 passed in 0.81s",
+      "artifact_paths": [],
+      "failure_reason": null,
+      "profile": "phase-01"
+    },
+    {
+      "check_name": "environment_dependencies",
+      "command": [
+        "D:\\AICodingProject\\.venv\\Scripts\\python.exe",
+        "-m",
+        "pip",
+        "check"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.422,
+      "result_summary": "No broken requirements found.",
+      "artifact_paths": [],
+      "failure_reason": null,
+      "profile": "phase-01"
+    },
+    {
+      "check_name": "asset:detailed-1000015012",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\raw\\detailed\\1000015012.mp4"
+      ],
+      "status": "SKIPPED",
+      "exit_code": null,
+      "duration": 0.0,
+      "result_summary": "Source file unavailable on this host",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-01"
+    },
+    {
+      "check_name": "asset:clean-1000015021",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\raw\\clean\\1000015021.mp4"
+      ],
+      "status": "SKIPPED",
+      "exit_code": null,
+      "duration": 0.0,
+      "result_summary": "Source file unavailable on this host",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-01"
+    },
+    {
+      "check_name": "asset:formation-reference-set",
+      "command": [
+        "sha256",
+        "D:\\AICodingProject\\data\\screenshots\\formations"
+      ],
+      "status": "SKIPPED",
+      "exit_code": null,
+      "duration": 0.0,
+      "result_summary": "Source file unavailable on this host",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-01"
+    },
+    {
+      "check_name": "asset:prior-spectator-screenshot",
+      "command": [
+        "sha256",
+        "C:\\Users\\codexuser\\AppData\\Local\\Temp\\codex-clipboard-d35a3a33-b9bc-4456-b816-507809be0898.png"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.004,
+      "result_summary": "SHA-256 66beaf9ef1e8ca1b6d21eb0e9ae53feea0296d3d45888708c6aea3d1c72fd519",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-01"
+    },
+    {
+      "check_name": "asset:prior-desktop-reference",
+      "command": [
+        "sha256",
+        "C:\\Users\\codexuser\\Desktop\\c6597302055081d1f799a8c1a543178b.mp4"
+      ],
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.01,
+      "result_summary": "SHA-256 2ebf913eff9f11f5a90260aba422b24315b08ccc6ff28afeffd4f4b28b4f700f",
+      "artifact_paths": [
+        "D:\\AICodingProject\\data\\manifests\\assets.json"
+      ],
+      "failure_reason": null,
+      "profile": "phase-01"
+    }
+  ]
+}

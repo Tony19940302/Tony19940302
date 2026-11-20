@@ -1,0 +1,202 @@
+{
+  "version": "thunder-tiger-review-v4",
+  "changes": {
+    "L1:18506:PET_LIMIT_CHANGE": {
+      "note": "跨回合，普通画面有结算和特技提示。额度增加的触发原因未知。"
+    },
+    "L5:21506:USE_MEDICINE": {
+      "actor_id": "L5_PET",
+      "target_id": "L2",
+      "kind": "pet",
+      "note": "普通回放 28.7–29.2 秒蓝宠快乐加倍施法。29.445 秒 L2 血条上方出现 1838，L2 气血增加，随后右侧放失心符。"
+    },
+    "L1:27756:USE_MEDICINE": {
+      "actor_id": "L1",
+      "target_id": "L5",
+      "kind": "player",
+      "note": "普通回放约 35.1 秒 L1 人物挥动金色武器，约 35.6 秒左内侧较低人物跳 1645，之后才显示月刃。"
+    },
+    "R1:32005:SUMMON_PET": {
+      "actor_id": "R1",
+      "kind": "player",
+      "note": "约 39.5 秒右上人物起手，约 40 秒相邻上方空宠位出现超级神虎及不屈。"
+    },
+    "L2:39504:USE_MEDICINE": {
+      "actor_id": "L2_PET",
+      "target_id": "L2",
+      "kind": "pet",
+      "note": "46.9–47.2 秒左侧中前绿色宠物先动。47.370 秒 L2 血条上方出现 1857，L2 气血增加，随后另一个宠位显示泰山压顶。"
+    },
+    "R4:43253:USE_MEDICINE": {
+      "note": "回合边界前后有套装及多段伤害同屏，无法确认施药单位。"
+    },
+    "R4:46502:USE_MEDICINE": {
+      "actor_id": "R4_PET",
+      "target_id": "R5",
+      "kind": "pet",
+      "note": "人工反馈 human-review-01 A 补充确认，虎翼阵 3 号位（画面 R4）的宠物给虎翼阵 5 号位（画面 R5）人物用药。普通回放约 54.45 秒 R5 头顶出现绿色 267，详细回放 R4 药次由 1/10 变 2/10。"
+    },
+    "L5:47502:USE_MEDICINE": {
+      "actor_id": "L5_PET",
+      "target_id": "L2",
+      "kind": "pet",
+      "note": "人工反馈 human-review-01 A 指认快乐加倍施药和主人。约 54.59 秒起手，55.291 秒 L2 血条上方出现 1838，L2 气血增加，与 L5 独立药次对应。"
+    },
+    "R3:54253:SUMMON_PET": {
+      "actor_id": "R3",
+      "kind": "player",
+      "note": "普通回放约 62 秒右下人物出现紫色动作，右侧中部由空宠位变为金色新宠，详细回放 R3 的计数同步增加。"
+    },
+    "L5:81014:USE_MEDICINE": {
+      "note": "多个恢复数字出现，动作靠近下一次出宠，无法单独锁定施药者。"
+    },
+    "R2:81764:SUMMON_PET": {
+      "actor_id": "R2",
+      "kind": "player",
+      "note": "普通回放约 89.2 秒右外排中间人物举武器，金圈出现后在对应区域看到蓝色新宠。"
+    },
+    "L2:82763:SUMMON_PET": {
+      "actor_id": "L2",
+      "kind": "player",
+      "note": "普通回放约 90.4 秒左中人物动作后出现本侧金圈和红色新宠，发生在右侧出宠之后。"
+    },
+    "R4:104761:USE_MEDICINE": {
+      "note": "岩柱与跨回合结算重叠，普通画面无法确认施药者。"
+    },
+    "L2:109011:USE_MEDICINE": {
+      "actor_id": "L2_PET",
+      "target_id": "L2",
+      "kind": "pet",
+      "note": "人工反馈 human-review-01 B 确认宠物施法用药。L2 官方药次增加，115.685 秒 L2 血条上方跳出 1857，L2 气血增加。"
+    },
+    "L5:109511:USE_MEDICINE": {
+      "note": "见到左内侧与蓝宠动作，右侧封印提示接续出现，施药者保留未知。"
+    },
+    "L3:126010:USE_MEDICINE": {
+      "note": "约 133.2 秒左内侧跳 870，随后覆盖水漫金山提示，暂不确认施药者。"
+    }
+  },
+  "hard_negatives": [
+    {
+      "id": "N01",
+      "round": 1,
+      "start_ms": 8604,
+      "end_ms": 9310,
+      "event_type": "NON_MEDICINE_SKILL",
+      "actor_id": "R1",
+      "cue": "飞砂走石及左侧金色结算。"
+    },
+    {
+      "id": "N02",
+      "round": 3,
+      "start_ms": 52800,
+      "end_ms": 53600,
+      "event_type": "NON_MEDICINE_ARTIFACT",
+      "actor_id": "R4",
+      "cue": "右底排中间人物头顶番天印。"
+    },
+    {
+      "id": "N03",
+      "round": 3,
+      "start_ms": 73800,
+      "end_ms": 74700,
+      "event_type": "NON_MEDICINE_SKILL",
+      "actor_id": "R1",
+      "cue": "右外排上方人物显示凤舞九天。"
+    },
+    {
+      "id": "N04",
+      "round": 4,
+      "start_ms": 98900,
+      "end_ms": 99800,
+      "event_type": "PET_REVIVAL",
+      "actor_id": null,
+      "cue": "右上召唤灵被击后显示高级神佑复生，右侧宠位原实例恢复。"
+    },
+    {
+      "id": "N05",
+      "round": 5,
+      "start_ms": 125650,
+      "end_ms": 126450,
+      "event_type": "NON_MEDICINE_SKILL",
+      "actor_id": null,
+      "cue": "地狱烈火群体火焰，右上同时出现 659 恢复。"
+    }
+  ],
+  "supersedes": "thunder-tiger-review-v3.json",
+  "target_revisions": [
+    {
+      "sample_id": "L5:21506:USE_MEDICINE",
+      "old_target_id": "L1",
+      "target_id": "L2",
+      "clean_frame_pair_ms": [
+        29362,
+        29445
+      ],
+      "prior_L1_health_width_px": [
+        24,
+        24
+      ],
+      "observed_L2_health_width_px": [
+        4,
+        14
+      ],
+      "evidence": "outputs/phase-06/medicine-dev/receiver-label-check.jpg"
+    },
+    {
+      "sample_id": "L2:39504:USE_MEDICINE",
+      "old_target_id": "L1",
+      "target_id": "L2",
+      "clean_frame_pair_ms": [
+        47287,
+        47370
+      ],
+      "prior_L1_health_width_px": [
+        24,
+        24
+      ],
+      "observed_L2_health_width_px": [
+        10,
+        18
+      ],
+      "evidence": "outputs/phase-06/medicine-dev/receiver-label-check.jpg"
+    },
+    {
+      "sample_id": "L5:47502:USE_MEDICINE",
+      "old_target_id": "L1",
+      "target_id": "L2",
+      "clean_frame_pair_ms": [
+        55207,
+        55291
+      ],
+      "prior_L1_health_width_px": [
+        24,
+        24
+      ],
+      "observed_L2_health_width_px": [
+        18,
+        26
+      ],
+      "evidence": "outputs/phase-06/medicine-dev/receiver-label-check.jpg"
+    },
+    {
+      "sample_id": "L2:109011:USE_MEDICINE",
+      "old_target_id": "L1",
+      "target_id": "L2",
+      "clean_frame_pair_ms": [
+        115602,
+        115685
+      ],
+      "prior_L1_health_width_px": [
+        24,
+        24
+      ],
+      "observed_L2_health_width_px": [
+        10,
+        19
+      ],
+      "evidence": "outputs/phase-06/medicine-dev/receiver-label-check.jpg"
+    }
+  ],
+  "revision_note": "普通画面 700×320 裁切中，L1、L2 红色气血条分别位于 y=43、y=84。四次绿色数字显示时 L2 红条加长，L1 保持相同长度。修订受药者字段，原标签保留在 v3。"
+}

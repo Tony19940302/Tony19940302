@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools==80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "battletracker"
+version = "0.1.0"
+requires-python = ">=3.11"
+dependencies = ["av==16.1.0", "pillow==13.0.0"]
+
+[project.optional-dependencies]
+test = ["pytest==8.4.2"]
+vision = ["opencv-python==5.0.0.93", "numpy==2.5.4"]
+experiment = ["onnx==1.18.0"]
+temporal = ["torch==2.8.0"]
+deployment = ["onnxruntime==1.22.1"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+
+
+
+

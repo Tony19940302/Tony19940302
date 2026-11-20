@@ -1,0 +1,1918 @@
+{
+  "version": "wind-cloud-reviewed-events-v1",
+  "battle_id": "replay-2026-11-19-wind-cloud",
+  "clean_asset_id": "clean-223619",
+  "detailed_asset_id": "detailed-224507",
+  "alignment_version": "wind-cloud-alignment-v1",
+  "changes": [
+    {
+      "sample_id": "WC-M01",
+      "round": 2,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R2",
+      "actor_id": "R2_PET",
+      "target_id": "R2",
+      "clip_start_ms": 38383,
+      "clip_end_ms": 40033,
+      "mapped_counter_interval_ms": [
+        39283,
+        39333
+      ],
+      "detailed_interval_ms": [
+        39353,
+        39403
+      ],
+      "before": "0/10",
+      "after": "1/10",
+      "note": "详细版相邻计数帧人工复核。 普通版先见固定宠位施法，再见受药人物的回复。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png",
+        "outputs/phase-06/final-intake/independent-early-precise-counts.png",
+        "outputs/phase-06/final-intake/independent-early-actor-R2.jpg"
+      ]
+    },
+    {
+      "sample_id": "WC-M02",
+      "round": 2,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L4",
+      "actor_id": "L4_PET",
+      "target_id": "L1",
+      "clip_start_ms": 39383,
+      "clip_end_ms": 41032,
+      "mapped_counter_interval_ms": [
+        40283,
+        40332
+      ],
+      "detailed_interval_ms": [
+        40354,
+        40403
+      ],
+      "before": "0/10",
+      "after": "1/10",
+      "note": "详细版相邻计数帧人工复核。 普通版先见固定宠位施法，再见受药人物的回复。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png",
+        "outputs/phase-06/final-intake/independent-early-precise-counts.png",
+        "outputs/phase-06/final-intake/independent-early-actor-L4.jpg"
+      ]
+    },
+    {
+      "sample_id": "WC-M03",
+      "round": 3,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L4",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 63121,
+      "clip_end_ms": 64972,
+      "mapped_counter_interval_ms": [
+        64021,
+        64272
+      ],
+      "detailed_interval_ms": [
+        64011,
+        64260
+      ],
+      "before": "1/10",
+      "after": "2/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M04",
+      "round": 3,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 64126,
+      "clip_end_ms": 65978,
+      "mapped_counter_interval_ms": [
+        65026,
+        65278
+      ],
+      "detailed_interval_ms": [
+        65010,
+        65260
+      ],
+      "before": "0/11",
+      "after": "1/11",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S01",
+      "round": 3,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L5",
+      "actor_id": "L5",
+      "target_id": "L5_PET",
+      "clip_start_ms": 64881,
+      "clip_end_ms": 66732,
+      "mapped_counter_interval_ms": [
+        65781,
+        66032
+      ],
+      "detailed_interval_ms": [
+        65760,
+        66009
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M05",
+      "round": 3,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L4",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 68150,
+      "clip_end_ms": 70002,
+      "mapped_counter_interval_ms": [
+        69050,
+        69302
+      ],
+      "detailed_interval_ms": [
+        69008,
+        69258
+      ],
+      "before": "2/10",
+      "after": "3/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S02",
+      "round": 3,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L1",
+      "actor_id": "L1",
+      "target_id": "L1_PET",
+      "clip_start_ms": 69660,
+      "clip_end_ms": 71511,
+      "mapped_counter_interval_ms": [
+        70560,
+        70811
+      ],
+      "detailed_interval_ms": [
+        70508,
+        70758
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M06",
+      "round": 4,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L4",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 91473,
+      "clip_end_ms": 93323,
+      "mapped_counter_interval_ms": [
+        92373,
+        92623
+      ],
+      "detailed_interval_ms": [
+        92250,
+        92500
+      ],
+      "before": "3/10",
+      "after": "4/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M07",
+      "round": 4,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 93741,
+      "clip_end_ms": 95591,
+      "mapped_counter_interval_ms": [
+        94641,
+        94891
+      ],
+      "detailed_interval_ms": [
+        94516,
+        94766
+      ],
+      "before": "1/11",
+      "after": "2/11",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S03",
+      "round": 4,
+      "event_type": "SUMMON_PET",
+      "owner_id": "R2",
+      "actor_id": "R2",
+      "target_id": "R2_PET",
+      "clip_start_ms": 97992,
+      "clip_end_ms": 99842,
+      "mapped_counter_interval_ms": [
+        98892,
+        99142
+      ],
+      "detailed_interval_ms": [
+        98764,
+        99014
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S04",
+      "round": 4,
+      "event_type": "SUMMON_PET",
+      "owner_id": "R3",
+      "actor_id": "R3",
+      "target_id": "R3_PET",
+      "clip_start_ms": 98492,
+      "clip_end_ms": 100343,
+      "mapped_counter_interval_ms": [
+        99392,
+        99643
+      ],
+      "detailed_interval_ms": [
+        99264,
+        99514
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M08",
+      "round": 5,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 115476,
+      "clip_end_ms": 117327,
+      "mapped_counter_interval_ms": [
+        116376,
+        116627
+      ],
+      "detailed_interval_ms": [
+        116259,
+        116511
+      ],
+      "before": "0/10",
+      "after": "1/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M09",
+      "round": 5,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R2",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 116224,
+      "clip_end_ms": 118322,
+      "mapped_counter_interval_ms": [
+        117124,
+        117622
+      ],
+      "detailed_interval_ms": [
+        117009,
+        117509
+      ],
+      "before": "1/10",
+      "after": "2/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M10",
+      "round": 5,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L4",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 120709,
+      "clip_end_ms": 122558,
+      "mapped_counter_interval_ms": [
+        121609,
+        121858
+      ],
+      "detailed_interval_ms": [
+        121508,
+        121758
+      ],
+      "before": "4/10",
+      "after": "5/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M11",
+      "round": 5,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 132666,
+      "clip_end_ms": 134515,
+      "mapped_counter_interval_ms": [
+        133566,
+        133815
+      ],
+      "detailed_interval_ms": [
+        133503,
+        133753
+      ],
+      "before": "0/10",
+      "after": "1/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S05",
+      "round": 5,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L2",
+      "actor_id": "L2",
+      "target_id": "L2_PET",
+      "clip_start_ms": 135160,
+      "clip_end_ms": 137009,
+      "mapped_counter_interval_ms": [
+        136060,
+        136309
+      ],
+      "detailed_interval_ms": [
+        136005,
+        136255
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M12",
+      "round": 5,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 136406,
+      "clip_end_ms": 138255,
+      "mapped_counter_interval_ms": [
+        137306,
+        137555
+      ],
+      "detailed_interval_ms": [
+        137255,
+        137505
+      ],
+      "before": "0/10",
+      "after": "1/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M13",
+      "round": 6,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 141900,
+      "clip_end_ms": 143750,
+      "mapped_counter_interval_ms": [
+        142800,
+        143050
+      ],
+      "detailed_interval_ms": [
+        142753,
+        143003
+      ],
+      "before": "1/10",
+      "after": "2/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M14",
+      "round": 6,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R2",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 168651,
+      "clip_end_ms": 170268,
+      "mapped_counter_interval_ms": [
+        169551,
+        169568
+      ],
+      "detailed_interval_ms": [
+        169459,
+        169476
+      ],
+      "before": "2/10",
+      "after": "3/10",
+      "note": "详细版相邻计数帧人工复核。 同帧两人药次各加一，普通版多单位同时回复，施法归属无法逐笔区分。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png",
+        "outputs/phase-06/final-intake/simultaneous-r6-detail.png",
+        "outputs/phase-06/final-intake/simultaneous-r6-clean.jpg"
+      ],
+      "timing_group": "r6-simultaneous"
+    },
+    {
+      "sample_id": "WC-M15",
+      "round": 6,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 168651,
+      "clip_end_ms": 170268,
+      "mapped_counter_interval_ms": [
+        169551,
+        169568
+      ],
+      "detailed_interval_ms": [
+        169459,
+        169476
+      ],
+      "before": "1/10",
+      "after": "2/10",
+      "note": "详细版相邻计数帧人工复核。 同帧两人药次各加一，普通版多单位同时回复，施法归属无法逐笔区分。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png",
+        "outputs/phase-06/final-intake/simultaneous-r6-detail.png",
+        "outputs/phase-06/final-intake/simultaneous-r6-clean.jpg"
+      ],
+      "timing_group": "r6-simultaneous"
+    },
+    {
+      "sample_id": "WC-M16",
+      "round": 7,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 173709,
+      "clip_end_ms": 176060,
+      "mapped_counter_interval_ms": [
+        174609,
+        175360
+      ],
+      "detailed_interval_ms": [
+        174508,
+        175258
+      ],
+      "before": "2/10",
+      "after": "3/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png",
+        "outputs/phase-06/final-intake/manual-changes-extended.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M17",
+      "round": 7,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R2",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 195624,
+      "clip_end_ms": 197240,
+      "mapped_counter_interval_ms": [
+        196524,
+        196540
+      ],
+      "detailed_interval_ms": [
+        196434,
+        196450
+      ],
+      "before": "3/10",
+      "after": "4/10",
+      "note": "详细版相邻计数帧人工复核。 同帧两人药次各加一，普通版多单位同时回复，施法归属无法逐笔区分。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png",
+        "outputs/phase-06/final-intake/simultaneous-r7-detail.png",
+        "outputs/phase-06/final-intake/simultaneous-r7-clean.jpg"
+      ],
+      "timing_group": "r7-simultaneous"
+    },
+    {
+      "sample_id": "WC-M18",
+      "round": 7,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 195624,
+      "clip_end_ms": 197240,
+      "mapped_counter_interval_ms": [
+        196524,
+        196540
+      ],
+      "detailed_interval_ms": [
+        196434,
+        196450
+      ],
+      "before": "2/10",
+      "after": "3/10",
+      "note": "详细版相邻计数帧人工复核。 同帧两人药次各加一，普通版多单位同时回复，施法归属无法逐笔区分。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png",
+        "outputs/phase-06/final-intake/simultaneous-r7-detail.png",
+        "outputs/phase-06/final-intake/simultaneous-r7-clean.jpg"
+      ],
+      "timing_group": "r7-simultaneous"
+    },
+    {
+      "sample_id": "WC-S06",
+      "round": 8,
+      "event_type": "SUMMON_PET",
+      "owner_id": "R1",
+      "actor_id": "R1",
+      "target_id": "R1_PET",
+      "clip_start_ms": 197700,
+      "clip_end_ms": 199551,
+      "mapped_counter_interval_ms": [
+        198600,
+        198851
+      ],
+      "detailed_interval_ms": [
+        198516,
+        198767
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M19",
+      "round": 8,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R2",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 204929,
+      "clip_end_ms": 206778,
+      "mapped_counter_interval_ms": [
+        205829,
+        206078
+      ],
+      "detailed_interval_ms": [
+        205763,
+        206013
+      ],
+      "before": "4/10",
+      "after": "5/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M20",
+      "round": 8,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 205926,
+      "clip_end_ms": 207775,
+      "mapped_counter_interval_ms": [
+        206826,
+        207075
+      ],
+      "detailed_interval_ms": [
+        206763,
+        207012
+      ],
+      "before": "3/10",
+      "after": "4/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M21",
+      "round": 8,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L4",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 213403,
+      "clip_end_ms": 215252,
+      "mapped_counter_interval_ms": [
+        214303,
+        214552
+      ],
+      "detailed_interval_ms": [
+        214259,
+        214509
+      ],
+      "before": "5/10",
+      "after": "6/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M22",
+      "round": 8,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 225172,
+      "clip_end_ms": 227023,
+      "mapped_counter_interval_ms": [
+        226072,
+        226323
+      ],
+      "detailed_interval_ms": [
+        226003,
+        226253
+      ],
+      "before": "3/10",
+      "after": "4/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M23",
+      "round": 9,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 230684,
+      "clip_end_ms": 232785,
+      "mapped_counter_interval_ms": [
+        231584,
+        232085
+      ],
+      "detailed_interval_ms": [
+        231501,
+        232001
+      ],
+      "before": "4/10",
+      "after": "5/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S07",
+      "round": 9,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L3",
+      "actor_id": "L3",
+      "target_id": "L3_PET",
+      "clip_start_ms": 235210,
+      "clip_end_ms": 237061,
+      "mapped_counter_interval_ms": [
+        236110,
+        236361
+      ],
+      "detailed_interval_ms": [
+        236016,
+        236266
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M24",
+      "round": 9,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L4",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 236213,
+      "clip_end_ms": 238063,
+      "mapped_counter_interval_ms": [
+        237113,
+        237363
+      ],
+      "detailed_interval_ms": [
+        237016,
+        237265
+      ],
+      "before": "6/10",
+      "after": "7/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S08",
+      "round": 10,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L4",
+      "actor_id": "L4",
+      "target_id": "L4_PET",
+      "clip_start_ms": 248238,
+      "clip_end_ms": 251592,
+      "mapped_counter_interval_ms": [
+        249322,
+        249339
+      ],
+      "detailed_interval_ms": [
+        249194,
+        249211
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "详细版字幕遮挡前可见 L4 宠次由 1/6 变 2/6，普通版金环后新宠血条出现。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png",
+        "outputs/phase-06/final-intake/manual-changes-extended.png",
+        "outputs/phase-06/final-intake/independent-L4-r10-detail.png",
+        "outputs/phase-06/final-intake/independent-L4-r10-clean.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M26",
+      "round": 10,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 254000,
+      "clip_end_ms": 255851,
+      "mapped_counter_interval_ms": [
+        254900,
+        255151
+      ],
+      "detailed_interval_ms": [
+        254758,
+        255008
+      ],
+      "before": "0/10",
+      "after": "1/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M25",
+      "round": 10,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 255253,
+      "clip_end_ms": 257104,
+      "mapped_counter_interval_ms": [
+        256153,
+        256404
+      ],
+      "detailed_interval_ms": [
+        256008,
+        256258
+      ],
+      "before": "5/10",
+      "after": "6/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png",
+        "outputs/phase-06/final-intake/manual-medicine-timing.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M27",
+      "round": 10,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 257007,
+      "clip_end_ms": 258857,
+      "mapped_counter_interval_ms": [
+        257907,
+        258157
+      ],
+      "detailed_interval_ms": [
+        257757,
+        258007
+      ],
+      "before": "4/10",
+      "after": "5/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S09",
+      "round": 10,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L5",
+      "actor_id": "L5",
+      "target_id": "L5_PET",
+      "clip_start_ms": 258008,
+      "clip_end_ms": 259860,
+      "mapped_counter_interval_ms": [
+        258908,
+        259160
+      ],
+      "detailed_interval_ms": [
+        258756,
+        259007
+      ],
+      "before": "2/6",
+      "after": "3/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M29",
+      "round": 11,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 275056,
+      "clip_end_ms": 276906,
+      "mapped_counter_interval_ms": [
+        275956,
+        276206
+      ],
+      "detailed_interval_ms": [
+        275763,
+        276013
+      ],
+      "before": "6/10",
+      "after": "7/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S10",
+      "round": 11,
+      "event_type": "SUMMON_PET",
+      "owner_id": "R5",
+      "actor_id": "R5",
+      "target_id": "R5_PET",
+      "clip_start_ms": 276054,
+      "clip_end_ms": 277904,
+      "mapped_counter_interval_ms": [
+        276954,
+        277204
+      ],
+      "detailed_interval_ms": [
+        276763,
+        277013
+      ],
+      "before": "1/6",
+      "after": "2/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S11",
+      "round": 11,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L3",
+      "actor_id": "L3",
+      "target_id": "L3_PET",
+      "clip_start_ms": 279048,
+      "clip_end_ms": 280898,
+      "mapped_counter_interval_ms": [
+        279948,
+        280198
+      ],
+      "detailed_interval_ms": [
+        279761,
+        280011
+      ],
+      "before": "2/6",
+      "after": "3/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M30",
+      "round": 11,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 293769,
+      "clip_end_ms": 295619,
+      "mapped_counter_interval_ms": [
+        294669,
+        294919
+      ],
+      "detailed_interval_ms": [
+        294503,
+        294753
+      ],
+      "before": "1/10",
+      "after": "2/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S12",
+      "round": 11,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L2",
+      "actor_id": "L2",
+      "target_id": "L2_PET",
+      "clip_start_ms": 294767,
+      "clip_end_ms": 296616,
+      "mapped_counter_interval_ms": [
+        295667,
+        295916
+      ],
+      "detailed_interval_ms": [
+        295502,
+        295752
+      ],
+      "before": "2/6",
+      "after": "3/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M28",
+      "round": 11,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 295016,
+      "clip_end_ms": 297116,
+      "mapped_counter_interval_ms": [
+        295916,
+        296416
+      ],
+      "detailed_interval_ms": [
+        295752,
+        296252
+      ],
+      "before": "5/10",
+      "after": "6/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png",
+        "outputs/phase-06/final-intake/manual-changes-extended.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M31",
+      "round": 12,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 299274,
+      "clip_end_ms": 301124,
+      "mapped_counter_interval_ms": [
+        300174,
+        300424
+      ],
+      "detailed_interval_ms": [
+        300016,
+        300266
+      ],
+      "before": "7/10",
+      "after": "8/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M32",
+      "round": 12,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L2",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 316776,
+      "clip_end_ms": 318627,
+      "mapped_counter_interval_ms": [
+        317676,
+        317927
+      ],
+      "detailed_interval_ms": [
+        317508,
+        317758
+      ],
+      "before": "0/10",
+      "after": "1/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M33",
+      "round": 12,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 317528,
+      "clip_end_ms": 319627,
+      "mapped_counter_interval_ms": [
+        318428,
+        318927
+      ],
+      "detailed_interval_ms": [
+        318258,
+        318757
+      ],
+      "before": "2/10",
+      "after": "3/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M34",
+      "round": 12,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 319279,
+      "clip_end_ms": 321127,
+      "mapped_counter_interval_ms": [
+        320179,
+        320427
+      ],
+      "detailed_interval_ms": [
+        320007,
+        320257
+      ],
+      "before": "3/10",
+      "after": "4/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M35",
+      "round": 12,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 321754,
+      "clip_end_ms": 323602,
+      "mapped_counter_interval_ms": [
+        322654,
+        322902
+      ],
+      "detailed_interval_ms": [
+        322506,
+        322756
+      ],
+      "before": "6/10",
+      "after": "7/10",
+      "note": "详细版相邻计数帧人工复核。 两人计数变化的可辨时点区间重叠。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ],
+      "timing_group": "r12-overlapping"
+    },
+    {
+      "sample_id": "WC-M36",
+      "round": 12,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 321754,
+      "clip_end_ms": 323602,
+      "mapped_counter_interval_ms": [
+        322654,
+        322902
+      ],
+      "detailed_interval_ms": [
+        322506,
+        322756
+      ],
+      "before": "2/11",
+      "after": "3/11",
+      "note": "详细版相邻计数帧人工复核。 两人计数变化的可辨时点区间重叠。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ],
+      "timing_group": "r12-overlapping"
+    },
+    {
+      "sample_id": "WC-M37",
+      "round": 13,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 325218,
+      "clip_end_ms": 327066,
+      "mapped_counter_interval_ms": [
+        326118,
+        326366
+      ],
+      "detailed_interval_ms": [
+        326004,
+        326254
+      ],
+      "before": "8/10",
+      "after": "9/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S13",
+      "round": 13,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L3",
+      "actor_id": "L3",
+      "target_id": "L3_PET",
+      "clip_start_ms": 328930,
+      "clip_end_ms": 330777,
+      "mapped_counter_interval_ms": [
+        329830,
+        330077
+      ],
+      "detailed_interval_ms": [
+        329752,
+        330002
+      ],
+      "before": "3/6",
+      "after": "4/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M38",
+      "round": 13,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 342117,
+      "clip_end_ms": 343966,
+      "mapped_counter_interval_ms": [
+        343017,
+        343266
+      ],
+      "detailed_interval_ms": [
+        343011,
+        343261
+      ],
+      "before": "4/10",
+      "after": "5/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S14",
+      "round": 13,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L4",
+      "actor_id": "L4",
+      "target_id": "L4_PET",
+      "clip_start_ms": 343861,
+      "clip_end_ms": 345710,
+      "mapped_counter_interval_ms": [
+        344761,
+        345010
+      ],
+      "detailed_interval_ms": [
+        344760,
+        345010
+      ],
+      "before": "2/6",
+      "after": "3/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M39",
+      "round": 13,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 344110,
+      "clip_end_ms": 346208,
+      "mapped_counter_interval_ms": [
+        345010,
+        345508
+      ],
+      "detailed_interval_ms": [
+        345010,
+        345509
+      ],
+      "before": "3/11",
+      "after": "4/11",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M40",
+      "round": 14,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L4",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 349592,
+      "clip_end_ms": 351687,
+      "mapped_counter_interval_ms": [
+        350492,
+        350987
+      ],
+      "detailed_interval_ms": [
+        350506,
+        351003
+      ],
+      "before": "7/10",
+      "after": "8/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M41",
+      "round": 14,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 350834,
+      "clip_end_ms": 352684,
+      "mapped_counter_interval_ms": [
+        351734,
+        351984
+      ],
+      "detailed_interval_ms": [
+        351752,
+        352002
+      ],
+      "before": "9/10",
+      "after": "10/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S15",
+      "round": 14,
+      "event_type": "SUMMON_PET",
+      "owner_id": "R2",
+      "actor_id": "R2",
+      "target_id": "R2_PET",
+      "clip_start_ms": 356831,
+      "clip_end_ms": 358681,
+      "mapped_counter_interval_ms": [
+        357731,
+        357981
+      ],
+      "detailed_interval_ms": [
+        357765,
+        358015
+      ],
+      "before": "2/6",
+      "after": "3/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-0.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M42",
+      "round": 14,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 371767,
+      "clip_end_ms": 373616,
+      "mapped_counter_interval_ms": [
+        372667,
+        372916
+      ],
+      "detailed_interval_ms": [
+        372755,
+        373005
+      ],
+      "before": "5/10",
+      "after": "6/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M43",
+      "round": 14,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 374503,
+      "clip_end_ms": 376351,
+      "mapped_counter_interval_ms": [
+        375403,
+        375651
+      ],
+      "detailed_interval_ms": [
+        375504,
+        375753
+      ],
+      "before": "7/10",
+      "after": "8/10",
+      "note": "详细版相邻计数帧人工复核。 两人计数变化的可辨时点区间重叠。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ],
+      "timing_group": "r14-overlapping"
+    },
+    {
+      "sample_id": "WC-M44",
+      "round": 14,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 374503,
+      "clip_end_ms": 376351,
+      "mapped_counter_interval_ms": [
+        375403,
+        375651
+      ],
+      "detailed_interval_ms": [
+        375504,
+        375753
+      ],
+      "before": "4/11",
+      "after": "5/11",
+      "note": "详细版相邻计数帧人工复核。 两人计数变化的可辨时点区间重叠。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ],
+      "timing_group": "r14-overlapping"
+    },
+    {
+      "sample_id": "WC-M45",
+      "round": 15,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L4",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 379478,
+      "clip_end_ms": 381326,
+      "mapped_counter_interval_ms": [
+        380378,
+        380626
+      ],
+      "detailed_interval_ms": [
+        380501,
+        380750
+      ],
+      "before": "8/10",
+      "after": "9/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-30.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S16",
+      "round": 15,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L1",
+      "actor_id": "L1",
+      "target_id": "L1_PET",
+      "clip_start_ms": 385960,
+      "clip_end_ms": 387809,
+      "mapped_counter_interval_ms": [
+        386860,
+        387109
+      ],
+      "detailed_interval_ms": [
+        387013,
+        387263
+      ],
+      "before": "2/6",
+      "after": "3/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M46",
+      "round": 15,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 396167,
+      "clip_end_ms": 398017,
+      "mapped_counter_interval_ms": [
+        397067,
+        397317
+      ],
+      "detailed_interval_ms": [
+        397256,
+        397506
+      ],
+      "before": "5/11",
+      "after": "6/11",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-45.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M47",
+      "round": 15,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 396417,
+      "clip_end_ms": 398267,
+      "mapped_counter_interval_ms": [
+        397317,
+        397567
+      ],
+      "detailed_interval_ms": [
+        397506,
+        397756
+      ],
+      "before": "8/10",
+      "after": "9/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-45.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S17",
+      "round": 16,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L4",
+      "actor_id": "L4",
+      "target_id": "L4_PET",
+      "clip_start_ms": 398664,
+      "clip_end_ms": 400514,
+      "mapped_counter_interval_ms": [
+        399564,
+        399814
+      ],
+      "detailed_interval_ms": [
+        399754,
+        400004
+      ],
+      "before": "3/6",
+      "after": "4/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M48",
+      "round": 16,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 403911,
+      "clip_end_ms": 405761,
+      "mapped_counter_interval_ms": [
+        404811,
+        405061
+      ],
+      "detailed_interval_ms": [
+        405001,
+        405251
+      ],
+      "before": "9/10",
+      "after": "10/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-45.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S18",
+      "round": 16,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L5",
+      "actor_id": "L5",
+      "target_id": "L5_PET",
+      "clip_start_ms": 404911,
+      "clip_end_ms": 406761,
+      "mapped_counter_interval_ms": [
+        405811,
+        406061
+      ],
+      "detailed_interval_ms": [
+        406001,
+        406251
+      ],
+      "before": "3/6",
+      "after": "4/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S19",
+      "round": 16,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L2",
+      "actor_id": "L2",
+      "target_id": "L2_PET",
+      "clip_start_ms": 410673,
+      "clip_end_ms": 412524,
+      "mapped_counter_interval_ms": [
+        411573,
+        411824
+      ],
+      "detailed_interval_ms": [
+        411764,
+        412015
+      ],
+      "before": "3/6",
+      "after": "4/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M49",
+      "round": 16,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 423664,
+      "clip_end_ms": 425514,
+      "mapped_counter_interval_ms": [
+        424564,
+        424814
+      ],
+      "detailed_interval_ms": [
+        424757,
+        425007
+      ],
+      "before": "6/11",
+      "after": "7/11",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-45.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S20",
+      "round": 17,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L5",
+      "actor_id": "L5",
+      "target_id": "L5_PET",
+      "clip_start_ms": 427659,
+      "clip_end_ms": 429509,
+      "mapped_counter_interval_ms": [
+        428559,
+        428809
+      ],
+      "detailed_interval_ms": [
+        428755,
+        429005
+      ],
+      "before": "4/6",
+      "after": "5/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M50",
+      "round": 17,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L4",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 443904,
+      "clip_end_ms": 445754,
+      "mapped_counter_interval_ms": [
+        444804,
+        445054
+      ],
+      "detailed_interval_ms": [
+        445013,
+        445263
+      ],
+      "before": "9/10",
+      "after": "10/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-45.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M51",
+      "round": 17,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 444652,
+      "clip_end_ms": 446503,
+      "mapped_counter_interval_ms": [
+        445552,
+        445803
+      ],
+      "detailed_interval_ms": [
+        445762,
+        446013
+      ],
+      "before": "7/11",
+      "after": "8/11",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-45.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M52",
+      "round": 17,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R1",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 445652,
+      "clip_end_ms": 447501,
+      "mapped_counter_interval_ms": [
+        446552,
+        446801
+      ],
+      "detailed_interval_ms": [
+        446762,
+        447012
+      ],
+      "before": "0/10",
+      "after": "1/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-45.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S21",
+      "round": 17,
+      "event_type": "SUMMON_PET",
+      "owner_id": "R5",
+      "actor_id": "R5",
+      "target_id": "R5_PET",
+      "clip_start_ms": 446900,
+      "clip_end_ms": 448749,
+      "mapped_counter_interval_ms": [
+        447800,
+        448049
+      ],
+      "detailed_interval_ms": [
+        448011,
+        448261
+      ],
+      "before": "2/6",
+      "after": "3/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-S22",
+      "round": 18,
+      "event_type": "SUMMON_PET",
+      "owner_id": "R1",
+      "actor_id": "R1",
+      "target_id": "R1_PET",
+      "clip_start_ms": 454138,
+      "clip_end_ms": 455988,
+      "mapped_counter_interval_ms": [
+        455038,
+        455288
+      ],
+      "detailed_interval_ms": [
+        455256,
+        455506
+      ],
+      "before": "2/6",
+      "after": "3/6",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-1-15.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M53",
+      "round": 18,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 459122,
+      "clip_end_ms": 460971,
+      "mapped_counter_interval_ms": [
+        460022,
+        460271
+      ],
+      "detailed_interval_ms": [
+        460253,
+        460503
+      ],
+      "before": "6/10",
+      "after": "7/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-45.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M54",
+      "round": 18,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R4",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 466366,
+      "clip_end_ms": 468215,
+      "mapped_counter_interval_ms": [
+        467266,
+        467515
+      ],
+      "detailed_interval_ms": [
+        467516,
+        467766
+      ],
+      "before": "0/10",
+      "after": "1/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-45.png"
+      ]
+    },
+    {
+      "sample_id": "WC-M55",
+      "round": 18,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L5",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 467363,
+      "clip_end_ms": 469212,
+      "mapped_counter_interval_ms": [
+        468263,
+        468512
+      ],
+      "detailed_interval_ms": [
+        468516,
+        468765
+      ],
+      "before": "7/10",
+      "after": "8/10",
+      "note": "详细版相邻计数帧人工复核。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-45.png"
+      ]
+    }
+  ],
+  "verified_empty_windows_ms": [
+    [
+      1000,
+      31000
+    ]
+  ],
+  "verified_empty_window_evidence": [
+    {
+      "detailed_endpoints_ms": [
+        0,
+        31755
+      ],
+      "clean_aligned_endpoints_ms": [
+        0,
+        31691
+      ],
+      "clean_window_ms": [
+        1000,
+        31000
+      ],
+      "evidence": [
+        "outputs/phase-06/final-intake/independent-r1-r2-counts.png"
+      ]
+    }
+  ],
+  "completion": {
+    "opening_checkpoint_ms": 0,
+    "final_checkpoint_ms": 478010,
+    "evidence": [
+      "outputs/phase-06/final-intake/224507-boundary-0.jpg",
+      "outputs/phase-06/final-intake/independent-terminal-counts.png",
+      "outputs/phase-06/final-intake/223619-terminal-boundary.jpg",
+      "outputs/phase-06/final-intake/224507-terminal-boundary.jpg"
+    ]
+  }
+}

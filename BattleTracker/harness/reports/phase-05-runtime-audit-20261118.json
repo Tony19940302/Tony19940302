@@ -1,0 +1,7 @@
+{
+  "linear_probability_error": 1.618172973394394e-08,
+  "atol": 1e-05,
+  "runtime_version": "1.22.1",
+  "cnn_logit_error": 1.7136335372924805e-07,
+  "status": "PASS"
+}
