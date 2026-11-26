@@ -7,12 +7,17 @@ from pathlib import Path
 
 from align_videos import ANNOTATION, DESTINATION, ROOT, prepare, read_json, write_json
 from battletracker.alignment import check_grouping
+from battletracker.formation import vision_pet_owners, vision_slot_numbers
 
 OFFICIAL = ROOT / "outputs/phase-02/official_events.jsonl"
 REVIEW = ROOT / "data/annotations/thunder-tiger-review.json"
 
 
-def build(alignment, alignment_report, assets, detailed, clean, events_path, reviews):
+def build(alignment, alignment_report, assets, detailed, clean, events_path, reviews, *, vision_layout=None):
+    if vision_layout is not None and vision_layout.get("source_asset") != clean["asset_id"]:
+        raise ValueError("vision layout must identify the paired clean recording")
+    pet_owners = vision_pet_owners(vision_layout) if vision_layout is not None else None
+    slot_numbers = vision_slot_numbers(vision_layout) if vision_layout is not None else {}
     source_report = json.loads(read_json(events_path.with_name("counter_extraction_report.json")))
     source_asset = source_report["source_asset"]
     if (detailed["role"] != "detailed_match_replay" or source_asset != detailed["asset_id"]
@@ -56,13 +61,22 @@ def build(alignment, alignment_report, assets, detailed, clean, events_path, rev
             continue
         review = reviews["changes"].get(change_id, {})
         actor = review.get("actor_id")
-        if actor and (review.get("kind"), actor) not in {("player", owner), ("pet", f"{owner}_PET")}:
-            raise ValueError("reviewed actor must agree with screen-slot owner")
+        if actor:
+            actor_kind = review.get("kind")
+            actor_owner = actor if actor_kind == "player" else None
+            if actor_kind == "pet" and actor.endswith("_PET"):
+                pet_slot = actor.removesuffix("_PET")
+                actor_owner = pet_slot if pet_owners is None else pet_owners.get(pet_slot)
+            if actor_owner != owner:
+                raise ValueError("reviewed actor must agree with screen-slot owner")
         if actor and (kind not in {"USE_MEDICINE", "SUMMON_PET"} or
                       (kind == "SUMMON_PET" and review["kind"] != "player") or
                       event["delta"] != 1 or event["needs_review"]):
             raise ValueError("review cannot assign a single actor to an unresolved counter change")
         round_start, round_end = event["earliest_round"], event["latest_round"]
+        slots = {role: slot_numbers[identifier] for role, identifier in (
+            ("actor", actor), ("owner", owner), ("target", review.get("target_id")),
+        ) if identifier in slot_numbers}
         samples.append(dict(
             common, sample_id=change_id, round=round_end if round_start == round_end else None,
             round_bounds=[round_start, round_end], event_type=kind, owner_id=owner, actor_id=actor,
@@ -74,6 +88,7 @@ def build(alignment, alignment_report, assets, detailed, clean, events_path, rev
             official_reference=provenance, annotation_status="reviewed" if actor else "candidate",
             alignment_confidence="manual_anchor_interpolation",
             review_note=review.get("note"), reference_delta=event["delta"],
+            **({"formation_slots": slots} if slots else {}),
         ))
     mapped_ids = {row["sample_id"] for row in samples}
     if set(reviews["changes"]) - mapped_ids:
@@ -116,12 +131,14 @@ def main():
     parser.add_argument("--alignment", type=Path, default=ANNOTATION)
     parser.add_argument("--events", type=Path, default=OFFICIAL)
     parser.add_argument("--review", type=Path, default=REVIEW)
+    parser.add_argument("--vision-layout", type=Path, help="calibrated pet ownership for the clean recording")
     parser.add_argument("--output", type=Path, default=DESTINATION)
     parser.add_argument("--export-clips", action="store_true")
     args = parser.parse_args()
     alignment, report, assets, detailed, clean = prepare(args.alignment)
+    layout = json.loads(read_json(args.vision_layout)) if args.vision_layout else None
     samples, unmatched, summary = build(alignment, report, assets, detailed, clean, args.events,
-                                        json.loads(read_json(args.review)))
+                                        json.loads(read_json(args.review)), vision_layout=layout)
     args.output.mkdir(parents=True, exist_ok=True)
     if args.export_clips:
         from battletracker.review_clips import export_review_clips

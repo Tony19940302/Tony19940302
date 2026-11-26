@@ -1,0 +1,9 @@
+{
+  "version": "dragon-tiger-left-pet-verification-02",
+  "extends_geometry": "data/annotations/dragon-tiger-formation-crosswalk.json",
+  "battle_id": "user-20261118-dragon-tiger-01",
+  "source_asset": "clean-001110",
+  "source_sha256": "d7f2600d3ce78676b046fe110756fe37bc836542bee02ea07b209b6ab32ed0ed",
+  "verified_pet_geometry_ids": ["L2_PET", "L4_PET"],
+  "new_evidence": "data/annotations/human-review-20.json"
+}

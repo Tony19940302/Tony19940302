@@ -1,0 +1,89 @@
+{
+  "version": "human-review-19",
+  "feedback_source": "用户复核风扬第 7 回合与龙飞对虎翼第 8 回合的同步回血普通录像",
+  "cases": [
+    {
+      "case_id": "WC-R07-R3-group-heal",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "round": 7,
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "source_window_ms": [176720, 178920],
+      "review_media": "outputs/phase-06/group-followup-20261125/generalization/wind-178091-ordinary.mp4",
+      "review_media_sha256": "b4d0a0586dfdb4f255189ec8c0cffdde8e26aa2edb06e87c82b9b82b4a24bfa7",
+      "actions": [
+        {
+          "action_id": "WC-R07-R3-group-medicine",
+          "event_type": "USE_MEDICINE",
+          "effect": "GROUP_HEAL",
+          "actor_id": "R3_PET",
+          "owner_id": "R3",
+          "first_visible_ms": 178025.089,
+          "observed_recoveries": [
+            {"target_id": "R2", "value": 480},
+            {"target_id": "R4", "value": 590},
+            {"target_id": "R5_PET", "value": 531}
+          ],
+          "recipient_list_complete": false,
+          "counter_link_status": "unresolved"
+        },
+        {
+          "action_id": "WC-R07-R5-zhui-si",
+          "event_type": "SKILL",
+          "skill": "追思",
+          "activation": "passive",
+          "actor_id": "R5",
+          "first_visible_ms": 177141.5,
+          "independent_of_action_id": "WC-R07-R3-group-medicine"
+        }
+      ],
+      "feedback": "和追思没关系，追思是5号人物的门派被动技能，这里的群体回血是3号宠物施药导致",
+      "evidence": [
+        "outputs/phase-06/group-transfer-20261125/wind178/wind-178091-native-observations.json",
+        "outputs/phase-06/group-transfer-20261125/wind178/wind-178091-onset-native.jpg"
+      ],
+      "status": "reviewed"
+    },
+    {
+      "case_id": "DT-R08-left-formation-slot-3-group-heal",
+      "battle_id": "user-20261118-dragon-tiger-01",
+      "dataset_split": "validation",
+      "round": 8,
+      "source_video_id": "clean-001110",
+      "source_sha256": "d7f2600d3ce78676b046fe110756fe37bc836542bee02ea07b209b6ab32ed0ed",
+      "source_window_ms": [192700, 196200],
+      "review_media": "outputs/phase-06/group-generalization-20261125/unseen-assets/dragon-194093-ordinary.mp4",
+      "review_media_sha256": "76a0cf9761e6456a4eb2b8610e719523b94470fcf6439daabb27184b93b923b8",
+      "actions": [
+        {
+          "action_id": "DT-R08-left-formation-slot-3-group-medicine",
+          "event_type": "USE_MEDICINE",
+          "effect": "GROUP_HEAL",
+          "formation": "long_fei",
+          "actor_kind": "pet",
+          "side": "L",
+          "owner_formation_slot": 3,
+          "geometry_actor_id": "L4_PET",
+          "geometry_owner_id": "L5",
+          "first_visible_ms": 194092.922,
+          "observed_recoveries": [
+            {"target_id": "L4_PET", "target_formation_slot": 3, "value": 717},
+            {"target_id": "L1", "target_formation_slot": 5, "value": 358}
+          ],
+          "recipient_list_complete": false,
+          "counter_link_status": "unresolved"
+        }
+      ],
+      "feedback": "是3号宠物吃药，但是龙飞阵的人物站位会有点特别，其他阵法的站位，比如右边参战方，都是排完1号位（永远都是在阵法的中间，是队长位置）然后从右到左，再从上到下排2，3，4，5。而左边对战方则是排完1号位后，从左到右从下到上，镜像排2，3，4，5。龙飞则是在参站方排完1号后，从左到右从上到下，而对战方从右到左从下到上，并且只是人物的站位是这样特别，宠物还是和其他阵法一样站位",
+      "evidence": [
+        "outputs/phase-06/group-generalization-20261125/unseen-assets/dragon-194093-provenance.json",
+        "outputs/phase-06/group-transfer-20261125/dragon/clean-001110-194093.jpg",
+        "outputs/phase-06/group-transfer-20261125/dragon/dragon-194093-left3-pet-native.jpg",
+        "outputs/phase-06/group-transfer-20261125/dragon/dragon-194093-native-numbers.jpg",
+        "data/annotations/dragon-tiger-formation-crosswalk.json"
+      ],
+      "status": "reviewed"
+    }
+  ]
+}

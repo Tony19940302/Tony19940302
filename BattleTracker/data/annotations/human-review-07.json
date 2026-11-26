@@ -1,0 +1,91 @@
+{
+  "version": "human-review-07",
+  "feedback_source": "用户复核 2026-11-23 参战模拟错例全表中的 E 至 G",
+  "cases": [
+    {
+      "id": "E",
+      "sample_id": "WC-M06",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "review_media": "outputs/phase-06/accuracy-recheck-20261123/E-WC-M06.mp4",
+      "review_media_sha256": "daf0fc22a56116d005df82d92903744c2394a77b2d3850c7daa3f75095bc5e04",
+      "source_window_ms": [90800, 94400],
+      "round": 4,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L4",
+      "previous_actor_id": null,
+      "actor_id": "L4",
+      "previous_target_id": null,
+      "target_id": "L5",
+      "counter_review": {
+        "status": "confirmed_increment",
+        "before": "3/10",
+        "after": "4/10",
+        "detailed_interval_ms": [92250, 92500]
+      },
+      "feedback": "左 4 人物用药，左 5 人物受药。左 4 人物有大幅抬手施法动作。",
+      "status": "reviewed"
+    },
+    {
+      "id": "F",
+      "sample_id": "BM-S09",
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "source_video_id": "clean-221123",
+      "source_sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "review_media": "outputs/phase-06/accuracy-recheck-20261123/F-BM-S09.mp4",
+      "review_media_sha256": "76de0d79248976bc4838e0668728767feeed20a0f1a4136d4d88faa380438b0d",
+      "source_window_ms": [289800, 293800],
+      "round": 12,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L2",
+      "actor_id": "L2",
+      "target_id": "L2_PET",
+      "counter_review": {
+        "status": "confirmed_increment",
+        "before": "2/6",
+        "after": "3/6",
+        "detailed_interval_ms": [292911, 292928]
+      },
+      "feedback": "左 2 的宠物模型发生了变化，这也是一个判断方向。",
+      "status": "reviewed"
+    },
+    {
+      "id": "G",
+      "sample_id": "BM-M03",
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "source_video_id": "clean-221123",
+      "source_sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "review_media": "outputs/phase-06/accuracy-recheck-20261123/G-BM-M03.mp4",
+      "review_media_sha256": "8ae2433449faf90eaf538738c97aceff58b8a1719163711c96971e234d9dd767",
+      "source_window_ms": [64500, 69200],
+      "previous_prediction_id": 5,
+      "previous_prediction_time_ms": 66248,
+      "actual_action": {
+        "event_type": "NON_RESOURCE_SKILL",
+        "actor_id": "L2_PET",
+        "target_id": "R2",
+        "action": "spell_attack",
+        "negative_sample_id": "BM-N04"
+      },
+      "counter_review": {
+        "owner_id": "L1",
+        "status": "confirmed_display_change_unresolved_action",
+        "before": "0/10",
+        "after": "1/10",
+        "detailed_confirmed_frames_ms": [66895, 66912],
+        "previous_mapped_interval_ms": [66332, 66366]
+      },
+      "feedback": "左 2 宠物对右 2 人物使用攻击法术。短片中未看到左 1 人物或宠物施药，用户质疑该段左 1 药次增加的原判断。",
+      "status": "reviewed",
+      "evidence": [
+        "outputs/phase-06/feedback-07/alignment-G-counter-strip.jpg",
+        "outputs/phase-06/feedback-07/alignment-G-paired-contact.jpg",
+        "outputs/phase-06/feedback-07/alignment-G-frame-comparison.json"
+      ]
+    }
+  ]
+}

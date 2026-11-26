@@ -1,0 +1,21 @@
+{
+  "version": "dragon-tiger-left-formation-v1",
+  "battle_id": "user-20261118-dragon-tiger-01",
+  "source_asset": "clean-001110",
+  "source_sha256": "d7f2600d3ce78676b046fe110756fe37bc836542bee02ea07b209b6ab32ed0ed",
+  "geometry_layout": "configs/vision/dragon-tiger.json",
+  "geometry_layout_version": "dragon-tiger-clean-v1",
+  "side": "L",
+  "formation": "long_fei",
+  "slots_by_geometry_id": {
+    "players": {"L1": 5, "L2": 1, "L3": 4, "L4": 2, "L5": 3},
+    "pets": {"L1_PET": 4, "L2_PET": 2, "L3_PET": 1, "L4_PET": 3, "L5_PET": 5}
+  },
+  "verified_pet_geometry_ids": ["L4_PET"],
+  "evidence": {
+    "formation_order": "data/annotations/human-review-19.json",
+    "player_alignment": "outputs/phase-06/group-generalization-20261125/unseen-assets/dragon-l-formation-crosswalk.json",
+    "pet_slot_3_motion": "outputs/phase-06/group-transfer-20261125/dragon/dragon-194093-left3-pet-native.jpg"
+  },
+  "scope": "龙飞左侧旧画面 ID 到阵法编号的离线校准。人物号由编号阵法图与实际锚点比对，宠位按阵法固定顺序核对。保留历史事件的画面 ID 和检测器输入。"
+}

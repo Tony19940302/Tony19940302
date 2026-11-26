@@ -29,6 +29,12 @@ class EventType(StrEnum):
     BATTLE_END = "BATTLE_END"
 
 
+class MedicineConsumption(StrEnum):
+    CHARGED = "charged"
+    WAIVED = "waived"
+    UNKNOWN = "unknown"
+
+
 @dataclass(frozen=True)
 class BattleEvent:
     event_id: str
@@ -48,6 +54,10 @@ class BattleEvent:
     algorithm_version: str | None = None
     revision_of: str | None = None
     payload: dict = field(default_factory=dict)
+
+    @property
+    def medicine_consumption(self) -> MedicineConsumption:
+        return MedicineConsumption(self.payload.get("medicine_consumption", MedicineConsumption.CHARGED))
 
     @classmethod
     def from_dict(cls, data: dict):
@@ -72,9 +82,12 @@ class PlayerState:
     resource_sources: dict[str, str] = field(default_factory=dict)
     updated_ms: int | None = None
     child_used: int | None = None
+    pending_medicine_event_ids: tuple[str, ...] = ()
 
     @property
     def medicine_remaining(self) -> int | None:
+        if self.pending_medicine_event_ids:
+            return None
         return _remaining(self.medicine_limit, self.medicine_used)
 
     @property
@@ -215,6 +228,11 @@ class BattleStateEngine:
             raise ValueError("invalid end timestamp")
         if not isinstance(event.event_type, EventType) or not isinstance(event.payload, dict):
             raise ValueError("invalid event type or payload")
+        if "medicine_consumption" in event.payload:
+            if event.event_type != EventType.USE_MEDICINE:
+                raise ValueError("medicine consumption belongs to a medicine action")
+            if event.payload["medicine_consumption"] not in tuple(MedicineConsumption):
+                raise ValueError("invalid medicine consumption")
 
     def _effective(self, events) -> list[BattleEvent]:
         original = {}
@@ -279,11 +297,15 @@ class BattleStateEngine:
             if event.event_type in SNAPSHOTS:
                 flags.extend(self._snapshot_link_flags(event, indexed, resource_events, action_order))
             self._apply(state, event)
-            if event.event_type in RESOURCE_EVENT_FIELDS:
+            if event.event_type in RESOURCE_EVENT_FIELDS and (
+                event.event_type != EventType.USE_MEDICINE or event.medicine_consumption == MedicineConsumption.CHARGED
+            ):
                 resource_events[event.event_id] = (
                     self._owner(state, event).player_id, RESOURCE_EVENT_FIELDS[event.event_type]
                 )
         for player in state.players.values():
+            flags.extend(f"{player.player_id}:medicine:unresolved_consumption:{event_id}"
+                         for event_id in player.pending_medicine_event_ids)
             for resource in ("medicine", "pet"):
                 used = getattr(player, f"{resource}_used")
                 limit = getattr(player, f"{resource}_limit")
@@ -357,6 +379,8 @@ class BattleStateEngine:
                 self._set(player, name, value, event)
                 if name in {"medicine_used", "pet_used"} and value is not None:
                     setattr(player, f"observed_{name.removesuffix('_used')}_delta", 0)
+                if name == "medicine_used" and value is not None:
+                    player.pending_medicine_event_ids = ()
 
     def _pet_slot(self, state: BattleState, player: PlayerState) -> PetSlot:
         return state.pet_slots[f"{player.player_id[0]}_PET_{player.formation_slot}"]
@@ -431,7 +455,11 @@ class BattleStateEngine:
             pet = state.pets.get(instance_id)
             if pet is not None and (pet.alive is False or player.current_pet_id != pet.pet_instance_id):
                 raise ValueError("medicine actor is not the active living pet")
-            self._increment(player, "medicine", event)
+            if event.medicine_consumption == MedicineConsumption.CHARGED:
+                self._increment(player, "medicine", event)
+            elif event.medicine_consumption == MedicineConsumption.UNKNOWN:
+                player.pending_medicine_event_ids += (event.event_id,)
+                player.updated_ms = event.timestamp_ms
         elif kind == EventType.SUMMON_PET:
             if event.actor_id and event.actor_id != player.player_id:
                 raise ValueError("only a player can summon in this event")

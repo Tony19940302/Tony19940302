@@ -216,8 +216,9 @@ def main():
         raise ValueError("source hash does not match the calibrated replay")
     report = extract(source, config, load_json(args.annotations), args.output, args.step, asset["battle_id"])
     report["source_sha256"] = digest
-    with (args.output / "official_events.jsonl").open("rb") as events:
-        report["official_events_sha256"] = hashlib.file_digest(events, "sha256").hexdigest()
+    for artifact in ("raw_reads", "official_events"):
+        with (args.output / f"{artifact}.jsonl").open("rb") as stream:
+            report[f"{artifact}_sha256"] = hashlib.file_digest(stream, "sha256").hexdigest()
     (args.output / "counter_extraction_report.json").write_text(
         json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf-8"
     )

@@ -1,0 +1,29 @@
+{
+  "version": "human-review-22",
+  "feedback_source": "用户复核白兔施药与寸草心触发条件",
+  "cases": [
+    {
+      "case_id": "DT-R08-left-formation-slot-3-trigger-contrast",
+      "battle_id": "user-20261118-dragon-tiger-01",
+      "dataset_split": "validation",
+      "round": 8,
+      "source_video_id": "clean-001110",
+      "source_sha256": "d7f2600d3ce78676b046fe110756fe37bc836542bee02ea07b209b6ab32ed0ed",
+      "source_window_ms": [192700, 196200],
+      "review_media": "outputs/phase-06/group-generalization-20261125/unseen-assets/dragon-194093-ordinary.mp4",
+      "review_media_sha256": "76a0cf9761e6456a4eb2b8610e719523b94470fcf6439daabb27184b93b923b8",
+      "action_reference": "data/annotations/human-review-19.json",
+      "related_waiver_reference": "data/annotations/human-review-21.json",
+      "actions": [],
+      "ordinary_observation": {
+        "actor": "左 3 白兔",
+        "effect": "群体回血药品",
+        "visible_caption": "not_detected",
+        "medicine_consumption": "unknown"
+      },
+      "feedback": "不一定每次都触发，是有一定触发，只要触发了就免扣药次",
+      "scope": "用户确认触发带概率和触发后的免扣效果。第 8 回合的字幕可见性和扣次未由本条反馈确认。",
+      "status": "reviewed"
+    }
+  ]
+}

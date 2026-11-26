@@ -1,0 +1,110 @@
+{
+  "version": "human-review-06",
+  "feedback_source": "用户复核 2026-11-22 参战模拟错例清单中的 A 至 D",
+  "cases": [
+    {
+      "id": "A",
+      "sample_id": "WC-M08",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "review_media": "outputs/phase-06/review-failures-20261122/A-WC-M08.mp4",
+      "review_media_sha256": "bb07282b1682a50248ffb7774511999b0f43fd7b86114885b3024273d6ff84c1",
+      "source_window_ms": [114800, 119000],
+      "round": 5,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "previous_actor_id": null,
+      "actor_id": "L1_PET",
+      "previous_target_id": null,
+      "target_id": "L5",
+      "counter_review": {
+        "status": "confirmed_increment",
+        "before": "0/10",
+        "after": "1/10",
+        "detailed_interval_ms": [116259, 116511]
+      },
+      "feedback": "左 1 的宠物施药，左 5 人物受药。",
+      "status": "reviewed"
+    },
+    {
+      "id": "B",
+      "sample_id": "WC-S01",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "review_media": "outputs/phase-06/review-failures-20261122/B-WC-S01.mp4",
+      "review_media_sha256": "c9c4b3911a0bd722a8ccbfed96690addc6cb793931f603681bc382157bfdd944",
+      "source_window_ms": [64000, 68700],
+      "round": 3,
+      "event_type": "SUMMON_PET",
+      "owner_id": "L5",
+      "actor_id": "L5",
+      "target_id": "L5_PET",
+      "pet_name": "高神爆爆爆",
+      "counter_review": {
+        "status": "confirmed_increment",
+        "before": "1/6",
+        "after": "2/6",
+        "detailed_interval_ms": [65760, 66009]
+      },
+      "feedback": "左 5 人物扬起手后，对应位置出现「高神爆爆爆」。",
+      "status": "reviewed"
+    },
+    {
+      "id": "C",
+      "sample_id": "WC-L2-original-ghost-449207",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "review_media": "outputs/phase-06/review-failures-20261122/C-WC-FP173.mp4",
+      "review_media_sha256": "28939b16a30998fb3512b4ade7a2050b8520b2c4c6af4670bc0c12682748e7fc",
+      "source_window_ms": [447000, 452300],
+      "owner_id": "L2",
+      "prediction_id": 173,
+      "prediction_time_ms": 449207,
+      "pet_slot": "L2_PET",
+      "observed_pet_slot_state": "original_pet_present",
+      "pet_has_ghost_trait": true,
+      "counter_review": {
+        "event_type": "SUMMON_PET",
+        "status": "confirmed_no_increment",
+        "before_used": 4,
+        "after_used": 4,
+        "clean_checkpoint_ms": [425314, 452295]
+      },
+      "feedback": "左 2 没有出宠，原来的鬼魂宠仍占着 2 号宠位。鬼魂宠死后会留在原地。",
+      "annotation_note": "本例确认宠物实例持续占位。未另标记本段发生了死亡。",
+      "status": "reviewed"
+    },
+    {
+      "id": "D",
+      "sample_id": "BM-M01",
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "source_video_id": "clean-221123",
+      "source_sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "review_media": "outputs/phase-06/review-failures-20261122/D-BM-M01.mp4",
+      "review_media_sha256": "a416ede1882f39586139a7286f47523801e2bd5fc2d6fd170a8e6ec74b3d2cf0",
+      "source_window_ms": [105800, 109400],
+      "round": 4,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R1",
+      "previous_actor_id": null,
+      "actor_id": "R1_PET",
+      "target_id": "R1",
+      "pet_name": "集火黄皮",
+      "counter_review": {
+        "status": "confirmed_increment",
+        "before": "1/10",
+        "after": "2/10",
+        "detailed_interval_ms": [107948, 108031]
+      },
+      "feedback": "右 1 的宠物施药，它有个摆动的大幅度动作。",
+      "status": "reviewed"
+    }
+  ]
+}

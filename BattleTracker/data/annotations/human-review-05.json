@@ -1,0 +1,31 @@
+{
+  "version": "human-review-05",
+  "feedback_source": "用户在本次对话对鸟翔阵第 5 回合用药短片的复核",
+  "cases": [
+    {
+      "sample_id": "BM-M02",
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "source_video_id": "clean-221123",
+      "source_sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "review_media": "outputs/phase-06/user-review-followup/bird-round-05-medicine.mp4",
+      "review_media_sha256": "7646dbe6b5401b01658193b4aede26bfa1fc788fc796182a29a5c5735f814fcb",
+      "source_window_ms": [114500, 119000],
+      "round": 5,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L1",
+      "previous_actor_id": null,
+      "actor_id": "L1_PET",
+      "pet_name": "超级神马",
+      "target_id": "L1",
+      "counter_review": {
+        "status": "confirmed_increment",
+        "before": "3/10",
+        "after": "4/10",
+        "detailed_interval_ms": [117049, 117132]
+      },
+      "feedback": "1 号的宠物「超级神马」施药。超级神马有个大幅度的动作。",
+      "status": "reviewed"
+    }
+  ]
+}

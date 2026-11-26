@@ -6,6 +6,8 @@ import json
 from pathlib import Path
 from time import perf_counter
 
+from battletracker.formation import vision_pet_owners, vision_slot_numbers
+from battletracker.medicine_vision import mark_medicine_trigger
 from battletracker.vision import classify, observe
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -24,6 +26,7 @@ def sha256(path):
 
 def save_predictions(output, events, config, asset, summary):
     output.mkdir(parents=True, exist_ok=True)
+    numbers = vision_slot_numbers(config)
     with (output / "predictions.jsonl").open("w", encoding="utf-8") as stream:
         for i, row in enumerate(events, 1):
             record = dict(row, prediction_id=i, source_asset=asset["asset_id"],
@@ -31,6 +34,10 @@ def save_predictions(output, events, config, asset, summary):
                           calibration=config["version"])
             if config["participant_view"]:
                 record["input_view"] = summary["input_view"]
+            slots = {role: numbers[identifier] for role in ("actor", "owner", "target")
+                     if (identifier := row.get(f"{role}_id")) in numbers}
+            if slots:
+                record["formation_slots"] = slots
             stream.write(json.dumps(record, ensure_ascii=False) + "\n")
     summary = dict(summary, event_types=Counter(row["event_type"] for row in events))
     (output / "visual_summary.json").write_text(
@@ -39,13 +46,32 @@ def save_predictions(output, events, config, asset, summary):
 
 
 def check_pet_ownership(events, config):
+    owners = vision_pet_owners(config)
+    unverified = {slot for slot in config.get("unverified_pet_owners", ()) if slot not in owners}
+    unverified.update(slot for slot, owner in owners.items() if owner is None)
     for row in events:
-        owner = row.get("owner_id")
-        if owner in config.get("unverified_pet_owners", []) and (
-            row["event_type"] == "SUMMON_PET" or str(row.get("actor_id", "")).endswith("_PET")
-        ):
+        pet = row.get("target_id") if row["event_type"] == "SUMMON_PET" else row.get("actor_id")
+        if pet and pet.endswith("_PET") and pet.removesuffix("_PET") in unverified:
             row.update(event_type="UNKNOWN", actor_id=None, owner_id=None)
             row["evidence"]["ownership_status"] = "unverified_pet_mapping"
+            mark_medicine_trigger(row, row.get("payload", {}).get("medicine_trigger_hints", ()))
+
+
+def temporal_events(timeline, cues, healing, config, summons, medicine):
+    from battletracker.summon_vision import merge_summons
+
+    events = classify(timeline, cues, healing, config, include_medicine=False)
+    if config.get("summon_track_identity") is True:
+        events = summons.filter_events(events)
+    events = merge_summons(events, summons.events())
+    skills = [(actor, name, cue) for (kind, actor, name), cue in cues if kind == "skill"]
+    events.extend(medicine.classify(skills, summons=events))
+    # This later appearance evidence only revises summon candidates. Medicine
+    # decisions still use the observations available at their own decision time.
+    events = summons.review_retained_entries(events)
+    events.sort(key=lambda row: (row["time_ms"], row["event_type"]))
+    check_pet_ownership(events, config)
+    return events
 
 
 def main():
@@ -96,13 +122,14 @@ def main():
     observers = ()
     if temporal:
         from battletracker.medicine_vision import MedicineObserver
-        from battletracker.summon_vision import SummonObserver, merge_summons
+        from battletracker.summon_vision import SummonObserver
 
         summons, medicine = SummonObserver(config), MedicineObserver(config)
         observers = (summons, medicine)
-    implementation = ["tools/predict_clean.py", "src/battletracker/vision.py"]
+    implementation = ["tools/predict_clean.py", "src/battletracker/vision.py",
+                      "src/battletracker/medicine_vision.py", "src/battletracker/formation.py"]
     if temporal:
-        implementation.extend(["src/battletracker/summon_vision.py", "src/battletracker/medicine_vision.py"])
+        implementation.append("src/battletracker/summon_vision.py")
     provenance = {name: sha256(ROOT / name) for name in implementation}
     start = perf_counter()
     timeline, cues, healing = observe(path, config, template_path, template_config, observers=observers)
@@ -123,13 +150,8 @@ def main():
         save_predictions(args.baseline_output or args.output, baseline, config, asset, baseline_summary)
     if temporal:
         start = perf_counter()
-        events = classify(timeline, cues, healing, config, include_medicine=False)
-        events = merge_summons(events, summons.events())
-        skills = [(actor, name, cue) for (kind, actor, name), cue in cues if kind == "skill"]
-        events.extend(medicine.classify(skills, summons=events))
-        events.sort(key=lambda row: (row["time_ms"], row["event_type"]))
+        events = temporal_events(timeline, cues, healing, config, summons, medicine)
         temporal_summary = dict(summary, detector="temporal", classification_seconds=perf_counter() - start)
-        check_pet_ownership(events, config)
         save_predictions(args.output, events, config, asset, temporal_summary)
 
 

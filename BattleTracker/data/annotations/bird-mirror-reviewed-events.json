@@ -1,10 +1,10 @@
 {
-  "version": "bird-mirror-reviewed-events-v2",
+  "version": "bird-mirror-reviewed-events-v8",
   "battle_id": "replay-2026-11-19-bird-mirror",
   "clean_asset_id": "clean-221123",
   "detailed_asset_id": "detailed-220552",
   "alignment_version": "bird-mirror-alignment-v2",
-  "changes": [
+  "counter_only_changes": [
     {
       "sample_id": "BM-M03",
       "round": 3,
@@ -24,12 +24,16 @@
       ],
       "before": "0/10",
       "after": "1/10",
-      "note": "详细版 L1 药次由 0/10 变为 1/10，处于第 2 到第 3 回合切换处。普通版同时有多单位受伤和回复，施药者和受药者欠缺独立证据。",
+      "note": "详细版 L1 药次由 0/10 变为 1/10，处于第 2 到第 3 回合切换处。复核确认数字更新，用户指出这段未见左 1 人或宠物施药。时间窗只表示界面读数更新，实际用药动作及发生时点待核。",
       "evidence": [
         "outputs/phase-06/bird-review/L1-early-clean.jpg",
-        "outputs/phase-06/bird-review/L1-early-detail.jpg"
+        "outputs/phase-06/bird-review/L1-early-detail.jpg",
+        "outputs/phase-06/feedback-07/alignment-G-counter-strip.jpg",
+        "data/annotations/human-review-07.json"
       ]
-    },
+    }
+  ],
+  "changes": [
     {
       "sample_id": "BM-S01",
       "round": 4,
@@ -91,7 +95,7 @@
       "round": 4,
       "event_type": "USE_MEDICINE",
       "owner_id": "R1",
-      "actor_id": null,
+      "actor_id": "R1_PET",
       "target_id": "R1",
       "clip_start_ms": 106554,
       "clip_end_ms": 108620,
@@ -105,11 +109,12 @@
       ],
       "before": "1/10",
       "after": "2/10",
-      "note": "详细版 R1 药次从 1/10 变 2/10。普通版约 107.503 秒 R1 出现绿色 822，随后另一动作显示高级先发和水漫金山。R1 的宠物「集火黄皮」此前跳起并出现金光，同屏邻宠也有明显动作，施药者身份留空。",
+      "note": "详细版 R1 药次从 1/10 变 2/10。普通版约 107.503 秒 R1 出现绿色 822，随后另一动作显示高级先发和水漫金山。R1 的宠物「集火黄皮」此前跳起并出现金光。用户根据宠物本体的大幅摆动确认由 R1 宠物施药。",
       "evidence": [
         "outputs/phase-06/bird-review/medicine-round4-third.jpg",
         "outputs/phase-06/bird-review/reviewed-count-transitions.jpg",
-        "outputs/phase-06/bird-visual-evidence/R1-medicine-clean.jpg"
+        "outputs/phase-06/bird-visual-evidence/R1-medicine-clean.jpg",
+        "data/annotations/human-review-06.json"
       ]
     },
     {
@@ -117,7 +122,7 @@
       "round": 5,
       "event_type": "USE_MEDICINE",
       "owner_id": "L1",
-      "actor_id": null,
+      "actor_id": "L1_PET",
       "target_id": "L1",
       "clip_start_ms": 115702,
       "clip_end_ms": 117235,
@@ -131,11 +136,12 @@
       ],
       "before": "3/10",
       "after": "4/10",
-      "note": "详细版 L1 药次从 3/10 变 4/10。普通版约 116.585 秒左中 L1 的橙光和绿色 405 对应结算。L1 的宠物「超级神马」此前跳起并出现白金光，画面还有相邻特效，施药者身份留空。",
+      "note": "详细版 L1 药次从 3/10 变 4/10。普通版约 116.585 秒左中 L1 的橙光和绿色 405 对应结算。用户根据结算前宠物本体的大幅动作确认由 L1 的宠物「超级神马」施药。",
       "evidence": [
         "outputs/phase-06/bird-review/medicine-round4-fifth.jpg",
         "outputs/phase-06/bird-review/reviewed-count-transitions.jpg",
-        "outputs/phase-06/bird-visual-evidence/L1-medicine-clean.jpg"
+        "outputs/phase-06/bird-visual-evidence/L1-medicine-clean.jpg",
+        "data/annotations/human-review-05.json"
       ]
     },
     {
@@ -213,6 +219,26 @@
         "outputs/phase-06/bird-review/counters-agent-L1-clean-contact.jpg",
         "outputs/phase-06/bird-review/counters-agent-L1-detailed-contact.jpg",
         "outputs/phase-06/bird-review/counters-agent-L1-counter-boundary.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-M06",
+      "round": 9,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "L2",
+      "actor_id": "L2",
+      "target_id": "L5",
+      "clip_start_ms": 215800,
+      "clip_end_ms": 218800,
+      "mapped_counter_interval_ms": [217252, 217268],
+      "detailed_interval_ms": [218351, 218367],
+      "before": "0/10",
+      "after": "1/10",
+      "note": "用户确认左 2 人物举武器动作为给左 5 人物施药。普通版起手与详细版计数更新时间分别复核，药效种类未知。",
+      "evidence": [
+        "data/annotations/human-review-15.json",
+        "outputs/phase-06/medicine-feedback-20261125/bird/L2-masked-contact.jpg",
+        "outputs/phase-06/medicine-review-20261125/audit/bird/L2-counter-boundary.jpg"
       ]
     },
     {
@@ -337,11 +363,12 @@
       ],
       "before": "2/6",
       "after": "3/6",
-      "note": "原超级神龙消失，L2 俯身，固定宠位出现金环，随后换成蚌仙子及新血条并出现不屈飘字。",
+      "note": "原超级神龙消失，L2 俯身，固定宠位出现金环，随后换成蚌仙子及新血条并出现不屈飘字。用户指出同一宠位前后出现不同宠物模型可以佐证出宠。",
       "evidence": [
         "outputs/phase-06/bird-review/summon-l2-292-clean.jpg",
         "outputs/phase-06/bird-review/summon-l2-292-clean-full.jpg",
-        "outputs/phase-06/bird-review/summon-l2-292-detail.jpg"
+        "outputs/phase-06/bird-review/summon-l2-292-detail.jpg",
+        "data/annotations/human-review-07.json"
       ]
     },
     {
@@ -442,6 +469,64 @@
     }
   ],
   "hard_negatives": [
+    {
+      "sample_id": "BM-N07",
+      "event_type": "NON_RESOURCE_EFFECT",
+      "actor_id": null,
+      "target_id": "L2_PET",
+      "clip_start_ms": 110100,
+      "clip_end_ms": 110600,
+      "misclassified_as": "SUMMON_PET",
+      "misclassified_actor_id": "L2",
+      "note": "左 2 宠物吉里吉里在波浪遮挡前后同名同位置。约 110.253 秒可见旧宠金色效果。详细版左 2 宠次始终为 1/6。",
+      "evidence": [
+        "outputs/phase-06/child-entry-20261127/evidence/bird-110253-L2-ordinary.jpg",
+        "outputs/phase-06/child-entry-20261127/evidence/bird-110253-L2-detailed.jpg",
+        "outputs/phase-06/child-entry-20261127/evidence/entry-evidence-provenance.json"
+      ]
+    },
+    {
+      "sample_id": "BM-N06",
+      "round": 4,
+      "event_type": "NON_RESOURCE_SKILL",
+      "actor_id": null,
+      "clip_start_ms": 111300,
+      "clip_end_ms": 111770,
+      "note": "用户确认左侧切回合时三个 584 和一个 292 是普陀山莲花状态回血。左 3 药瓶同帧变化是独立读数观察。",
+      "evidence": [
+        "data/annotations/human-review-11.json",
+        "outputs/phase-06/staggered-heal-20261124/review/bird-111-native-counters.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-N05",
+      "round": 11,
+      "event_type": "NON_RESOURCE_SKILL",
+      "actor_id": null,
+      "clip_start_ms": 283650,
+      "clip_end_ms": 283950,
+      "misclassified_as": "USE_MEDICINE",
+      "misclassified_actor_id": "R2_PET",
+      "note": "用户确认右侧四个人物头顶粉红花标记为普陀山技能状态，回合末自动回血。原预测将其中一条回复轨迹归为右 2 宠物用药。用户未指明最初施放该状态的人物。",
+      "evidence": [
+        "data/annotations/human-review-08.json",
+        "outputs/phase-06/window-robustness-20261124/review/bird-76-R2-counter.jpg"
+      ]
+    },
+    {
+      "sample_id": "BM-N04",
+      "event_type": "NON_RESOURCE_SKILL",
+      "actor_id": "L2_PET",
+      "target_id": "R2",
+      "clip_start_ms": 66150,
+      "clip_end_ms": 66450,
+      "misclassified_as": "USE_MEDICINE",
+      "note": "用户确认左 2 宠物对右 2 人物施放攻击法术。该候选与左 1 处的数字刷新重叠，不能匹配为用药。",
+      "evidence": [
+        "outputs/phase-06/feedback-07/alignment-G-paired-contact.jpg",
+        "data/annotations/human-review-07.json"
+      ]
+    },
     {
       "sample_id": "BM-N01",
       "round": 1,

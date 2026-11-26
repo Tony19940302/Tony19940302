@@ -1,0 +1,36 @@
+{
+  "version": "human-review-11",
+  "feedback_source": "用户复核鸟翔第 4 回合切到第 5 回合时左侧群体回血",
+  "cases": [
+    {
+      "sample_id": "BM-N06",
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "round": 4,
+      "source_video_id": "clean-221123",
+      "source_sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "source_window_ms": [109600, 113600],
+      "review_media": "outputs/phase-06/staggered-heal-20261124/review/bird-111-ordinary.mp4",
+      "review_media_sha256": "120a61a555cdad13cb4bae99447ff9efe63b429c9bc5d186861e4cf6655669ec",
+      "event_type": "NON_RESOURCE_SKILL",
+      "effect": "PUTUO_PERIODIC_HEAL",
+      "actor_id": null,
+      "reviewed_side": "L",
+      "confirmed_medicine_events_in_reviewed_recovery": 0,
+      "observed_recovery_numbers": [584, 584, 584, 292],
+      "counter_observation": {
+        "status": "unlinked_display_change",
+        "owner_id": "L3",
+        "detailed_asset_id": "detailed-220552",
+        "detailed_interval_ms": [111914.522, 111931.444],
+        "before": "0/10",
+        "after": "1/10",
+        "linked_event_id": null,
+        "evidence": "outputs/phase-06/staggered-heal-20261124/review/bird-111-native-counters.jpg"
+      },
+      "feedback": "也是普陀山技能，他们头上都有莲花。回合切换时的群体回血，基本都是技能导致。",
+      "annotation_note": "本次复核限左侧三个 584 和一个 292 的这波回血。左 3 药瓶刷新原因未知，先前 98.723 秒独立群药保留原动作标注。其他动作未复核。",
+      "status": "reviewed"
+    }
+  ]
+}

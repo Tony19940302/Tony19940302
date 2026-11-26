@@ -1,0 +1,190 @@
+{
+  "profile": "phase-06-participant",
+  "status": "PASS",
+  "checks": [
+    {
+      "check_name": "unit_and_integration",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 10.583,
+      "profile": "phase-06-participant",
+      "result_summary": "98 passed, 2 warnings"
+    },
+    {
+      "check_name": "environment_dependencies",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.482,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:prior-spectator-screenshot",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.005,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:prior-desktop-reference",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.012,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:detailed-221754_520",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.162,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:clean-221332_859",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.131,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:formation-feng_yang",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.001,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:formation-hu_yi",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.001,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:formation-niao_xiang",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.001,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:formation-di_zai",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.001,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:formation-yun_chui",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.001,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:formation-she_pan",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.001,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:formation-ying_xiao",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.001,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:formation-lei_jue",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.001,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:formation-long_fei",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.001,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:clean-001110",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.35,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:detailed-001815",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.363,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:clean-221123",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.284,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:detailed-220552",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.318,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:clean-223619",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.451,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:detailed-224507",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.425,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:child-front-red",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.001,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:child-front-white",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.0,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "asset:child-front-green",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 0.0,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "participant_visibility_prediction",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 257.51,
+      "profile": "phase-06-participant"
+    },
+    {
+      "check_name": "participant_visibility_metrics",
+      "status": "PASS",
+      "exit_code": 0,
+      "duration": 1.154,
+      "profile": "phase-06-participant"
+    }
+  ],
+  "publication_note": "Local commands, paths and detailed logs are excluded from this copy."
+}

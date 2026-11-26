@@ -1,0 +1,38 @@
+{
+  "version": "human-review-24",
+  "feedback_source": "用户复核雷绝对虎翼第 5 回合的 659",
+  "cases": [
+    {
+      "case_id": "TT-R05-right-pet-lifesteal-659",
+      "battle_id": "replay-2026-11-15-thunder-tiger",
+      "dataset_split": "train",
+      "round": 5,
+      "source_video_id": "clean-221332_859",
+      "source_sha256": "23f38b58ee4272e72f5504b09d4f9c7f714a5df2fc7e4ddaa68839f02641bc25",
+      "source_window_ms": [124454.933, 127722.333],
+      "review_media": "outputs/phase-06/medicine-auto-glyph-20261126/controls/thunder-659-ordinary.mp4",
+      "review_media_sha256": "e45c1bf4cba679cb2a79342ba5dcf4c00eaa881ecfab3c77aa5d07eaa70d6bf9",
+      "actions": [
+        {
+          "action_id": "TT-R05-right-4-pet-attacks-left-1",
+          "event_type": "NON_MEDICINE_SKILL",
+          "effect": "ATTACK_WITH_LIFESTEAL",
+          "actor": {"side": "R", "formation_slot": 4, "kind": "pet"},
+          "attack_target": {"side": "L", "formation_slot": 1, "kind": "player"},
+          "recovery": {
+            "receiver": {"side": "R", "formation_slot": 4, "kind": "pet"},
+            "value": 659,
+            "first_visible_ms": 125338.189
+          },
+          "scope": "角色编号使用用户确认的阵法号位。仅覆盖右上 659，另一个地狱烈火动作单独留存。"
+        }
+      ],
+      "feedback": "是右4的宠物去攻击了左1人物，右4的宠物有吸血技能，攻击之后回复了659血",
+      "evidence": [
+        "outputs/phase-06/medicine-auto-glyph-20261126/controls/thunder-659-review-provenance.json",
+        "outputs/phase-06/medicine-auto-glyph-20261126/controls/thunder-659-onset.jpg"
+      ],
+      "status": "reviewed"
+    }
+  ]
+}

@@ -108,3 +108,173 @@
 
 - 接收并核对「大圣佑」原宠出击与复活后群体治疗两段反馈。第一段作为训练中的出宠反例，第二段追加两行动标注并保留计次疑点。两场对局的数据分组已核对。见 [复核标注](../data/annotations/human-review-04.json)和[阶段对照](plans/phase-06.md#第四批人工反馈)。
 - 新增多受药候选的逐目标时间证据。执行 `python tools/verify.py --profile phase-06-participant --output outputs/phase-06/feedback-shengyou-group/default-replay --report harness/reports/phase-06-feedback-shengyou-group.json`，83 项测试及统一验证通过。见 [验证报告](reports/phase-06-feedback-shengyou-group.json)。
+
+## Phase 6 第五批人工反馈 · 2026-11-22
+
+- 保存鸟翔阵左方 1 号宠物「超级神马」的用药动作复核。按新标签复评先前冻结的参战模拟结果。默认输出仍为未知，补判实验正确匹配施药者、药次主人和受药者。见 [复评](../outputs/phase-06/user-review-followup/bird-medicine-review-comparison.json)。
+- 执行 `python tools/verify.py --profile phase-06-overlap --report harness/reports/phase-06-feedback-super-horse.json`，28 项流程检查通过，包含 83 项测试。独立复跑 6 项评估测试，核对素材哈希、归属、时间边界和测试分组。见 [验证报告](reports/phase-06-feedback-super-horse.json)和[独立审查](reviews/phase-06-overlap.md#第五批人工反馈独立复核)。
+
+## Phase 6 第六批人工反馈
+
+- 更新两场测试回放参考。补齐 A 和 D 施药归属，把 B 扬手后新宠入位与 C 原鬼魂宠持续占位纳入正反例。原帧复跑重现 C 误报，确认 B 缺默认检测所需的金环候选。见 [动作诊断](plans/phase-06.md#第六批人工反馈)。
+- 执行 `python tools/verify.py --profile phase-06-overlap --report harness/reports/phase-06-feedback-ghost-pet.json`，28 项检查与 83 项测试通过。风扬和鸟翔参战模拟以原预测分别重算，独立核对四段短片、源录像哈希和分组。见 [验证报告](reports/phase-06-feedback-ghost-pet.json)和[独立审查](reviews/phase-06-participant.md#第六批人工反馈复核)。
+
+## Phase 6 默认识别复跑 · 2026-11-23
+
+- 运行 `python tools/verify.py --profile phase-06-participant`，指定单独的风扬输出目录。26 项检查通过，含 83 项测试。鸟翔以相同参战模拟重新预测和评分，龙飞按原六个标注片段重放。三组的用药、出宠命中和错误逐项核对一致。见 [验证报告](../outputs/phase-06/accuracy-recheck-20261123/wind-validation.json)及[错例全表](../outputs/phase-06/accuracy-recheck-20261123/识别错例全表.md)。
+
+## Phase 6 第七批人工反馈
+
+- 登记 E 和 F 的可见动作。G 在初版评估被误配为用药时间命中，复核后保留计数变化，攻击负例从匹配候选中剔除并计入误报。现场复核使用同一对普通和详细录像的原帧。见 [第七批复核](plans/phase-06.md#第七批人工反馈)。
+- 执行 `python tools/verify.py --profile phase-06-overlap --report harness/reports/phase-06-feedback-g-attack.json`，28 项检查与 84 项测试通过。另对冻结的风扬和鸟翔参战模拟重新评分，独立复跑 7 项专项测试。见 [验证报告](reports/phase-06-feedback-g-attack.json)和[独立复核](reviews/phase-06-overlap.md#第七批人工反馈独立复核)。
+
+## Phase 6 动作起手与宠位连续性试验
+
+- 实现两项可选离线分支，分别从施放者连续动作反查同次结算、从固定宠位验证稳定模型与名称轮廓。独立审查后复跑冻结修订版。在风扬和鸟翔比较命中、误报及累计误差。见 [比较结果](../outputs/phase-06/action-identity-20261123/识别试验结果.md)。
+- 运行 `python tools/verify.py --profile phase-06-participant`，指定分开的默认输出和报告。26 项检查通过，包含 94 项测试。独立复跑用药 19 项和召唤 18 项。见 [统一验证报告](reports/phase-06-action-identity.json)及[独立审查](reviews/phase-06-participant.md#动作起手与宠位连续性独立审查)。
+
+## Phase 6 用药动作训练与新宠入位复评 · 2026-11-24
+
+- 用 19 段雷绝对虎翼录像拟合两个等长窗模型，冻结权重后计算龙飞、鸟翔和风扬的片段分类。另跑两场整段已检用药候选过滤，以及延长新宠模型稳定观察的同帧对照。分别保留模型、逐候选输出和对照报告。见 [训练复评](../outputs/phase-06/action-training-20261124/训练复评.md)。
+- 执行 `python tools/verify.py --profile phase-06-participant`，26 项检查与 97 项测试通过。风扬默认预测与存档逐字节一致。独立复跑 5 项出宠延时相关测试。实战采集、设备识别延迟仍待真实参战录像验证。见 [统一验证](reports/phase-06-training-20261124.json)和[独立审查](reviews/phase-06-participant.md#用药训练与延时出宠独立审查)。
+
+## Phase 6 窗口偏移训练与回合末治疗反馈 · 2026-11-24
+
+- 保存 95 个偏移训练窗的权重、ONNX 对照和逐候选评分。两场整段对照采用相同的 49 条原用药候选，复评后保留默认识别器。鸟翔 `BM-N05` 按用户反馈补标，并分开保存原参考评分和补标后的评分。见 [多窗复评](../outputs/phase-06/window-robustness-20261124/多窗复评.md)和[独立审查](reviews/phase-06-participant.md#窗口偏移与第八批反馈独立审查)。
+- 以 `python tools/verify.py --profile phase-06-participant` 重跑阶段验证，26 项检查和 98 项测试通过。回合末治疗专项只验证已复核样例和评估范围，实战采集待验证。见[验证报告](reports/phase-06-window-robustness-20261124.json)。
+
+## Phase 6 回合末治疗线索复评 · 2026-11-24
+
+- 对四个普通回放组执行状态和回合线索扫描，复用鸟翔和风扬整段默认候选独立评分。原候选输出保留，几何试验和筛选只存于本地实验目录。记录了龙飞的先回血、后药次变化片段。见 [复评](../outputs/phase-06/periodic-heal-20261124/回合末治疗复评.md)和[独立审查](reviews/phase-06-participant.md#回合末治疗证据独立审查)。
+- 执行 `python tools/verify.py --profile phase-06-participant`，26 项检查和 98 项测试通过，默认预测与归档逐字节一致。见 [验证报告](reports/phase-06-periodic-heal-20261124.json)。
+
+## Phase 6 龙飞回合末回血反馈 · 2026-11-24
+
+- 确认短片内右方治疗为普陀山技能，保存为右侧用药反例并保留独立读数观察。用详细版原生帧纠正旧拼图的一帧偏移，再核对该片段冻结预测。见 [第九批反馈](../data/annotations/human-review-09.json)、[专项复评](../outputs/phase-06/dragon-heal-feedback-20261124/focused-regression.json)和[独立复核](reviews/phase-06-participant.md#龙飞普陀回血反馈独立复核)。
+- `phase-06-participant` 的 26 项检查和 98 项测试通过。见 [验证报告](reports/phase-06-dragon-heal-feedback-20261124.json)。
+
+## Phase 6 分批回血复评 · 2026-11-24
+
+- 在四场普通回放留存的画面观察量中试验延迟绿字关联，保留原识别和账本。根据两条用户回复补标龙飞与风扬的自动治疗，重算风扬冻结预测。检查点校验同时使用动作参考和未关联动作的计数变化，后者不参与动作匹配。见 [复评](../outputs/phase-06/staggered-heal-20261124/分批回血复评.md)和[独立审查](reviews/phase-06-participant.md#分批回血证据独立审查)。
+- `phase-06-participant` 的 26 项检查和 98 项测试通过。补标后风扬默认预测与归档逐字节一致。见 [验证报告](reports/phase-06-staggered-heal-20261124.json)。
+
+## Phase 6 绿字分离复评 · 2026-11-24
+
+- 保存背景扣除和亮色笔画两套试验，使用遮蔽原帧复跑并逐条复核增补轨迹。录入鸟翔第十一批人工反馈，用同一份原预测复评。见 [复评](../outputs/phase-06/green-separation-20261124/绿字分离复评.md)和[独立审查](reviews/phase-06-participant.md#绿字分离独立审查)。
+- `phase-06-participant` 的 26 项检查和 98 项测试通过，默认风扬预测与归档逐字节一致。见 [验证报告](reports/phase-06-green-separation-20261124.json)。
+
+## Phase 6 回合末施药对照 · 2026-11-24
+
+- 固定普通回放的视觉候选后选取 A、B 两段，记录用户确认的药物复活、莲花和回生。先用原预测复评补标，再用同一预测入口运行整段笔画补检。见 [对照报告](../outputs/phase-06/medicine-active-review-20261124/施药与莲花对照.md)和[独立审查](reviews/phase-06-participant.md#回合末施药对照独立审查)。
+- `phase-06-participant` 的 26 项检查和 98 项测试通过。同版本默认复跑与对照归档匹配。见 [验证报告](reports/phase-06-medicine-active-review-20261124.json)。
+
+## Phase 6 用药误报与归属复评 · 2026-11-25
+
+- 记录第十三批人工反馈，在旧评估上增加主人加时间的独立匹配。离线复跑青底数字筛查和起手前低纹理宠位重排，两场重新评分。见 [复评](../outputs/phase-06/medicine-error-20261124/用药误报与归属复评.md)和[独立审查](reviews/phase-06-participant.md#用药误报与归属独立审查)。
+- `phase-06-participant` 的 26 项检查和 99 项测试通过。见 [验证报告](reports/phase-06-medicine-error.json)。
+
+## Phase 6 用药筛选组合复评 · 2026-11-25
+
+- 固定上轮整场预测，在两场普通回放的已存视觉线索上复评回合末治疗筛选。核对两条鸟翔误报、两场既有命中与召唤，以及清除误报后的最后可核点偏差。见 [组合复评](../outputs/phase-06/medicine-review-20261125/用药筛选组合复评.md)和[独立审查](reviews/phase-06-participant.md#用药筛选组合独立审查)。
+- 执行 `python tools/verify.py --profile phase-06-participant`，26 项检查和 99 项测试通过。见 [验证报告](reports/phase-06-medicine-review-20261125.json)。
+
+## Phase 6 双侧复活复评 · 2026-11-25
+
+- 补记两条风扬人工动作证据，以现有分组复评冻结预测。针对青光重叠截断飘字，用我方可见气血加橙色复活效果补检目标。新增预测均为未知。验证了瞬时回升、两帧飘字、相邻目标去重与两场评分一致。见 [复评](../outputs/phase-06/medicine-feedback-20261125/双侧复活复评.md)及[独立审查](reviews/phase-06-participant.md#双侧复活独立审查)。
+- `phase-06-participant` 的 26 项检查和 99 项测试通过。见 [验证报告](reports/phase-06-medicine-feedback-20261125.json)。
+- 用含 `BM-M06` 的新参考独立复跑鸟翔冻结版与补检版。完整计数一致与双方匹配结果在两次复评间一致。见 [专项断言结果](../outputs/phase-06/medicine-feedback-20261125/hp-return/verification.json)及[补标](../data/annotations/human-review-15.json)。
+
+## Phase 6 飘字续接与分轨复评 · 2026-11-25
+
+- 第十六批用户复核补记两次群药，保留详细版同帧计数更新。用冻结观察复跑原轨与分轨，独立评分使用普通版动作证据。检查青光遮挡下的两帧续接、目标位置、轨迹歧义和既有事件一致性。见 [复评](../outputs/phase-06/medicine-clues-20261125/飘字续接与分轨复评.md)及[独立审查](reviews/phase-06-participant.md#飘字续接与分轨独立审查)。
+- `phase-06-participant` 的 26 项检查和 99 项测试通过，默认风扬预测哈希与上轮一致。见 [验证报告](reports/phase-06-medicine-clues-20261125.json)。
+
+## Phase 6 群药归因复评 · 2026-11-25
+
+- 固定上一轮整场候选、宠位及状态线索，复跑共同施药者关联。补记两条人工施药归属，分别按普通动作时间和详细版检查点评分。受益宠物作为同一候选的观察列表，保留原 ID。见 [复评](../outputs/phase-06/group-medicine-20261125/群药归因复评.md)和[独立审查](reviews/phase-06-participant.md#群药归因独立审查)。
+- `phase-06-participant` 的 26 项检查和 99 项测试通过，默认风扬输出哈希保持一致。见 [阶段报告](reports/phase-06-group-medicine-20261125.json)。
+
+## Phase 6 群药后续复评 · 2026-11-25
+
+- 用冻结普通遮蔽观察量复算首次橙光配对和受遮挡宠位数字片段。两个阶段的预测先落盘，再用第十八批普通动作标签和已记录官方快照评分。核验原候选 ID、施药归属和单次药量。见 [后续复评](../outputs/phase-06/group-followup-20261125/群药后续复评.md)。
+- `phase-06-participant` 的 26 项检查和 99 项测试通过。见 [阶段验证](reports/phase-06-group-followup-20261125.json)。
+
+## Phase 6 群药跨画面对照 · 2026-11-25
+
+- 固定普通录像窗口和动作时间参考，分别重放保留右方状态条、遮住双方状态条及动作时间余量试验。对龙飞验证源复跑完整普通画面，另行核对双版证据。见 [跨画面对照](../outputs/phase-06/group-transfer-20261125/群药跨画面对照.md)。
+- `phase-06-participant` 的 26 项检查和 99 项测试通过。见 [阶段验证](reports/phase-06-group-transfer-20261125.json)。
+- 第十九批人工反馈落盘。风扬通过补接同次动作尾段找回群药，技能归属仅作为人工记录。龙飞分别映射旧人物和宠位的编号并复跑整场，左 3 宠位归属得到确认，目标归并仍待改进。见 [标注](../data/annotations/human-review-19.json)、[评分核验](../outputs/phase-06/group-transfer-20261125/feedback-19-verification.json)和 [独立审查](reviews/phase-06-participant.md#跨画面群药独立审查)。
+
+## Phase 6 人物与宠物群药归并 · 2026-11-25
+
+- 复核龙飞两条独立受益轨，使用原生帧重算提前动作并复验四种采样起点。四场普通录像共 16,802 个采样帧，离线候选只变化一条。独立对照另核 19 个已复核动作窗口。见 [归并复评](../outputs/phase-06/group-receivers-20261125/人物与宠物群药归并复评.md)。
+- `phase-06-participant` 的 26 项检查和 99 项测试通过。见 [阶段验证](reports/phase-06-group-receivers-20261125.json)。
+
+## Phase 6 异宠受益与单人物复评 · 2026-11-25
+
+- 在普通录像原帧上核对人物和另一只受药宠物，加入同槽两轨首帧一致检查。将第 20 批用户确认的龙飞左 2 水灵兽作用和站位验证落盘，整场复跑找回一条离线候选。见 [异宠受益复评](../outputs/phase-06/group-nonself-20261125/非自身宠物受益与群药复评.md)和[复核记录](../data/annotations/human-review-20.json)。
+- `phase-06-participant` 的 26 项检查和 99 项测试通过。见 [阶段验证](reports/phase-06-group-nonself-20261125.json)。
+
+## Phase 6 施药动作与免扣复评
+
+- 第 21 批反馈确认白兔「寸草心」可免扣本次施药。详细版原帧证实本场暂记药次在切回合时恢复。视觉候选、确认账本及计次评分区分提示、确认免扣和扣次未知。见 [本轮复评](../outputs/phase-06/medicine-skill-separation-20261125/施药动作与免扣药次复评.md)和[阶段验证](reports/phase-06-medicine-waiver-verified-20261125.json)。
+- `phase-06-participant` 的 26 项检查和 109 项测试通过。风扬复跑 6004 帧，预测校验值与上一轮一致。
+
+## Phase 6 详细版暂记药次复评 · 2026-11-26
+
+- 新增已复核免扣动作的离线结算。用龙飞详细版原帧读数核对暂增和回退，保留两段瓶数缺读。普通扣药及合成边界复跑通过。见 [复评](../outputs/phase-06/medicine-counter-settlement-20261126/详细版暂记药次复评.md)和[阶段报告](reports/phase-06-medicine-counter-settlement-final-20261126.json)。
+- `phase-06-participant` 的 26 项检查和 118 项测试通过。雷绝详细版复跑 630 帧，官方事件文件与原基准逐字节一致。
+
+## Phase 6 稀疏读数与原帧补读 · 2026-11-26
+
+- 龙飞已复核的免扣在 250 毫秒间隔的全部 250 个起点均能补回证据。原视频实跑执行 143 帧 OCR，逐帧基线为 869 帧。普通扣药跨回合保持 +1。见 [复评与对照](../outputs/phase-06/medicine-adaptive-sampling-20261126/稀疏读数与原帧补读复评.md)。
+- 阶段验证 26 项通过，风扬遮敌方状态条的 6004 帧复跑预测与上一轮逐字节一致。阶段运行所用环境跳过的模型测试已用项目环境补跑，完整测试 123 项通过。见 [阶段验证](reports/phase-06-medicine-adaptive-sampling-20261126.json)和[完整测试](../outputs/phase-06/medicine-adaptive-sampling-20261126/workspace-tests.txt)。
+
+## Phase 6 普通画面免扣提示复评 · 2026-11-26
+
+- 从普通原帧读取「寸草心」，在双方状态条均遮蔽的四个起点复现一条已知施药关联。改用字幕起点配对以避免串到随后回血。第 22 批反馈确认白兔有概率触发。见 [阶段复评](../outputs/phase-06/medicine-visible-waiver-20261126/普通画面免扣提示复评.md)。
+- 阶段验证 26 项和完整测试 126 项通过。风扬 6004 帧默认参战模拟预测文件与上一轮逐字节一致。见 [阶段报告](reports/phase-06-medicine-visible-waiver-20261126.json)。
+
+## Phase 6 龙飞第 8 回合复活复评 · 2026-11-26
+
+- 普通版左 1 人物的 825 与详细版同一效果已用原帧对齐。核到左 1 即时药次增加及左 3 切回合药次增加两项独立观测。遮表复跑定位受益者，施放者排名对取帧起点敏感，保留待复核。相关药次、识别和对齐测试 49 项通过。见 [复评与证据](../outputs/phase-06/medicine-revival-20261126/龙飞第8回合复活复评.md)。
+
+## Phase 6 复活飘字与本体动作复评 · 2026-11-26
+
+- 检查青光遮挡下已上升的绿字续接。十个窗口的八十组对照只增加四个风扬 590 受益候选。独立光流试验暂未改善施放者总体排序。见 [复评](../outputs/phase-06/revival-body-20261126/复活飘字与施药本体复评.md)。
+- 第 23 批反馈补齐已有参考 WC-M46。普通版右 5 短促起手可核，原检测与续接试验均漏掉 801 的受益轨迹。阶段检查 26 项、项目测试 129 项通过，补标后使用冻结预测重新评分。见 [阶段报告](reports/phase-06-revival-body-final-20261126.json)和[补标复评](../outputs/phase-06/revival-body-20261126/final-check/metrics-with-r15-review.json)。
+
+## Phase 6 自动定位绿字补读 · 2026-11-26
+
+- 试验自动选区，无需指定右 2。801 在八次遮蔽复跑匹配六次，590 保留八次受益候选。弱起点无法跨空帧连接到下一波。见 [自动补读复评](../outputs/phase-06/medicine-auto-glyph-20261126/自动定位绿字补读复评.md)。
+- 风扬整场找回 801，并发现一条已核 207 的施药归属错误。维持可选试验。阶段检查 26 项、项目测试 135 项通过。见 [整场差异](../outputs/phase-06/medicine-auto-glyph-20261126/wind-full-overlap-comparison.json)和[阶段验证](reports/phase-06-medicine-auto-glyph-verified-20261126.json)。
+- 207 的独立局部对照用此前宠位纹理观察复核动作，两个错误均改归左 4。第 24 批反馈标注雷绝 659 为右 4 宠物攻击后的吸血，遮蔽状态条的八次复跑都未判为用药。见 [用户标注](../data/annotations/human-review-24.json)和[反例复跑](../outputs/phase-06/medicine-auto-glyph-20261126/controls/thunder-659-lifesteal-regression.json)。
+
+## Phase 6 宠位本体与施药归属 · 2026-11-26
+
+- 增加可选的起手前宠位纹理复核。技能和已知入场保护了原有证据，组内推迟到所需的最晚判定帧。全场配对仅纠正风扬 207 的归属。四场 88 次局部复跑包含鬼魂宠、孩子和遮挡对照。阶段 26 项检查、项目 137 项测试通过。见 [复评](../outputs/phase-06/medicine-pet-presence-20261126/宠位本体与施药归属复评.md)和[阶段报告](reports/phase-06-medicine-pet-presence-20261126.json)。
+
+## Phase 6 左方阵法站位与施药归属 · 2026-11-26
+
+- 四场左方人物和宠位的真实号位从原帧校准。主预测的输出保留画面键并附阵法号。风扬整场默认和冻结的补读预测分别用新标注评分，阶段检查 26 项通过。独立复查覆盖施药、召唤、标注导入及未校准宠位。见 [复评](../outputs/phase-06/formation-identity-left-20261126/左方站位与归属复评.md)和[阶段报告](reports/phase-06-formation-identity-left-20261126.json)。
+
+## Phase 6 龙飞剩余宠位及复活补取 · 2026-11-26
+
+- 确认龙飞剩余三个宠物主人。配对原帧覆盖全部五位人物的宠次，三笔取样的前后只有对应主人变化。第 26 批反馈补录两项用药，单独复核风扬迟至切回合的药瓶刷新。局部诊断采用普通录像的不同取帧起点，找回两笔已知复活的六次漏归。代码测试 142 项、阶段检查 26 项通过。见 [复评](../outputs/phase-06/dragon-revival-followup-20261126/施药动作和药次刷新复评.md)和[阶段报告](reports/phase-06-dragon-revival-followup-20261126.json)。
+
+## Phase 6 弱金环出宠 · 2026-11-27
+
+- 增加左侧光柱和原位模型稳定入场的可选路径。三场完整模拟参战回放新增五条已复核出宠，52 组局部前后对照仅补回龙飞左 5 漏检。修正长模板与新候选重叠时的重复输出。阶段验证 26 项，最后全套测试 144 项通过。见 [复评](../outputs/phase-06/summon-weak-ring-20261126/弱金环出宠复评.md)及[阶段报告](reports/phase-06-vacant-beam-20261126.json)。
+
+## Phase 6 入场后回位 · 2026-11-27
+
+- 增加连续空位前后按名字字形关联召唤模型的可选路径，避免第二轮光柱触发重复关联。64 次短窗对照只补回风扬 `WC-S01` 的四次漏检。阶段检查 26 项、最终项目测试 146 项通过。见 [回位复评](../outputs/phase-06/summon-return-20261127/入场后回位复评.md)及[阶段报告](reports/phase-06-beam-return-20261127.json)。
+
+## Phase 6 孩子入场 · 2026-11-27
+
+- 保存双区域外观和名字字形的实验结果，使用四场已核普通召唤作为反例。通过来源、人物、宠位与入场时间应用人工反馈并独立计次。加入风扬孩子和鸟翔同一旧宠的已核误报。阶段检查 26 项、项目测试 147 项通过。见 [复评](../outputs/phase-06/child-entry-20261127/孩子入场与宠次复评.md)及[阶段报告](reports/phase-06-child-entry-20261127.json)。
+
+## Phase 6 原宠留场 · 2026-11-27
+
+- 增加默认关闭的 `summon_guard_retained`。同一已核实宠位的连续名字和本体外观用于复核弱出宠候选。保留已观察的原候选信号，并记录判定所用原帧。技能冲突和独立入场证据沿用原路径。
+- 六段原宠的四起点对照少报 11 次，三段真实出宠的 12 次已检出候选均保留。鸟翔、风扬整段继续命中各 4、11 笔真实出宠。阶段检查 26 项、最终项目测试 153 项通过。见 [复评](../outputs/phase-06/retained-pet-20261127/原宠留场复评.md)及[阶段报告](reports/phase-06-retained-pet-20261127.json)。

@@ -1,0 +1,35 @@
+{
+  "version": "human-review-08",
+  "feedback_source": "用户复核鸟翔第 11 回合末自动回血片段",
+  "cases": [
+    {
+      "sample_id": "BM-N05",
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "round": 11,
+      "source_video_id": "clean-221123",
+      "source_sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "source_window_ms": [281750, 285950],
+      "review_media": "outputs/phase-06/window-robustness-20261124/review/bird-76-ordinary.mp4",
+      "review_media_sha256": "74112eac26f72bdcd6da3f02d16bd76c900c50e0bbaabc185e36aef14d4686b4",
+      "event_type": "NON_RESOURCE_SKILL",
+      "actor_id": null,
+      "original_prediction": {
+        "prediction_id": 76,
+        "time_ms": 283776,
+        "event_type": "USE_MEDICINE",
+        "actor_id": "R2_PET",
+        "target_id": "R1"
+      },
+      "counter_review": {
+        "owner_id": "R2",
+        "detailed_asset_id": "detailed-220552",
+        "observed_detailed_interval_ms": [284513, 285763],
+        "before": "2/10",
+        "after": "2/10"
+      },
+      "feedback": "右边四个人物头顶粉红色的花是普陀山的技能状态，会在回合结束时自动回血。该次回血由技能状态触发。",
+      "status": "reviewed"
+    }
+  ]
+}

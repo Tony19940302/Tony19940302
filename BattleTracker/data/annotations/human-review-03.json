@@ -15,6 +15,7 @@
       "basis_prediction_id": 170,
       "owner_id": "R4",
       "owner_formation_slot": "云垂阵 4 号",
+      "arrival_slot_id": "R4_PET",
       "display_name": "小星星",
       "unit_kind": "child",
       "event_type": "SUMMON_CHILD",

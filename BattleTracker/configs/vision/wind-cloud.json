@@ -31,6 +31,13 @@
     "R5": [354, 173]
   },
   "portal_centers": {},
+  "formation_slots": {
+    "L": {
+      "players":{"L1":1,"L2":2,"L3":3,"L4":4,"L5":5},
+      "pets":{"L1":1,"L2":2,"L3":3,"L4":4,"L5":5},
+      "verified_pets":["L1","L2","L3","L4","L5"]
+    }
+  },
   "portal_templates": [],
   "skill_templates": [],
   "thresholds": {"portal": 0.65, "skill": 0.74, "pet_change": 0.075, "heal_area": 120},

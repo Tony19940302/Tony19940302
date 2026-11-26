@@ -12,8 +12,14 @@
     "L1":[180,166], "L2":[220,135], "L3":[265,114], "L4":[308,89], "L5":[349,65],
     "R1":[520,66], "R2":[478,94], "R3":[436,120], "R4":[394,148], "R5":[354,168]
   },
-  "unverified_pet_owners":["L1","L2","L3","L4","L5"],
-  "calibration_note":"Screen identity anchors. Right-side pet ownership retained across matching tiger formation; left ownership remains unverified.",
+  "formation_slots": {
+    "L": {
+      "players":{"L1":5,"L2":1,"L3":4,"L4":2,"L5":3},
+      "pets":{"L1":4,"L2":2,"L3":1,"L4":3,"L5":5},
+      "verified_pets":["L1","L2","L3","L4","L5"]
+    }
+  },
+  "calibration_note":"Left coordinates retain legacy geometry IDs. Formation crosswalk and verified pet ownership are recorded in dragon-tiger-left-pet-verification-03.json.",
   "portal_centers":{}, "portal_templates":[], "skill_templates":[],
   "thresholds":{"portal":0.65,"skill":0.74,"pet_change":0.075,"heal_area":120}
 }

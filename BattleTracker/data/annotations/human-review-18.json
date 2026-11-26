@@ -1,0 +1,244 @@
+{
+  "version": "human-review-18",
+  "feedback_source": "用户复核鸟翔和风扬的五段同步回血普通录像",
+  "cases": [
+    {
+      "case_id": "BM-R12-R5-group-heal",
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "round": 12,
+      "source_video_id": "clean-221123",
+      "source_sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "source_window_ms": [
+        287900,
+        290850
+      ],
+      "review_media": "outputs/phase-06/group-followup-20261125/review/bird-289441-ordinary.mp4",
+      "review_media_sha256": "78ae27d5bb08ab8e7860218c8e77effac17ae534643785bff33c62242adc0a18",
+      "actions": [
+        {
+          "action_id": "BM-R12-R5-group-medicine",
+          "event_type": "USE_MEDICINE",
+          "effect": "GROUP_HEAL",
+          "actor_id": "R5_PET",
+          "owner_id": "R5",
+          "first_visible_ms": 289440.878,
+          "observed_recoveries": [
+            {
+              "target_id": "R1",
+              "value": 322
+            },
+            {
+              "target_id": "R3",
+              "value": 960
+            },
+            {
+              "target_id": "R2_PET",
+              "value": 615
+            }
+          ],
+          "recipient_list_complete": false,
+          "counter_link_status": "unresolved"
+        }
+      ],
+      "feedback": "是右5宠物在施药",
+      "evidence": [
+        "outputs/phase-06/group-followup-20261125/review/bird-289441-provenance.json",
+        "outputs/phase-06/group-followup-20261125/review/bird-289441-ordinary-number-onset.jpg",
+        "outputs/phase-06/group-followup-20261125/review/bird-289441-ordinary-round.jpg"
+      ],
+      "status": "reviewed"
+    },
+    {
+      "case_id": "WC-R05-R3-group-heal",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "round": 5,
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "source_window_ms": [
+        117800,
+        120750
+      ],
+      "review_media": "outputs/phase-06/group-followup-20261125/review/wind-119281-ordinary.mp4",
+      "review_media_sha256": "50fd3225499519b42e929f0f9b6205d4a04a4a7da2ba4160751fa778a60b5602",
+      "actions": [
+        {
+          "action_id": "WC-R05-R3-group-medicine",
+          "event_type": "USE_MEDICINE",
+          "effect": "GROUP_HEAL",
+          "actor_id": "R3_PET",
+          "owner_id": "R3",
+          "first_visible_ms": 119247.511,
+          "observed_recoveries": [
+            {
+              "target_id": "R2",
+              "value": 315
+            },
+            {
+              "target_id": "R4",
+              "value": 921
+            },
+            {
+              "target_id": "R5_PET",
+              "value": 590
+            }
+          ],
+          "recipient_list_complete": false,
+          "counter_link_status": "unresolved"
+        }
+      ],
+      "feedback": "是右3宠物在施药",
+      "nearby_skill_text": "追思",
+      "evidence": [
+        "outputs/phase-06/group-followup-20261125/review/wind-119281-provenance.json",
+        "outputs/phase-06/group-followup-20261125/review/wind-119281-ordinary-number-onset.jpg",
+        "outputs/phase-06/group-followup-20261125/review/wind-119281-ordinary-round.jpg"
+      ],
+      "status": "reviewed"
+    },
+    {
+      "case_id": "WC-R06-R2-group-heal",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "round": 6,
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "source_window_ms": [
+        142350,
+        145250
+      ],
+      "review_media": "outputs/phase-06/group-followup-20261125/review/wind-143846-ordinary.mp4",
+      "review_media_sha256": "13396e13c414a80db49f314f3e8848950d5222e8de722a6aa253a9794087bb46",
+      "actions": [
+        {
+          "action_id": "WC-R06-R2-group-medicine",
+          "event_type": "USE_MEDICINE",
+          "effect": "GROUP_HEAL",
+          "actor_id": "R2_PET",
+          "owner_id": "R2",
+          "first_visible_ms": 143779.433,
+          "observed_recoveries": [
+            {
+              "target_id": "R2",
+              "value": 327
+            },
+            {
+              "target_id": "R3",
+              "value": 979
+            },
+            {
+              "target_id": "R5_PET",
+              "value": 615
+            }
+          ],
+          "recipient_list_complete": false,
+          "counter_link_status": "unresolved"
+        }
+      ],
+      "feedback": "右2宠物施药，用的是群体回血，和之前一样",
+      "nearby_skill_text": "失心符",
+      "evidence": [
+        "outputs/phase-06/group-followup-20261125/review/wind-143846-provenance.json",
+        "outputs/phase-06/group-followup-20261125/review/wind-143846-ordinary-number-onset.jpg",
+        "outputs/phase-06/group-followup-20261125/review/wind-143846-ordinary-round.jpg"
+      ],
+      "status": "reviewed"
+    },
+    {
+      "case_id": "WC-R07-R2-group-heal",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "round": 7,
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "source_window_ms": [
+        174500,
+        177500
+      ],
+      "review_media": "outputs/phase-06/group-followup-20261125/review/wind-176008-ordinary.mp4",
+      "review_media_sha256": "a6967b292944030308dc8034d8aec54a8bddac074148e74a354247aaa5af141f",
+      "actions": [
+        {
+          "action_id": "WC-R07-R2-group-medicine",
+          "event_type": "USE_MEDICINE",
+          "effect": "GROUP_HEAL",
+          "actor_id": "R2_PET",
+          "owner_id": "R2",
+          "first_visible_ms": 175958.433,
+          "observed_recoveries": [
+            {
+              "target_id": "R1",
+              "value": 960
+            },
+            {
+              "target_id": "R2",
+              "value": 327
+            },
+            {
+              "target_id": "R5_PET",
+              "value": 553
+            }
+          ],
+          "recipient_list_complete": false,
+          "counter_link_status": "unresolved"
+        }
+      ],
+      "feedback": "右2宠物施药，也是群体回血的药品",
+      "nearby_skill_text": "笑里藏刀",
+      "evidence": [
+        "outputs/phase-06/group-followup-20261125/review/wind-176008-provenance.json",
+        "outputs/phase-06/group-followup-20261125/review/wind-176008-ordinary-number-onset.jpg",
+        "outputs/phase-06/group-followup-20261125/review/wind-176008-ordinary-round.jpg"
+      ],
+      "status": "reviewed"
+    },
+    {
+      "case_id": "BM-R10-R5-group-heal",
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "round": 10,
+      "source_video_id": "clean-221123",
+      "source_sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "source_window_ms": [
+        244980,
+        247150
+      ],
+      "review_media": "outputs/phase-06/group-followup-20261125/generalization/bird-246253-ordinary.mp4",
+      "review_media_sha256": "4683b5f3b68cb2b48fbd3587521aa70532c5775110a2219ed3ef7df36274b36e",
+      "actions": [
+        {
+          "action_id": "BM-R10-R5-group-medicine",
+          "event_type": "USE_MEDICINE",
+          "effect": "GROUP_HEAL",
+          "actor_id": "R5_PET",
+          "owner_id": "R5",
+          "first_visible_ms": 246252.644,
+          "observed_recoveries": [
+            {
+              "target_id": "R3",
+              "value": 960
+            },
+            {
+              "target_id": "R5",
+              "value": 327
+            },
+            {
+              "target_id": "R5_PET",
+              "value": 615
+            }
+          ],
+          "recipient_list_complete": false,
+          "counter_link_status": "unresolved"
+        }
+      ],
+      "feedback": "右5宠物施药，也是群体回血的药",
+      "evidence": [
+        "outputs/phase-06/group-followup-20261125/generalization/bird-246253-onset.jpg",
+        "outputs/phase-06/group-followup-20261125/generalization/bird-246253-predecessor.jpg",
+        "outputs/phase-06/group-followup-20261125/generalization/first-amber-counterfactual.json"
+      ],
+      "status": "reviewed"
+    }
+  ]
+}

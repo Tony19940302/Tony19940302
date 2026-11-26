@@ -1,0 +1,61 @@
+{
+  "version": "human-review-16",
+  "feedback_source": "用户复核鸟翔镜像第 3 回合右 2 人物先后出现 590 和 960 的普通版短片",
+  "cases": [
+    {
+      "case_id": "BM-R03-two-group-medicine-actions",
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "round": 3,
+      "source_video_id": "clean-221123",
+      "source_sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "source_window_ms": [83000, 88000],
+      "review_media": "outputs/phase-06/medicine-clues-20261125/bird-r2/bird-r2-two-waves-ordinary.mp4",
+      "review_media_sha256": "af4f90bee5e2c698e4fa92b3bf674ac49850e2c41011126b03448ba6f87cecea",
+      "actions": [
+        {
+          "action_id": "BM-R03-R1-group-medicine",
+          "event_type": "USE_MEDICINE",
+          "effect": "GROUP_HEAL",
+          "actor_id": "R1_PET",
+          "owner_id": "R1",
+          "first_visible_ms": 85275.589,
+          "observed_recoveries": [{"target_id": "R2", "value": 590}, {"target_id": "R3", "value": 921}],
+          "recipient_list_complete": false,
+          "counter_link_status": "consistent_with_later_round_refresh"
+        },
+        {
+          "action_id": "BM-R03-R2-group-medicine",
+          "event_type": "USE_MEDICINE",
+          "effect": "GROUP_HEAL",
+          "actor_id": "R2_PET",
+          "owner_id": "R2",
+          "first_visible_ms": 86108.744,
+          "observed_recoveries": [{"target_id": "R2", "value": 960}],
+          "recipient_list_complete": false,
+          "counter_link_status": "consistent_with_later_round_refresh"
+        }
+      ],
+      "counter_refresh_observation": {
+        "source_video_id": "detailed-220552",
+        "source_sha256": "be93535fb34ed705498de7b879f3df4603b664834cc3e7ec6421f9f0ec9f726d",
+        "adjacent_native_frames_ms": [90530.078, 90546.500],
+        "mapped_counter_interval_ms": [90039, 90055],
+        "round_before": 3,
+        "round_after": 4,
+        "medicine": {"R1": {"before": "0/10", "after": "1/10"}, "R2": {"before": "0/10", "after": "1/10"}},
+        "note": "两名主人的药次和回合数同帧更新。动作首见时刻分别保存。"
+      },
+      "feedback": "第一次590是右1的宠物在施药，群体回血的药品，第二次是右2的宠物在施药，也是群体回血的药品",
+      "evidence": [
+        "outputs/phase-06/medicine-clues-20261125/bird-r2/two-waves-audit.json",
+        "outputs/phase-06/medicine-clues-20261125/bird-r2/two-waves-provenance.json",
+        "outputs/phase-06/medicine-clues-20261125/bird-r2/first-590-and-921-native-onset.jpg",
+        "outputs/phase-06/medicine-clues-20261125/bird-r2/second-960-native-onset.jpg",
+        "outputs/phase-06/medicine-clues-20261125/bird-r2/detailed-r1-r2-round-native.jpg",
+        "outputs/phase-06/medicine-clues-20261125/bird-r2/right-r1-r2-counter-refresh.json"
+      ],
+      "status": "reviewed"
+    }
+  ]
+}

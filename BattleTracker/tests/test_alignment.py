@@ -77,3 +77,26 @@ def test_official_source_and_output_digest_are_bound_to_detailed_video(tmp_path,
     path.write_text(json.dumps(dict(event, owner_id="R1")) + "\n", encoding="utf-8")
     with pytest.raises(ValueError, match="event log hash"):
         build(*args)
+
+    event.update(owner_id="L4", earliest_timestamp_ms=1300, latest_timestamp_ms=1500,
+                 needs_review=False)
+    path.write_text(json.dumps(event) + "\n", encoding="utf-8")
+    data["official_events_sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
+    metadata.write_text(json.dumps(data), encoding="utf-8")
+    changes = {"L4:1500:USE_MEDICINE": dict(kind="pet", actor_id="L2_PET", target_id="L1")}
+    args = (*args[:-1], dict(reviews, changes=changes))
+    layout = dict(source_asset="clean", players={key: {} for key in ("L1", "L2", "L4")},
+                  pets={key: {} for key in ("L2", "L4")}, formation_slots={"L": {
+                      "players": {"L1": 5, "L2": 1, "L4": 2}, "pets": {"L2": 2, "L4": 3},
+                      "verified_pets": ["L2"],
+                  }})
+    samples, _, _ = build(*args, vision_layout=layout)
+    sample, = samples
+    assert sample["formation_slots"] == {"actor": 2, "owner": 2, "target": 5}
+    with pytest.raises(ValueError, match="paired clean"):
+        build(*args, vision_layout=dict(layout, source_asset="other"))
+    with pytest.raises(ValueError, match="screen-slot owner"):
+        build(*args)
+    changes["L4:1500:USE_MEDICINE"]["actor_id"] = "L4_PET"
+    with pytest.raises(ValueError, match="screen-slot owner"):
+        build(*args, vision_layout=layout)

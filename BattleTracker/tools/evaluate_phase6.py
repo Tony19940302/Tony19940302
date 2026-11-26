@@ -10,8 +10,9 @@ from PIL import Image
 
 from align_videos import ROOT, prepare, write_json
 from battletracker.alignment import check_grouping
+from battletracker.battle import MedicineConsumption
 from battletracker.vision import frames
-from evaluate import RESOURCE_TYPES, match_events, read_jsonl
+from evaluate import RESOURCE_TYPES, match_events, prediction_consumption, read_jsonl
 
 
 OUTPUT = ROOT / "outputs/phase-06"
@@ -64,17 +65,25 @@ def checkpoint_metrics(predictions, rows, owners, alignment, alignment_error_ms,
     if len({c["clean_ms"] for c in checkpoints}) != len(checkpoints):
         raise ValueError("duplicate counter checkpoint time")
 
+    charged = [row for row in predictions if prediction_consumption(row) == MedicineConsumption.CHARGED]
+    unresolved = [row for row in predictions if prediction_consumption(row) == MedicineConsumption.UNKNOWN]
+
     def automatic_count(owner, event_type, start, end):
         return sum(row["event_type"] == event_type and row["owner_id"] == owner
-                   and start < row["time_ms"] <= end for row in predictions)
+                   and start < row["time_ms"] <= end for row in charged)
 
     def summarize(fields):
+        pending = sum(f["error"] is None for f in fields)
+        fields = [f for f in fields if f["error"] is not None]
         count = len(fields)
-        return dict(compared=count, matching=sum(f["error"] == 0 for f in fields),
-                    exact_rate=sum(f["error"] == 0 for f in fields) / count if count else None,
-                    absolute_error_sum=sum(abs(f["error"]) for f in fields) if count else None,
-                    max_absolute_error=max((abs(f["error"]) for f in fields), default=None),
-                    timing_sensitive=sum(f["timing_sensitive"] for f in fields))
+        result = dict(compared=count, matching=sum(f["error"] == 0 for f in fields),
+                      exact_rate=sum(f["error"] == 0 for f in fields) / count if count else None,
+                      absolute_error_sum=sum(abs(f["error"]) for f in fields) if count else None,
+                      max_absolute_error=max((abs(f["error"]) for f in fields), default=None),
+                      timing_sensitive=sum(f["timing_sensitive"] for f in fields))
+        if pending:
+            result["unresolved_consumption"] = pending
+        return result
 
     if len(checkpoints) < 2:
         return dict(status="unverified", reason="fewer than two aligned manual checkpoints")
@@ -102,10 +111,17 @@ def checkpoint_metrics(predictions, rows, owners, alignment, alignment_error_ms,
                     baseline_ms + alignment_error_ms, end - alignment_error_ms)
                 upper = start_used + automatic_count(owner, event_type,
                     baseline_ms - alignment_error_ms, end + alignment_error_ms)
-                fields.append(dict(owner_id=owner, field=field, initial_used=start_used,
-                                   official_used=official_used, candidate_used=guess,
-                                   error=guess - official_used, timing_sensitive=lower != upper,
-                                   candidate_used_at_alignment_bounds=[lower, upper]))
+                pending = [] if event_type != "USE_MEDICINE" else [
+                    row["prediction_id"] for row in unresolved if row["owner_id"] == owner
+                    and baseline_ms - alignment_error_ms < row["time_ms"] <= end + alignment_error_ms
+                ]
+                result = dict(owner_id=owner, field=field, initial_used=start_used,
+                              official_used=official_used, candidate_used=guess,
+                              error=None if pending else guess - official_used, timing_sensitive=lower != upper,
+                              candidate_used_at_alignment_bounds=[lower, upper])
+                if pending:
+                    result["unresolved_prediction_ids"] = pending
+                fields.append(result)
         details.append(dict(checkpoint, fields=fields, summary=summarize(fields)))
     return dict(status="partial_replay", baseline=initial, checkpoints=details,
                 empirical_alignment_margin_ms=alignment_error_ms,
@@ -115,7 +131,7 @@ def checkpoint_metrics(predictions, rows, owners, alignment, alignment_error_ms,
                 last_checkpoint=details[-1]["summary"], final_battle_counts=None)
 
 
-def completion_metrics(completion, counts, references, tolerance):
+def completion_metrics(completion, counts, references, tolerance, *, counter_only_changes=()):
     """Check terminal counts separately from complete event-level coverage."""
     initial = counts.get("baseline")
     checkpoints = counts.get("checkpoints", [])
@@ -134,10 +150,11 @@ def completion_metrics(completion, counts, references, tolerance):
     observed = {key: [] for key in expected}
     by_counter = {key: [] for key in expected}
     localized = True
-    for row in sorted(references, key=lambda row: row["mapped_counter_interval_ms"]):
+    changes = sorted([*references, *counter_only_changes], key=lambda row: row["mapped_counter_interval_ms"])
+    for row in changes:
         start, end = row["mapped_counter_interval_ms"]
         if not window[0] < start <= end <= window[1]:
-            raise ValueError("reviewed event falls outside the opening and final checkpoints")
+            raise ValueError("reviewed counter change falls outside the opening and final checkpoints")
         localized &= end - start <= 2 * tolerance
         key = (row["owner_id"], row["event_type"])
         observed.setdefault(key, []).append(counter_used(row["after"]))
@@ -157,7 +174,8 @@ def completion_metrics(completion, counts, references, tolerance):
                                       event_type=key[1], official_delta=delta,
                                       reviewed_delta_bounds=[lower, upper]))
     return dict(terminal_counts_complete=all_terminal_fields, complete_event_reference=(
-                    all_terminal_fields and localized and observed == expected and not conflicts),
+                    all_terminal_fields and localized and observed == expected and not conflicts
+                    and not counter_only_changes),
                 checkpoint_conflicts=conflicts,
                 complete_round_end_checkpoints=(
                     {c["round"] for c in round_ends} == set(range(1, terminal["round"] + 1))
@@ -168,7 +186,13 @@ def completion_metrics(completion, counts, references, tolerance):
                 settlement_evidence=completion["evidence"])
 
 
-def event_metrics(predictions, references, empty_windows, overlap, tolerance, *, complete_window=None):
+def misclassified_actor(action):
+    """Scope a reviewed false positive to the actor reported by the detector."""
+    return action.get("misclassified_actor_id", action.get("actor_id"))
+
+
+def event_metrics(predictions, references, empty_windows, overlap, tolerance, *, complete_window=None,
+                  non_resource_actions=()):
     left, right = overlap
     if complete_window is None:
         scoped = [row for row in predictions if left <= row["time_ms"] <= right]
@@ -177,7 +201,8 @@ def event_metrics(predictions, references, empty_windows, overlap, tolerance, *,
         if not left <= opened < finished <= right:
             raise ValueError("complete reviewed combat window lies outside the aligned overlap")
         scoped = [row for row in predictions if opened < row["time_ms"] <= finished]
-    candidates = [row for row in scoped if row["event_type"] in RESOURCE_TYPES]
+    resources = [row for row in scoped if row["event_type"] in RESOURCE_TYPES]
+    candidates = [row for row in resources if prediction_consumption(row) == MedicineConsumption.CHARGED]
     if len({row["sample_id"] for row in references}) != len(references):
         raise ValueError("duplicate reviewed event ID")
     for ref in references:
@@ -190,15 +215,27 @@ def event_metrics(predictions, references, empty_windows, overlap, tolerance, *,
         if any(start <= b and a <= end for a, b in
                (r["mapped_counter_interval_ms"] for r in references)):
             raise ValueError("verified empty window overlaps a reviewed resource event")
+    for action in non_resource_actions:
+        if (not left <= action["clip_start_ms"] <= action["clip_end_ms"] <= right
+                or action["misclassified_as"] not in RESOURCE_TYPES or not misclassified_actor(action)):
+            raise ValueError("invalid reviewed non-resource action")
 
     false_positives, eligible = [], []
     for pred in candidates:
-        if any(start <= pred["time_ms"] <= end for start, end in empty_windows):
+        known_non_resource = any(
+            pred.get("actor_id") == misclassified_actor(action)
+            and pred["event_type"] == action["misclassified_as"]
+            and action["clip_start_ms"] <= pred["time_ms"] <= action["clip_end_ms"]
+            for action in non_resource_actions
+        )
+        if known_non_resource or any(start <= pred["time_ms"] <= end for start, end in empty_windows):
             false_positives.append(pred)
         else:
             eligible.append(pred)
     assigned = match_events(eligible, references, tolerance)
-    matches, unverified = [], []
+    owner_assigned = match_events(eligible, references, tolerance, require_same_owner=True)
+    matches = []
+    unverified = [row for row in resources if prediction_consumption(row) == MedicineConsumption.UNKNOWN]
     for index, pred in enumerate(eligible):
         timestamp = pred["time_ms"]
         if index in assigned:
@@ -222,8 +259,11 @@ def event_metrics(predictions, references, empty_windows, overlap, tolerance, *,
     for kind in sorted(RESOURCE_TYPES):
         support = sum(row["event_type"] == kind for row in references)
         hits = sum(match["reference"]["event_type"] == kind for match in matches)
+        owner_hits = sum(references[index]["event_type"] == kind for index in owner_assigned.values())
         verified_wrong = sum(row["event_type"] == kind for row in false_positives)
         by_event_type[kind] = dict(references=support, hits=hits, misses=support - hits,
+                                   owner_and_time_hits=owner_hits,
+                                   owner_and_time_recall=owner_hits / support if support else None,
                                    verified_false_positives=verified_wrong,
                                    unverified_predictions=sum(row["event_type"] == kind for row in unverified),
                                    reviewed_recall=hits / support if support else None,
@@ -253,7 +293,7 @@ def event_metrics(predictions, references, empty_windows, overlap, tolerance, *,
                 reviewed_reference_count=len(references),
                 verified_empty_windows_ms=empty_windows,
                 precision_scope=("complete reviewed combat window" if complete_window is not None
-                                 else "reviewed matches and verified empty windows only"),
+                                 else "reviewed matches and verified negative evidence only"),
                 timing_scope="prediction offset from reviewed event interval, not processing latency",
                 recorded_decision_offsets=dict(compared=len(timings),
                     median_midpoint_ms=median(sum(bounds) / 2 for bounds in timings) if timings else None,
@@ -267,7 +307,8 @@ def event_metrics(predictions, references, empty_windows, overlap, tolerance, *,
                 out_of_overlap_prediction_count=len(predictions) - len(scoped))
 
 
-def event_metrics_by_side(predictions, references, empty_windows, overlap, tolerance, *, complete_window):
+def event_metrics_by_side(predictions, references, empty_windows, overlap, tolerance, *,
+                          complete_window, non_resource_actions=()):
     """Measure hits against the same side so wrong-side events cannot count as hits."""
     by_side = {}
     for side in ("L", "R"):
@@ -275,6 +316,7 @@ def event_metrics_by_side(predictions, references, empty_windows, overlap, toler
             [row for row in predictions if (row.get("owner_id") or "").startswith(side)],
             [row for row in references if row["owner_id"].startswith(side)],
             empty_windows, overlap, tolerance, complete_window=complete_window,
+            non_resource_actions=non_resource_actions,
         )
         by_side[side] = dict(
             by_event_type=stats["by_event_type"], classes=stats["classes"],
@@ -397,8 +439,12 @@ def main():
             or set(owners) != set(layout["players"])):
         raise ValueError("manual counter reference has a different source or owner layout")
     targets = {*owners, *(f"{owner}_PET" for owner in owners), None}
-    references = []
-    for row in review["changes"]:
+    changes = review["changes"]
+    source_rows = [*changes, *review.get("counter_only_changes", [])]
+    if len({row["sample_id"] for row in source_rows}) != len(source_rows):
+        raise ValueError("duplicate event or counter-change ID")
+    aligned_rows = []
+    for row in source_rows:
         start, end = row["detailed_interval_ms"]
         mapped = [alignment.map(t) for t in (start, end)]
         owner = row["owner_id"]
@@ -410,7 +456,13 @@ def main():
                 or (row["event_type"] == "SUMMON_PET" and
                     (row["actor_id"] != owner or row["target_id"] != f"{owner}_PET"))):
             raise ValueError("invalid reviewed resource event for the aligned replay")
-        references.append(dict(row, aligned_official_counter_interval_ms=mapped))
+        aligned_rows.append(dict(row, aligned_official_counter_interval_ms=mapped))
+    references = aligned_rows[:len(changes)]
+    counter_only_changes = aligned_rows[len(changes):]
+    hard_negatives = review.get("hard_negatives", [])
+    non_resource_actions = [row for row in hard_negatives if "misclassified_as" in row]
+    if any(misclassified_actor(row) not in targets - {None} for row in non_resource_actions):
+        raise ValueError("reviewed non-resource action must identify the predicted battle unit")
     empty_windows = review.get("verified_empty_windows_ms", [])
     verified = set()
     for evidence in review.get("verified_empty_window_evidence", []):
@@ -436,13 +488,15 @@ def main():
                 or counts["checkpoints"][-1]["round"] != boundary.get("terminal_round")):
             raise ValueError("complete replay requires local start and settlement evidence matching the pair")
     tolerance = 500
-    coverage = completion_metrics(completion, counts, references, tolerance)
+    coverage = completion_metrics(completion, counts, references, tolerance,
+                                  counter_only_changes=counter_only_changes)
     complete_window = (coverage["reviewed_combat_window_ms"]
                        if coverage and coverage["complete_event_reference"] else None)
     events = event_metrics(predictions, references, empty_windows, overlap, tolerance,
-                           complete_window=complete_window)
+                           complete_window=complete_window, non_resource_actions=non_resource_actions)
     events_by_side = event_metrics_by_side(predictions, references, empty_windows, overlap, tolerance,
-                                           complete_window=complete_window)
+                                           complete_window=complete_window,
+                                           non_resource_actions=non_resource_actions)
     final_verified = bool(coverage and coverage["terminal_counts_complete"])
     if final_verified:
         counts.update(status="complete_replay", final_battle_counts=counts["last_checkpoint"])
@@ -468,7 +522,8 @@ def main():
                   input_sha256={str(path): digest(path) for path in sources}, events=events,
                   events_by_side=events_by_side, counts=counts,
                   engineering_targets=engineering_targets(events, counts, coverage),
-                  hard_negative_examples=review.get("hard_negatives", []), visual_run=visual)
+                  counter_only_changes=counter_only_changes,
+                  hard_negative_examples=hard_negatives, visual_run=visual)
     if args.export_evidence:
         result["failure_frames"] = export_failure_frames(ROOT / clean["path"], events,
             args.output.parent / ("bird-failure-frames" if args.output.name == "bird-evaluation.json"

@@ -5,9 +5,16 @@ import json
 from pathlib import Path
 from statistics import median
 
+from battletracker.battle import MedicineConsumption
 from predict_clean import OUTPUT, ROOT
 
 RESOURCE_TYPES = {"USE_MEDICINE", "SUMMON_PET"}
+
+
+def prediction_consumption(row):
+    if row["event_type"] == "USE_MEDICINE":
+        return MedicineConsumption(row.get("payload", {}).get("medicine_consumption", MedicineConsumption.CHARGED))
+    return MedicineConsumption.CHARGED
 
 
 def distance(time, bounds):
@@ -15,13 +22,15 @@ def distance(time, bounds):
     return max(start - time, 0, time - end)
 
 
-def match_events(predictions, references, tolerance):
-    """Maximum one-to-one temporal assignment within each event type."""
+def match_events(predictions, references, tolerance, *, require_same_owner=False):
+    """Maximum one-to-one temporal assignment by type, optionally constrained by owner."""
     edges = []
     for ref in references:
         bounds = ref["mapped_counter_interval_ms"]
         options = [i for i, pred in enumerate(predictions)
                    if pred["event_type"] == ref["event_type"]
+                   and (not require_same_owner or (ref["owner_id"] is not None
+                                                    and pred.get("owner_id") == ref["owner_id"]))
                    and distance(pred["time_ms"], bounds) <= tolerance]
         edges.append(sorted(options, key=lambda i: (
             distance(predictions[i]["time_ms"], bounds),
@@ -61,9 +70,12 @@ def evaluate(predictions, clips, tolerance):
         raise ValueError("no reviewed resource references")
     negatives = [row for row in clips if row["annotation_status"] == "reviewed_hard_negative"]
     unknown_refs = [row for row in clips if row["annotation_status"] == "candidate"]
-    candidates = [row for row in predictions if row["event_type"] in RESOURCE_TYPES]
+    resources = [row for row in predictions if row["event_type"] in RESOURCE_TYPES]
+    candidates = [row for row in resources if prediction_consumption(row) == MedicineConsumption.CHARGED]
     matches = match_events(candidates, reviewed, tolerance)
-    false_positives, unverified, attributions, paired = [], [], [], []
+    unverified = [dict(prediction=row, reference=None) for row in resources
+                  if prediction_consumption(row) == MedicineConsumption.UNKNOWN]
+    false_positives, attributions, paired = [], [], []
     misses = [ref for i, ref in enumerate(reviewed) if i not in matches.values()]
     for i, pred in enumerate(candidates):
         time = pred["time_ms"]

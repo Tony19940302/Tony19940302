@@ -8,6 +8,48 @@ PET_ORDER = (5, 3, 1, 2, 4)
 Point = tuple[float, float]
 
 
+def vision_slot_numbers(config):
+    """Translate calibrated image IDs to formation numbers without moving their anchors."""
+    numbers = {}
+    for side, slots in config.get("formation_slots", {}).items():
+        if side not in ("L", "R"):
+            raise ValueError("unknown screen side in formation slot map")
+        for kind, suffix in (("players", ""), ("pets", "_PET")):
+            table = slots[kind]
+            if (any(key not in config.get(kind, {}) or not key.startswith(side) for key in table)
+                    or any(type(value) is not int or value not in PET_ORDER for value in table.values())
+                    or len(set(table.values())) != len(table)):
+                raise ValueError(f"invalid {kind} formation slots for side {side}")
+            numbers.update((f"{key}{suffix}", number) for key, number in table.items())
+    return numbers
+
+
+def vision_pet_owners(config):
+    """Map fixed pet geometry keys to player geometry IDs, with unresolved owners as None."""
+    sides = config.get("formation_slots", {})
+    numbers = vision_slot_numbers(config)
+    players = {(player[0], number): player
+               for player in config.get("players", {}) if (number := numbers.get(player)) is not None}
+    for side, table in sides.items():
+        if set(table["verified_pets"]) - table["pets"].keys():
+            raise ValueError(f"verified pet is missing a formation number for side {side}")
+    legacy_unverified = set(config.get("unverified_pet_owners", ()))
+    owners = {}
+    for slot in config.get("pets", {}):
+        side = slot[0]
+        if side in sides:
+            if slot not in sides[side]["verified_pets"]:
+                owners[slot] = None
+                continue
+            owner = players.get((side, numbers[f"{slot}_PET"]))
+            if owner is None:
+                raise ValueError(f"verified pet {slot} has no player with the same formation number")
+            owners[slot] = owner
+        else:
+            owners[slot] = None if slot in legacy_unverified else slot
+    return owners
+
+
 class TeamSide(StrEnum):
     A = "A"
     B = "B"

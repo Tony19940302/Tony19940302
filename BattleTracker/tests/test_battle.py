@@ -70,6 +70,70 @@ def test_use_and_target_at_same_time(engine):
     assert players["A1"].medicine_remaining == 8
 
 
+def test_waived_medicine_is_recorded_without_charging_owner(engine):
+    waived = event("rabbit", actor_id="A_PET_1", target_id="A2",
+                   payload={"medicine_consumption": "waived", "triggered_skill": "寸草心"})
+    engine.record_many([waived, waived, event("regular", time=30, actor_id="A1")])
+    state = engine.state
+    assert state.players["A1"].medicine_used == 1
+    assert state.players["A1"].medicine_remaining == 9
+    assert state.players["A1"].resource_sources["medicine_used"] == "regular"
+    assert state.players["A2"].observed_medicine_delta == 0
+    assert state.event_history[1] == waived
+    assert len(state.event_history) == 3
+
+
+def test_disputed_medicine_waits_for_revision_or_counter_snapshot(engine, layout, tmp_path):
+    disputed = event("rabbit", actor_id="first", payload={"medicine_consumption": "unknown"})
+    engine.record_many([
+        disputed,
+        event("charged", time=30, actor_id="A1", payload={"medicine_consumption": "charged"}),
+    ])
+    state = engine.state
+    assert state.players["A1"].medicine_used == 1
+    assert state.players["A1"].medicine_remaining is None
+    assert state.players["A1"].pending_medicine_event_ids == ("rabbit",)
+    assert "A1:medicine:unresolved_consumption:rabbit" in state.uncertainty_flags
+
+    engine.record(event("limit", Kind.OFFICIAL_SNAPSHOT, 40,
+                        payload={"players": {"A1": {"medicine_limit": 11}}}))
+    assert engine.state.players["A1"].medicine_remaining is None
+    engine.record(event("counter", Kind.OFFICIAL_SNAPSHOT, 50,
+                        payload={"players": {"A1": {"medicine_used": 2}}}))
+    assert engine.state.players["A1"].medicine_remaining == 9
+    assert engine.state.players["A1"].pending_medicine_event_ids == ()
+    assert "A1:medicine:unresolved_consumption:rabbit" not in engine.state.uncertainty_flags
+
+    engine.record(event("waiver", Kind.MANUAL_CORRECTION, 60, revision_of="rabbit",
+                        payload={"changes": {"payload": {"medicine_consumption": "waived"}}}))
+    assert engine.state.players["A1"].medicine_used == 2
+    assert engine.state.event_history[1] == disputed
+    journal = tmp_path / "consumption.jsonl"
+    engine.save(journal)
+    assert BattleStateEngine.load(journal, "match", layout).state == engine.state
+
+
+def test_medicine_charge_revision_replays_against_original_baseline(engine):
+    engine.record(event("rabbit", actor_id="first", payload={"medicine_consumption": "unknown"}))
+    engine.record(event("charged", Kind.MANUAL_CORRECTION, 30, revision_of="rabbit",
+                        payload={"changes": {"payload": {"medicine_consumption": "charged"}}}))
+    assert engine.state.players["A1"].medicine_remaining == 9
+    engine.record(event("waived", Kind.MANUAL_CORRECTION, 40, revision_of="rabbit",
+                        payload={"changes": {"payload": {"medicine_consumption": "waived"}}}))
+    assert engine.state.players["A1"].medicine_remaining == 10
+
+
+def test_invalid_medicine_consumption_is_atomic(engine):
+    before = engine.state
+    with pytest.raises(ValueError, match="invalid medicine consumption"):
+        engine.record_many([event("regular", actor_id="A1"),
+                            event("bad", actor_id="A1", payload={"medicine_consumption": None})])
+    with pytest.raises(ValueError, match="belongs to a medicine action"):
+        engine.record(event("bad-summon", Kind.SUMMON_PET, actor_id="A1",
+                            payload={"medicine_consumption": "waived"}))
+    assert engine.state == before
+
+
 def test_initial_pet_and_replacement(engine):
     assert engine.state.players["A1"].pet_used == 1
     engine.record(event("dead", Kind.PET_DEPARTURE, 20, actor_id="first",

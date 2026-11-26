@@ -13,3 +13,13 @@
 - 独立复验两项回归测试通过。首版标签的端到端验证 23 项均通过，包含 44 项单元和集成测试。见 [验证报告](../reports/phase-06-overlap.json)。
 - 扩充标签后，重新执行 `python tools/evaluate_phase6.py --export-evidence` 和 `python -m pytest -q`。44 项测试通过。普通版匹配 5 次已标注用药，记对 4 次主人。第 13 回合末以前的 10 次召唤全部漏报。回合末 121/253 项计数一致。见 [最新标注](../../data/annotations/bird-mirror-reviewed-events.json)和[复验结果](../../outputs/phase-06/bird-evaluation.json)。
 - 补充核对确认开场有 4 条用药误报。剩余 55 条候选仍缺少事件证据。两段录像均未覆盖终局，完整比赛精确率、最终计数一致率和实时识别延迟待验证。见 [开场误报证据](../../outputs/phase-06/bird-opening-diagnostic.json)。
+
+## 第五批人工反馈独立复核
+
+- 核对 15 条参考的唯一性。只有 `BM-M02` 的施药者和对应证据更新，药次 `3/10 → 4/10`、主人、受药者和两个时间窗一致。两份原片与复核短片哈希相符，两份原片归入同一测试组。见 [反馈标注](../../data/annotations/human-review-05.json)。
+- 独立复跑评估测试 6 项通过。参战模拟默认预测的事件分项汇总及检查点计数逐项一致，`BM-M02` 仍漏报。普通观战基线与冻结补判实验均匹配该样本的施药者。此场当前只有一条施药者已确认的宠物用药参考。见 [复评](../../outputs/phase-06/user-review-followup/bird-medicine-review-comparison.json)及[重叠区间验证](../reports/phase-06-feedback-super-horse.json)。
+
+## 第七批人工反馈独立复核
+
+- 核对四份普通与详细源录像和三段短片的哈希。详细版 66.895 秒 `0/10` 和 66.912 秒 `1/10` 均在左 1 同一位置，两版画面配对交叉验证。G 的实际施药时点待核，左 2 攻击已确认。见 [独立计数原帧](../../outputs/phase-06/feedback-07/independent-counter-every-frame.png)及[反馈记录](../../data/annotations/human-review-07.json)。
+- 通过 7 项专项测试。旧标注在原预测下的匹配、误报与累计指标逐项复算一致。修订标注后，鸟翔 #5 计入用药误报，`BM-M03` 留在计数观察中，风扬分队结果一致。两场的训练与测试分组保留。见 [参战模拟复评](../../outputs/phase-06/feedback-07/bird-metrics.json)及[重叠区间验证](../reports/phase-06-feedback-g-attack.json)。

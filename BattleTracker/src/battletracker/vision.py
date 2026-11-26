@@ -6,6 +6,9 @@ import av
 import cv2
 import numpy as np
 
+from .formation import vision_pet_owners
+from .medicine_vision import MEDICINE_TRIGGER_SKILLS, attach_medicine_trigger_hints
+
 
 def enemy_gauge_rectangles(config):
     """Approximate replay gauge regions using calibrated 700×320 slot offsets."""
@@ -221,19 +224,29 @@ def observe(path, config, template_path=None, template_config=None, *, observers
 
 def classify(timeline, cues, healing, config, *, include_medicine=True):
     events = []
+    pet_owners = vision_pet_owners(config)
+
+    def owner_for(actor):
+        if actor and actor.endswith("_PET"):
+            slot = actor.removesuffix("_PET")
+            return pet_owners.get(slot, slot)
+        return actor
+
     skills = [(actor, name, cue) for (kind, actor, name), cue in cues if kind == "skill"]
     for actor, name, cue in skills:
         events.append(dict(event_type="SKILL", skill=name, actor_id=actor,
-                           owner_id=actor.removesuffix("_PET") if actor else None,
+                           owner_id=owner_for(actor),
                            target_id=None, start_ms=cue.start, end_ms=cue.end, time_ms=cue.start,
                            status="candidate", evidence={"glyph_template_score": round(cue.peak, 3)}))
 
-    for (kind, owner, _), cue in cues:
+    for (kind, pet_slot, _), cue in cues:
         if kind != "portal":
             continue
-        before = [sample[2][owner] for sample in timeline
+        owner = pet_owners.get(pet_slot, pet_slot)
+        pet_actor = f"{pet_slot}_PET"
+        before = [sample[2][pet_slot] for sample in timeline
                   if cue.start - 500 <= sample[0] < cue.start - 90]
-        after = [sample[2][owner] for sample in timeline
+        after = [sample[2][pet_slot] for sample in timeline
                  if cue.end + 160 <= sample[0] <= cue.end + 650]
         difference = (float(np.abs(np.median(before, axis=0) - np.median(after, axis=0)).sum())
                       if before and after else 0.0)
@@ -241,13 +254,13 @@ def classify(timeline, cues, healing, config, *, include_medicine=True):
                             if cue.start - 450 <= sample[0] <= cue.start + 80), default=0)
         exclusion = [name for actor, name, skill in skills
                      if name in {"死亡召唤", "高级神佑复生"}
-                     and actor in {None, f"{owner}_PET"}
+                     and actor in {None, pet_actor}
                      and skill.start <= cue.end + 120 and skill.end >= cue.start - 120]
-        corroborated = (difference >= config["thresholds"]["pet_change"]
+        corroborated = (owner is not None and difference >= config["thresholds"]["pet_change"]
                         and actor_motion >= 0.07 and not exclusion)
         events.append(dict(event_type="SUMMON_PET" if corroborated else "UNKNOWN",
                            actor_id=owner if corroborated else None, owner_id=owner,
-                           target_id=f"{owner}_PET", start_ms=cue.start, end_ms=cue.end,
+                           target_id=pet_actor, start_ms=cue.start, end_ms=cue.end,
                            time_ms=cue.end, status="candidate",
                            evidence={"portal_score": round(cue.peak, 3),
                                      "pet_appearance_change": round(difference, 3),
@@ -261,19 +274,24 @@ def classify(timeline, cues, healing, config, *, include_medicine=True):
                 for actor, value in activity.items():
                     motion[actor] = max(motion.get(actor, 0), value)
         ranking = sorted(motion.items(), key=lambda item: (-item[1], item[0]))[:3]
-        blocked = [name for _, name, skill in skills if skill.start <= cue.start + 80
-                   and skill.end >= cue.start - 550]
+        blocked = [name for _, name, skill in skills if name not in MEDICINE_TRIGGER_SKILLS
+                   and skill.start <= cue.start + 80 and skill.end >= cue.start - 550]
         top = ranking[0][1] if ranking else 0
         margin = top - ranking[1][1] if len(ranking) >= 2 else 0
         actor = ranking[0][0] if top >= 0.14 and margin >= 0.07 and not blocked else None
+        owner = owner_for(actor)
+        evidence = {"heal_area": cue.peak,
+                    "actor_motion_candidates": [[key, round(value, 3)] for key, value in ranking],
+                    "nearby_skill_templates": blocked}
+        if actor and owner is None:
+            actor = None
+            evidence["ownership_status"] = "unverified_pet_mapping"
         event_type = "NON_MEDICINE" if blocked else ("USE_MEDICINE" if actor else "UNKNOWN")
         events.append(dict(event_type=event_type, actor_id=actor,
-                           owner_id=actor.removesuffix("_PET") if actor else None,
+                           owner_id=owner,
                            target_id=target, start_ms=cue.start, end_ms=cue.end, time_ms=cue.start,
-                           status="candidate", evidence={"heal_area": cue.peak,
-                           "actor_motion_candidates": [[key, round(value, 3)] for key, value in ranking],
-                           "nearby_skill_templates": blocked}))
-    return sorted(events, key=lambda row: (row["time_ms"], row["event_type"]))
+                           status="candidate", evidence=evidence))
+    return attach_medicine_trigger_hints(sorted(events, key=lambda row: (row["time_ms"], row["event_type"])), skills)
 
 
 

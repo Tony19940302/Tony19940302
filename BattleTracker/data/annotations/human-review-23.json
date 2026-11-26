@@ -1,0 +1,55 @@
+{
+  "version": "human-review-23",
+  "feedback_source": "用户复核风扬第 15 回合末 801",
+  "cases": [
+    {
+      "case_id": "WC-R15-R5-revival-801",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "round": 15,
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "source_window_ms": [395650, 400150],
+      "review_media": "outputs/phase-06/medicine-active-review-20261124/positives/wind-397-ordinary.mp4",
+      "review_media_sha256": "4e047158de4c47d04dcf5db3dcc8b1bb24263c09b9b8a2e514a4d8bf553d7a0a",
+      "actions": [
+        {
+          "action_id": "WC-R15-R5-pet-revival",
+          "sample_id": "WC-M46",
+          "event_type": "USE_MEDICINE",
+          "effect": "MEDICINE_REVIVAL",
+          "actor_id": "R5_PET",
+          "actor_name": "迟不得",
+          "owner_id": "R5",
+          "target_id": "R2",
+          "observed_recovery": 801,
+          "first_visible_ms": 397251.800,
+          "action_review_status": "confirmed_by_user",
+          "counter_link_status": "verified",
+          "native_counter_observation": {
+            "source_asset": "detailed-224507",
+            "source_sha256": "6ca3e1b7ae59512122682889e0bbbc0b2b08d2d2b76c490bf70b6ac1c133213b",
+            "first_green_at_ms": 397439.589,
+            "detailed_interval_ms": [397439.589, 397456.378],
+            "before": "5/11",
+            "after": "6/11"
+          }
+        }
+      ],
+      "other_visible_recovery": {
+        "target_id": "R3",
+        "first_visible_ms": 397301.789,
+        "observed_recovery": 580,
+        "scope": "邻近粉红莲花和另一位人物的回复。用户答复限于前一笔 801。"
+      },
+      "feedback": "是右5的宠物“迟不得”施药复活了右2人物",
+      "evidence": [
+        "outputs/phase-06/medicine-active-review-20261124/positives/wind-397-ordinary-native.jpg",
+        "outputs/phase-06/medicine-active-review-20261124/positives/wind-397-detailed-native.jpg",
+        "outputs/phase-06/revival-body-20261126/flow/wind-r15-user-followup.json",
+        "outputs/phase-06/revival-body-20261126/wind-r15-native-number-shapes.json"
+      ],
+      "status": "reviewed"
+    }
+  ]
+}

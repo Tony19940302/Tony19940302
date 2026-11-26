@@ -1,0 +1,34 @@
+{
+  "version": "human-review-15",
+  "feedback_source": "用户复核鸟翔镜像第 9 回合左侧人物举起金色武器的普通版短片",
+  "cases": [
+    {
+      "sample_id": "BM-M06",
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "round": 9,
+      "source_video_id": "clean-221123",
+      "source_sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "source_window_ms": [215800, 218800],
+      "review_media": "outputs/phase-06/medicine-review-20261125/audit/bird/L2-counter-gap-tight-ordinary.mp4",
+      "review_media_sha256": "2b4d8e8c4073274e0a696c90263b6b5cbda88f1b760859d2ce231091f9835e3f",
+      "event_type": "USE_MEDICINE",
+      "actor_id": "L2",
+      "owner_id": "L2",
+      "target_id": "L5",
+      "ordinary_actor_animation_ms": [216126, 217093],
+      "native_counter_observation": {"detailed_interval_ms": [218351, 218367], "before": "0/10", "after": "1/10"},
+      "feedback": ["用药", "给5号人物用药"],
+      "annotation_note": "问题指向画面最左侧举起金色武器的左 2 人物。受药的 5 号解释为同侧左 5。药品、恢复资源种类、效果起始时刻仍为未知。",
+      "evidence": [
+        "outputs/phase-06/medicine-review-20261125/audit/bird/L2-counter-gap-tight-provenance.json",
+        "outputs/phase-06/medicine-review-20261125/audit/bird/L2-counter-boundary.jpg",
+        "outputs/phase-06/medicine-feedback-20261125/bird/L2-masked-contact.jpg",
+        "outputs/phase-06/medicine-feedback-20261125/bird/local-medicine-observer.json",
+        "outputs/phase-06/medicine-feedback-20261125/bird/bird-l2-l5-native-masked.jpg",
+        "outputs/phase-06/medicine-feedback-20261125/bird/bird-l2-l5-native-observations.json"
+      ],
+      "status": "reviewed"
+    }
+  ]
+}

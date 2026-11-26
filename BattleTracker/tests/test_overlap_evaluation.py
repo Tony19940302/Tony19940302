@@ -50,6 +50,68 @@ def test_checkpoint_uses_known_baseline_and_preserves_uncertain_last_read(monkey
                                         [6, 3, "2/10 ?"]], ["L1"], alignment, 100, set())
 
 
+def test_counter_metrics_keep_waivers_and_unresolved_cost_out_of_charged_events(monkeypatch):
+    monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[1] / "tools"))
+    from evaluate_phase6 import checkpoint_metrics, event_metrics
+
+    waived = dict(prediction(1, 1500), payload={"medicine_consumption": "waived"})
+    unknown = dict(prediction(2, 2500), payload={"medicine_consumption": "unknown"})
+    charged = prediction(3, 2700)
+    reference = dict(sample_id="normal", event_type="USE_MEDICINE", owner_id="L1", actor_id="L1_PET",
+                     target_id="L2", mapped_counter_interval_ms=[2600, 2750])
+    report = event_metrics([waived, unknown, charged], [reference], [], (0, 4000), 150,
+                           complete_window=(0, 4000))
+    assert not report["verified_false_positives"]
+    assert report["unverified_predictions"] == [unknown]
+    assert report["matches"][0]["prediction"] == charged
+
+    alignment = TimeAlignment([Anchor("a", 0, 0, "a", 1), Anchor("b", 4000, 4000, "b", 3)])
+    counts = checkpoint_metrics([waived, unknown, charged], [[0, 1, "2/10 1/6"], [2, 1, "2/10 1/6"],
+                                                           [4, 3, "3/10 1/6"]],
+                                ["L1"], alignment, 0, {2, 4})
+    first, last = counts["checkpoints"]
+    assert first["fields"][0]["candidate_used"] == 2
+    assert first["summary"]["matching"] == 2
+    assert last["fields"][0]["unresolved_prediction_ids"] == [2]
+    assert last["fields"][0]["error"] is None
+    assert last["summary"]["compared"] == last["summary"]["unresolved_consumption"] == 1
+
+
+def test_reviewed_attack_cannot_claim_nearby_medicine_reference(monkeypatch):
+    monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[1] / "tools"))
+    from evaluate_phase6 import event_metrics, event_metrics_by_side
+
+    reference = dict(sample_id="medicine", event_type="USE_MEDICINE", owner_id="L1",
+                     actor_id="L1_PET", target_id="L2", mapped_counter_interval_ms=[995, 1010])
+    attack = dict(actor_id="L2_PET", misclassified_as="USE_MEDICINE",
+                  clip_start_ms=900, clip_end_ms=1100)
+    rows = [prediction(1, 1000, "L2", "L2_PET"), prediction(2, 1050),
+            prediction(3, 1700, "L2", "L2_PET")]
+
+    report = event_metrics(rows, [reference], [], [0, 2500], 500, non_resource_actions=[attack])
+    assert report["verified_false_positives"] == [rows[0]]
+    assert report["matches"][0]["prediction"] == rows[1]
+    assert report["unverified_predictions"] == [rows[2]]
+    by_side = event_metrics_by_side(rows, [reference], [], [0, 2500], 500,
+                                    complete_window=None, non_resource_actions=[attack])
+    assert by_side["L"]["verified_false_positive_ids"] == [1]
+    assert by_side["L"]["matches"][0]["prediction_id"] == 2
+
+
+def test_end_of_round_heal_can_mark_false_use_without_a_known_caster(monkeypatch):
+    monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[1] / "tools"))
+    from evaluate_phase6 import event_metrics
+
+    periodic_heal = dict(actor_id=None, misclassified_actor_id="R2_PET", misclassified_as="USE_MEDICINE",
+                         clip_start_ms=900, clip_end_ms=1100)
+    rows = [prediction(1, 1000, "R2", "R2_PET"), prediction(2, 1000, "R1", "R1_PET"),
+            prediction(3, 1200, "R2", "R2_PET"), prediction(4, 1050, "R2", "R2_PET", "SUMMON_PET")]
+
+    report = event_metrics(rows, [], [], [0, 2500], 500, non_resource_actions=[periodic_heal])
+    assert report["verified_false_positives"] == [rows[0]]
+    assert report["unverified_predictions"] == rows[1:]
+
+
 def test_complete_replay_requires_events_to_agree_at_every_round_end(monkeypatch):
     monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[1] / "tools"))
     from evaluate_phase6 import checkpoint_metrics, completion_metrics
@@ -61,6 +123,10 @@ def test_complete_replay_requires_events_to_agree_at_every_round_end(monkeypatch
     change = dict(owner_id="L1", event_type="USE_MEDICINE", after="1/10",
                   detailed_interval_ms=[850, 1000], mapped_counter_interval_ms=[850, 1000])
     assert completion_metrics(end, counts, [change], 500)["complete_event_reference"]
+    counter_only = completion_metrics(end, counts, [], 500, counter_only_changes=[change])
+    assert counter_only["terminal_counts_complete"] and counter_only["complete_round_end_checkpoints"]
+    assert not counter_only["checkpoint_conflicts"]
+    assert not counter_only["complete_event_reference"]
     misplaced = dict(change, detailed_interval_ms=[1400, 1500], mapped_counter_interval_ms=[1400, 1500])
     report = completion_metrics(end, counts, [misplaced], 500)
     assert report["terminal_counts_complete"] and not report["complete_event_reference"]
@@ -116,3 +182,20 @@ def test_wrong_side_time_match_is_a_side_false_positive_and_miss(monkeypatch):
     assert sides["L"]["by_event_type"]["USE_MEDICINE"]["hits"] == 0
     assert sides["R"]["missed_sample_ids"] == ["r1"]
     assert sides["R"]["by_event_type"]["USE_MEDICINE"]["hits"] == 0
+
+
+def test_owner_and_time_score_can_match_a_farther_correct_owner(monkeypatch):
+    monkeypatch.syspath_prepend(str(Path(__file__).resolve().parents[1] / "tools"))
+    from evaluate_phase6 import event_metrics
+
+    reference = dict(sample_id="use", owner_id="L4", actor_id=None, target_id=None,
+                     event_type="USE_MEDICINE", mapped_counter_interval_ms=[950, 1000])
+    wrong_owner = prediction(1, 1000, "L2", "L2_PET")
+    right_owner = prediction(2, 1140, "L4", "L4_PET")
+    report = event_metrics([wrong_owner, right_owner], [reference], [], [0, 3000], 200)
+    assert report["matches"][0]["prediction"] == wrong_owner
+    assert report["by_event_type"]["USE_MEDICINE"]["owner_and_time_hits"] == 1
+
+    wrong_only = event_metrics([wrong_owner], [reference], [], [0, 3000], 200)
+    assert wrong_only["by_event_type"]["USE_MEDICINE"]["hits"] == 1
+    assert wrong_only["by_event_type"]["USE_MEDICINE"]["owner_and_time_hits"] == 0

@@ -1,5 +1,5 @@
 {
-  "version": "wind-cloud-reviewed-events-v1",
+  "version": "wind-cloud-reviewed-events-v9",
   "battle_id": "replay-2026-11-19-wind-cloud",
   "clean_asset_id": "clean-223619",
   "detailed_asset_id": "detailed-224507",
@@ -124,9 +124,10 @@
       ],
       "before": "1/6",
       "after": "2/6",
-      "note": "详细版相邻计数帧人工复核。",
+      "note": "详细版相邻计数帧人工复核。用户确认左方 5 号人物扬手后，宠物「高神爆爆爆」出现在其固定宠位。",
       "evidence": [
-        "outputs/phase-06/final-intake/changes-1-0.png"
+        "outputs/phase-06/final-intake/changes-1-0.png",
+        "data/annotations/human-review-06.json"
       ]
     },
     {
@@ -182,8 +183,8 @@
       "round": 4,
       "event_type": "USE_MEDICINE",
       "owner_id": "L4",
-      "actor_id": null,
-      "target_id": null,
+      "actor_id": "L4",
+      "target_id": "L5",
       "clip_start_ms": 91473,
       "clip_end_ms": 93323,
       "mapped_counter_interval_ms": [
@@ -196,9 +197,10 @@
       ],
       "before": "3/10",
       "after": "4/10",
-      "note": "详细版相邻计数帧人工复核。",
+      "note": "详细版相邻计数帧人工复核。用户根据左方 4 号人物大幅抬手的施法动作，确认由其施药，左方 5 号人物受药。",
       "evidence": [
-        "outputs/phase-06/final-intake/changes-0-0.png"
+        "outputs/phase-06/final-intake/changes-0-0.png",
+        "data/annotations/human-review-07.json"
       ]
     },
     {
@@ -278,8 +280,8 @@
       "round": 5,
       "event_type": "USE_MEDICINE",
       "owner_id": "L1",
-      "actor_id": null,
-      "target_id": null,
+      "actor_id": "L1_PET",
+      "target_id": "L5",
       "clip_start_ms": 115476,
       "clip_end_ms": 117327,
       "mapped_counter_interval_ms": [
@@ -292,9 +294,10 @@
       ],
       "before": "0/10",
       "after": "1/10",
-      "note": "详细版相邻计数帧人工复核。",
+      "note": "详细版相邻计数帧人工复核。用户确认左方 1 号宠物施药，左方 5 号人物受药。",
       "evidence": [
-        "outputs/phase-06/final-intake/changes-0-0.png"
+        "outputs/phase-06/final-intake/changes-0-0.png",
+        "data/annotations/human-review-06.json"
       ]
     },
     {
@@ -326,8 +329,8 @@
       "round": 5,
       "event_type": "USE_MEDICINE",
       "owner_id": "L4",
-      "actor_id": null,
-      "target_id": null,
+      "actor_id": "L4_PET",
+      "target_id": "L1",
       "clip_start_ms": 120709,
       "clip_end_ms": 122558,
       "mapped_counter_interval_ms": [
@@ -340,9 +343,10 @@
       ],
       "before": "4/10",
       "after": "5/10",
-      "note": "详细版相邻计数帧人工复核。",
+      "note": "用户确认绿色 207 为左 4 宠物给左 1 人物用药。原始计数区间保留。",
       "evidence": [
-        "outputs/phase-06/final-intake/changes-0-0.png"
+        "outputs/phase-06/final-intake/changes-0-0.png",
+        "data/annotations/human-review-13.json"
       ]
     },
     {
@@ -440,60 +444,6 @@
       "evidence": [
         "outputs/phase-06/final-intake/changes-0-0.png"
       ]
-    },
-    {
-      "sample_id": "WC-M14",
-      "round": 6,
-      "event_type": "USE_MEDICINE",
-      "owner_id": "R2",
-      "actor_id": null,
-      "target_id": null,
-      "clip_start_ms": 168651,
-      "clip_end_ms": 170268,
-      "mapped_counter_interval_ms": [
-        169551,
-        169568
-      ],
-      "detailed_interval_ms": [
-        169459,
-        169476
-      ],
-      "before": "2/10",
-      "after": "3/10",
-      "note": "详细版相邻计数帧人工复核。 同帧两人药次各加一，普通版多单位同时回复，施法归属无法逐笔区分。",
-      "evidence": [
-        "outputs/phase-06/final-intake/changes-0-0.png",
-        "outputs/phase-06/final-intake/simultaneous-r6-detail.png",
-        "outputs/phase-06/final-intake/simultaneous-r6-clean.jpg"
-      ],
-      "timing_group": "r6-simultaneous"
-    },
-    {
-      "sample_id": "WC-M15",
-      "round": 6,
-      "event_type": "USE_MEDICINE",
-      "owner_id": "R3",
-      "actor_id": null,
-      "target_id": null,
-      "clip_start_ms": 168651,
-      "clip_end_ms": 170268,
-      "mapped_counter_interval_ms": [
-        169551,
-        169568
-      ],
-      "detailed_interval_ms": [
-        169459,
-        169476
-      ],
-      "before": "1/10",
-      "after": "2/10",
-      "note": "详细版相邻计数帧人工复核。 同帧两人药次各加一，普通版多单位同时回复，施法归属无法逐笔区分。",
-      "evidence": [
-        "outputs/phase-06/final-intake/changes-0-0.png",
-        "outputs/phase-06/final-intake/simultaneous-r6-detail.png",
-        "outputs/phase-06/final-intake/simultaneous-r6-clean.jpg"
-      ],
-      "timing_group": "r6-simultaneous"
     },
     {
       "sample_id": "WC-M16",
@@ -671,36 +621,12 @@
       ]
     },
     {
-      "sample_id": "WC-M22",
-      "round": 8,
-      "event_type": "USE_MEDICINE",
-      "owner_id": "R3",
-      "actor_id": null,
-      "target_id": null,
-      "clip_start_ms": 225172,
-      "clip_end_ms": 227023,
-      "mapped_counter_interval_ms": [
-        226072,
-        226323
-      ],
-      "detailed_interval_ms": [
-        226003,
-        226253
-      ],
-      "before": "3/10",
-      "after": "4/10",
-      "note": "详细版相邻计数帧人工复核。",
-      "evidence": [
-        "outputs/phase-06/final-intake/changes-0-15.png"
-      ]
-    },
-    {
       "sample_id": "WC-M23",
       "round": 9,
       "event_type": "USE_MEDICINE",
       "owner_id": "L1",
-      "actor_id": null,
-      "target_id": null,
+      "actor_id": "L1_PET",
+      "target_id": "L1",
       "clip_start_ms": 230684,
       "clip_end_ms": 232785,
       "mapped_counter_interval_ms": [
@@ -713,9 +639,11 @@
       ],
       "before": "4/10",
       "after": "5/10",
-      "note": "详细版相邻计数帧人工复核。",
+      "note": "详细版相邻计数帧人工复核。用户确认左1宠物施药复活左1人物，恢复835。",
       "evidence": [
-        "outputs/phase-06/final-intake/changes-0-15.png"
+        "outputs/phase-06/final-intake/changes-0-15.png",
+        "data/annotations/human-review-25.json",
+        "outputs/phase-06/medicine-pet-presence-20261126/review/wind-231849-detailed-native.jpg"
       ]
     },
     {
@@ -967,8 +895,8 @@
       "round": 11,
       "event_type": "USE_MEDICINE",
       "owner_id": "L5",
-      "actor_id": null,
-      "target_id": null,
+      "actor_id": "L5_PET",
+      "target_id": "L2",
       "clip_start_ms": 293769,
       "clip_end_ms": 295619,
       "mapped_counter_interval_ms": [
@@ -981,9 +909,10 @@
       ],
       "before": "1/10",
       "after": "2/10",
-      "note": "详细版相邻计数帧人工复核。",
+      "note": "用户确认左 5 宠物用药复活左 2，绿字 825；后续左 4 回生和右方莲花回血分别保留。",
       "evidence": [
-        "outputs/phase-06/final-intake/changes-0-15.png"
+        "outputs/phase-06/final-intake/changes-0-15.png",
+        "data/annotations/human-review-12.json"
       ]
     },
     {
@@ -1500,8 +1429,8 @@
       "round": 15,
       "event_type": "USE_MEDICINE",
       "owner_id": "R5",
-      "actor_id": null,
-      "target_id": null,
+      "actor_id": "R5_PET",
+      "target_id": "R2",
       "clip_start_ms": 396167,
       "clip_end_ms": 398017,
       "mapped_counter_interval_ms": [
@@ -1514,9 +1443,11 @@
       ],
       "before": "5/11",
       "after": "6/11",
-      "note": "详细版相邻计数帧人工复核。",
+      "note": "详细版相邻计数帧人工复核。用户确认右5宠物「迟不得」施药复活右2人物，恢复801。",
       "evidence": [
-        "outputs/phase-06/final-intake/changes-0-45.png"
+        "outputs/phase-06/final-intake/changes-0-45.png",
+        "data/annotations/human-review-23.json",
+        "outputs/phase-06/medicine-active-review-20261124/positives/wind-397-detailed-native.jpg"
       ]
     },
     {
@@ -1644,8 +1575,8 @@
       "round": 16,
       "event_type": "USE_MEDICINE",
       "owner_id": "R5",
-      "actor_id": null,
-      "target_id": null,
+      "actor_id": "R5_PET",
+      "target_id": "R2",
       "clip_start_ms": 423664,
       "clip_end_ms": 425514,
       "mapped_counter_interval_ms": [
@@ -1658,9 +1589,10 @@
       ],
       "before": "6/11",
       "after": "7/11",
-      "note": "详细版相邻计数帧人工复核。",
+      "note": "用户确认右 5 宠物用药复活右 2，绿字 801；旁边 487 属莲花回血，位置归属另行保留。",
       "evidence": [
-        "outputs/phase-06/final-intake/changes-0-45.png"
+        "outputs/phase-06/final-intake/changes-0-45.png",
+        "data/annotations/human-review-12.json"
       ]
     },
     {
@@ -1860,8 +1792,8 @@
       "round": 18,
       "event_type": "USE_MEDICINE",
       "owner_id": "L5",
-      "actor_id": null,
-      "target_id": null,
+      "actor_id": "L5_PET",
+      "target_id": "L2",
       "clip_start_ms": 467363,
       "clip_end_ms": 469212,
       "mapped_counter_interval_ms": [
@@ -1874,9 +1806,95 @@
       ],
       "before": "7/10",
       "after": "8/10",
-      "note": "详细版相邻计数帧人工复核。",
+      "note": "用户确认左 5 宠物施药复活左 2。普通版 468.286 秒可见绿色 825，详细版原药次区间保留。",
       "evidence": [
-        "outputs/phase-06/final-intake/changes-0-45.png"
+        "outputs/phase-06/final-intake/changes-0-45.png",
+        "data/annotations/human-review-14.json",
+        "outputs/phase-06/medicine-review-20261125/review/wind-468-ordinary-native.jpg",
+        "outputs/phase-06/medicine-review-20261125/review/wind-468-detailed-native.jpg"
+      ]
+    }
+  ],
+  "counter_only_changes": [
+    {
+      "sample_id": "WC-M14",
+      "round": 6,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R2",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 168651,
+      "clip_end_ms": 170268,
+      "mapped_counter_interval_ms": [169551, 169568],
+      "detailed_interval_ms": [169459, 169476],
+      "before": "2/10",
+      "after": "3/10",
+      "note": "用户确认短片右方是自动回血。药瓶刷新与第 7 回合数字同帧，关联动作未知，保留为计数观察。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png",
+        "outputs/phase-06/final-intake/simultaneous-r6-detail.png",
+        "outputs/phase-06/final-intake/simultaneous-r6-clean.jpg",
+        "outputs/phase-06/staggered-heal-20261124/review/wind-169-native-counters.jpg",
+        "data/annotations/human-review-10.json"
+      ],
+      "timing_group": "r6-simultaneous"
+    },
+    {
+      "sample_id": "WC-M15",
+      "round": 6,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 168651,
+      "clip_end_ms": 170268,
+      "mapped_counter_interval_ms": [169551, 169568],
+      "detailed_interval_ms": [169459, 169476],
+      "before": "1/10",
+      "after": "2/10",
+      "note": "用户确认短片右方是自动回血。药瓶刷新与第 7 回合数字同帧，关联动作未知，保留为计数观察。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-0.png",
+        "outputs/phase-06/final-intake/simultaneous-r6-detail.png",
+        "outputs/phase-06/final-intake/simultaneous-r6-clean.jpg",
+        "outputs/phase-06/staggered-heal-20261124/review/wind-169-native-counters.jpg",
+        "data/annotations/human-review-10.json"
+      ],
+      "timing_group": "r6-simultaneous"
+    },
+    {
+      "sample_id": "WC-M22",
+      "round": 8,
+      "event_type": "USE_MEDICINE",
+      "owner_id": "R3",
+      "actor_id": null,
+      "target_id": null,
+      "clip_start_ms": 225172,
+      "clip_end_ms": 227023,
+      "mapped_counter_interval_ms": [226072, 226089],
+      "detailed_interval_ms": [226003, 226020],
+      "before": "3/10",
+      "after": "4/10",
+      "note": "详细版从第 8 回合切入第 9 回合时才刷新。第 8 回合 210.052 秒已独立确认右 3 宠位施药。动作与本条药瓶刷新一致，但尚缺逐条唯一对应证据，此处只验证读数及刷新时间。",
+      "evidence": [
+        "outputs/phase-06/final-intake/changes-0-15.png",
+        "outputs/phase-06/dragon-revival-followup-20261126/wind-961-detail-round-change.jpg",
+        "data/annotations/human-review-26.json"
+      ]
+    }
+  ],
+  "hard_negatives": [
+    {
+      "sample_id": "WC-R4-child-01",
+      "event_type": "SUMMON_CHILD",
+      "actor_id": "R4",
+      "clip_start_ms": 434300,
+      "clip_end_ms": 435300,
+      "misclassified_as": "SUMMON_PET",
+      "note": "用户确认右 4 的入场模型为孩子小星星。详细版宠次保持 1/6。同期召唤灵候选按错计宠次复核。",
+      "evidence": [
+        "data/annotations/human-review-03.json",
+        "outputs/phase-06/pet-vacancy-multicue/report/wind-cloud-fp-170-detailed.jpg"
       ]
     }
   ],

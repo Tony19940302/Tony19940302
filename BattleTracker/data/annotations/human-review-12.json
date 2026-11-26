@@ -1,0 +1,56 @@
+{
+  "version": "human-review-12",
+  "feedback_source": "用户复核风扬对云垂切回合前的两段普通版录像",
+  "cases": [
+    {
+      "id": "A",
+      "sample_id": "WC-M49",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "round": 16,
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "source_window_ms": [423100, 427200],
+      "review_media": "outputs/phase-06/medicine-active-review-20261124/positives/wind-424-ordinary.mp4",
+      "review_media_sha256": "bcf127c166bbdbf90d2343cea81a3ce18d93c8d66717b05dad76a695e4049a05",
+      "actions": [
+        {"event_type": "USE_MEDICINE", "effect": "MEDICINE_REVIVAL", "actor_id": "R5_PET", "owner_id": "R5", "target_id": "R2", "observed_recovery": 801, "first_visible_ms": 424764.033},
+        {"event_type": "NON_RESOURCE_SKILL", "effect": "PUTUO_PERIODIC_HEAL", "actor_id": null, "observed_recovery": 487, "first_visible_ms": 424797.4, "user_target_id": "R2", "visual_target_hint": "R3", "target_status": "unresolved_slot_disagreement"}
+      ],
+      "ordinary_round_switch_ms": 424897.356,
+      "reviewed_sides": ["R"],
+      "feedback": "右 5 宠物用药拉起右 2，出绿字 801。487 为莲花状态的回合末回血。",
+      "evidence": [
+        "outputs/phase-06/medicine-active-review-20261124/positives/wind-424-ordinary-native.jpg",
+        "outputs/phase-06/medicine-active-review-20261124/positives/wind-424-detailed-native.jpg"
+      ],
+      "status": "reviewed"
+    },
+    {
+      "id": "B",
+      "sample_id": "WC-M30",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "round": 11,
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "source_window_ms": [293300, 298000],
+      "review_media": "outputs/phase-06/medicine-active-review-20261124/review-wind/wind-295-ordinary.mp4",
+      "review_media_sha256": "650a5504c5eb42ef5317aa1b6e5e3497a889f06c8a118960d6d0fc4a29a6c792",
+      "actions": [
+        {"event_type": "USE_MEDICINE", "effect": "MEDICINE_REVIVAL", "actor_id": "L5_PET", "owner_id": "L5", "target_id": "L2", "observed_recovery": 825, "first_visible_ms": 294871.833},
+        {"event_type": "NON_RESOURCE_SKILL", "effect": "PASSIVE_REVIVAL", "actor_id": "L4", "target_id": "L4", "skill_name": "回生", "observed_recovery": 1943},
+        {"event_type": "NON_RESOURCE_SKILL", "effect": "PUTUO_PERIODIC_HEAL", "actor_id": null, "observed_recipient_ids": ["R1", "R2", "R4"]}
+      ],
+      "ordinary_round_switch_ms": 295954.578,
+      "reviewed_sides": ["L", "R"],
+      "feedback": "左 5 宠物用药复活左 2，恢复 825。切回合时左 4 触发被动回生，恢复 1943。右 1、右 2、右 4 为普陀山莲花回血。",
+      "evidence": [
+        "outputs/phase-06/medicine-active-review-20261124/review-wind/wind-295-ordinary-contact.jpg",
+        "outputs/phase-06/medicine-active-review-20261124/review-wind/wind-295-first-detail-native.jpg",
+        "outputs/phase-06/medicine-active-review-20261124/review-wind/wind-295-switch-detail-native.jpg"
+      ],
+      "status": "reviewed"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "version": "human-review-10",
+  "feedback_source": "用户复核龙飞第 13 回合末和风扬第 6 回合末普通版短片",
+  "cases": [
+    {
+      "sample_id": "DT-R13-putuo-periodic-heal",
+      "battle_id": "user-20261118-dragon-tiger-01",
+      "dataset_split": "validation",
+      "round": 13,
+      "source_video_id": "clean-001110",
+      "source_sha256": "d7f2600d3ce78676b046fe110756fe37bc836542bee02ea07b209b6ab32ed0ed",
+      "source_window_ms": [325100, 329600],
+      "review_media": "outputs/phase-06/periodic-heal-20261124/review/dragon-round-13-ordinary.mp4",
+      "review_media_sha256": "d1fd76f0ba603fb1acb86033c48f1d734095fc14a3186d75197065c3223637e6",
+      "event_type": "NON_RESOURCE_SKILL",
+      "effect": "PUTUO_PERIODIC_HEAL",
+      "actor_id": null,
+      "reviewed_side": "R",
+      "confirmed_medicine_events_on_reviewed_side": 0,
+      "observed_recovery_numbers": [514, 429, 580],
+      "counter_observation": {
+        "status": "unchanged_at_reviewed_snapshots",
+        "detailed_asset_id": "detailed-001815",
+        "observed_detailed_interval_ms": [326823, 328073],
+        "right_visible_readings": {"R1": "0/10", "R2": "0/11", "R3": "6/10", "R4": "5/10", "R5": "0/10"}
+      },
+      "feedback": "没有施药，还是普陀的技能，模型头顶有粉红色的花。",
+      "status": "reviewed"
+    },
+    {
+      "sample_id": "WC-R6-periodic-heal",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "round": 6,
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "source_window_ms": [167700, 171700],
+      "review_media": "outputs/phase-06/staggered-heal-20261124/review/wind-169-ordinary.mp4",
+      "review_media_sha256": "15fa30c14aa0c78fde56763a601e8b684d119c70d2c1ec708ab436e5e7c98ce0",
+      "event_type": "NON_RESOURCE_SKILL",
+      "effect": "PERIODIC_HEAL",
+      "actor_id": null,
+      "reviewed_side": "R",
+      "confirmed_medicine_events_in_reviewed_recovery": 0,
+      "observed_recovery_numbers": [290, 580, 580],
+      "counter_observation": {
+        "status": "unlinked_display_change",
+        "detailed_asset_id": "detailed-224507",
+        "detailed_interval_ms": [169459.3, 169475.833],
+        "changed_readings": {"R2": ["2/10", "3/10"], "R3": ["1/10", "2/10"]},
+        "prior_action_reference_ids": ["WC-M14", "WC-M15"],
+        "linked_event_id": null,
+        "evidence": "outputs/phase-06/staggered-heal-20261124/review/wind-169-native-counters.jpg"
+      },
+      "feedback": "全是自动回血。",
+      "annotation_note": "复核范围为第 6 回合切换前后的右侧 290/580/580 绿字。两条同一时段药瓶刷新从动作参考移至读数观察，短片中其他动作及左侧未复核。",
+      "status": "reviewed"
+    }
+  ]
+}

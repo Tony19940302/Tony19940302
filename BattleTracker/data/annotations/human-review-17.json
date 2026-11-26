@@ -1,0 +1,77 @@
+{
+  "version": "human-review-17",
+  "feedback_source": "用户复核鸟翔第 9 回合与风扬第 6 回合的两段同步回血录像",
+  "cases": [
+    {
+      "case_id": "BM-R09-R1-group-heal",
+      "battle_id": "replay-2026-11-19-bird-mirror",
+      "dataset_split": "test",
+      "round": 9,
+      "source_video_id": "clean-221123",
+      "source_sha256": "ad3ea7e9f870b0e392546adebe4119a3d6381ec5ef5c0db1f8b651f18733697d",
+      "source_window_ms": [236650, 239700],
+      "review_media": "outputs/phase-06/group-medicine-20261125/audit/bird-238004-ordinary.mp4",
+      "review_media_sha256": "1ebe431fe065e7515c7670811c428278572f2c563cf82e5eb36a17719164f394",
+      "actions": [
+        {
+          "action_id": "BM-R09-R1-group-medicine",
+          "event_type": "USE_MEDICINE",
+          "effect": "GROUP_HEAL",
+          "actor_id": "R1_PET",
+          "owner_id": "R1",
+          "first_visible_ms": 237937.733,
+          "observed_recoveries": [{"target_id": "R2", "value": 921}, {"target_id": "R3", "value": 590}, {"target_id": "R5_PET", "value": 590}],
+          "recipient_list_complete": false,
+          "counter_link_status": "consistent_with_later_round_refresh"
+        }
+      ],
+      "counter_refresh_observation": {
+        "source_video_id": "detailed-220552",
+        "source_sha256": "be93535fb34ed705498de7b879f3df4603b664834cc3e7ec6421f9f0ec9f726d",
+        "sampled_detailed_interval_ms": [241335, 241415],
+        "round_before": 9,
+        "round_after": 10,
+        "medicine": {"R1": {"before": "3/10", "after": "4/10"}}
+      },
+      "feedback": "是右1的宠物施药",
+      "evidence": [
+        "outputs/phase-06/group-medicine-20261125/audit/bird-238004-provenance.json",
+        "outputs/phase-06/group-medicine-20261125/audit/bird-238004-right-slots.jpg",
+        "outputs/phase-06/group-medicine-20261125/audit/bird-next-round-detailed-grid.jpg"
+      ],
+      "status": "reviewed"
+    },
+    {
+      "case_id": "WC-R06-R3-group-heal",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "round": 6,
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "source_window_ms": [144350, 147400],
+      "review_media": "outputs/phase-06/group-medicine-20261125/audit/wind-145695-ordinary.mp4",
+      "review_media_sha256": "0214b95d0d6d4edaca6c6dfc928b31cbd7a415c998b88b13b871b32d3d5764af",
+      "actions": [
+        {
+          "action_id": "WC-R06-R3-group-medicine",
+          "event_type": "USE_MEDICINE",
+          "effect": "GROUP_HEAL",
+          "actor_id": "R3_PET",
+          "owner_id": "R3",
+          "first_visible_ms": 145662.033,
+          "observed_recoveries": [{"target_id": "R2", "value": 315}, {"target_id": "R5", "value": 949}, {"target_id": "R1_PET", "value": 590}],
+          "recipient_list_complete": false,
+          "counter_link_status": "unresolved"
+        }
+      ],
+      "feedback": "右3的宠物施药",
+      "note": "动作标注与第 6 回合结束处的右 2、右 3 读数变化分开，WC-M14/15 保留原计数证据。",
+      "evidence": [
+        "outputs/phase-06/group-medicine-20261125/audit/wind-145695-provenance.json",
+        "outputs/phase-06/group-medicine-20261125/audit/wind-145695-right-slots.jpg",
+        "outputs/phase-06/group-medicine-20261125/audit/wind-next-round-detailed-grid.jpg"
+      ],
+      "status": "reviewed"
+    }
+  ]
+}

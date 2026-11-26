@@ -1,0 +1,47 @@
+{
+  "version": "human-review-20",
+  "feedback_source": "用户复核龙飞对虎翼第 2 回合群体回血普通录像",
+  "cases": [
+    {
+      "case_id": "DT-R02-left-formation-slot-2-group-heal",
+      "battle_id": "user-20261118-dragon-tiger-01",
+      "dataset_split": "validation",
+      "round": 2,
+      "source_video_id": "clean-001110",
+      "source_sha256": "d7f2600d3ce78676b046fe110756fe37bc836542bee02ea07b209b6ab32ed0ed",
+      "source_window_ms": [30500, 34600],
+      "review_media": "outputs/phase-06/group-nonself-20261125/dragon/dragon-32335-ordinary.mp4",
+      "review_media_sha256": "c298754e9ec4a127ad348337f7f59dffcb3d4e79e2b53c63c107c95ac327002b",
+      "actions": [
+        {
+          "action_id": "DT-R02-left-formation-slot-2-group-medicine",
+          "event_type": "USE_MEDICINE",
+          "effect": "GROUP_HEAL",
+          "side": "L",
+          "formation": "long_fei",
+          "actor_kind": "pet",
+          "actor_model": "水灵兽",
+          "owner_formation_slot": 2,
+          "geometry_actor_id": "L2_PET",
+          "geometry_owner_id": "L4",
+          "first_visible_ms": 32334.922,
+          "observed_recoveries": [
+            {"target_id": "L1", "target_formation_slot": 5, "value": 960},
+            {"target_id": "L2_PET", "target_formation_slot": 2, "value": 615}
+          ],
+          "recipient_list_complete": false,
+          "additional_receiver_observation": {"target_id": "L4_PET", "target_formation_slot": 3, "status": "unknown", "evidence": "同期有橙光，未见可读的回复数字。"},
+          "counter_link_status": "unresolved"
+        }
+      ],
+      "feedback": "2号宠物施药，用的是群体加血药品",
+      "evidence": [
+        "data/annotations/dragon-tiger-formation-crosswalk.json",
+        "outputs/phase-06/group-nonself-20261125/dragon/ordinary-review-provenance.json",
+        "outputs/phase-06/group-nonself-20261125/dragon/dragon-32335-receiver-native-proof.json",
+        "outputs/phase-06/group-nonself-20261125/dragon/dragon-32335-effect-native.jpg"
+      ],
+      "status": "reviewed"
+    }
+  ]
+}

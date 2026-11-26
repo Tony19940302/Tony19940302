@@ -1,0 +1,29 @@
+{
+  "version": "human-review-13",
+  "feedback_source": "用户复核风扬对云垂第 5 回合左方绿色 207",
+  "cases": [
+    {
+      "sample_id": "WC-M10",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "round": 5,
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "source_window_ms": [119450, 123600],
+      "review_media": "outputs/phase-06/medicine-error-20261124/review/wind-121-ordinary.mp4",
+      "review_media_sha256": "57fd2ec296b56a81f72f0e2797591feb9e1cc308086dd5a0f32dd0aa88af8632",
+      "event_type": "USE_MEDICINE",
+      "actor_id": "L4_PET",
+      "owner_id": "L4",
+      "target_id": "L1",
+      "observed_recovery": 207,
+      "first_visible_ordinary_ms": 121780.911,
+      "native_counter_observation": {"detailed_interval_ms": [121741.044, 121757.978], "before": "4/10", "after": "5/10"},
+      "prior_prediction": {"time_ms": 121848, "actor_id": "L2_PET", "owner_id": "L2", "target_id": "L1"},
+      "feedback": "是左 4 宠物对左 1 人物施药了。",
+      "annotation_note": "用户确认范围仅为绿色 207。前面的紫光及 1418 未收到动作标注，原计数区间保留。",
+      "evidence": ["outputs/phase-06/medicine-error-20261124/review/wind-121-ordinary-native.jpg", "outputs/phase-06/medicine-error-20261124/review/wind-121-detailed-native.jpg", "outputs/phase-06/medicine-error-20261124/review/wind-121-provenance.json"],
+      "status": "reviewed"
+    }
+  ]
+}

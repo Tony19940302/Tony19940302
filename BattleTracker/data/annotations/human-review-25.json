@@ -1,0 +1,48 @@
+{
+  "version": "human-review-25",
+  "feedback_source": "用户确认风扬第 9 回合 835 的施药者和受益者",
+  "cases": [
+    {
+      "case_id": "WC-R09-L1-pet-revival-835",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "round": 9,
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "source_window_ms": [230266.744, 234098.144],
+      "review_media": "outputs/phase-06/medicine-pet-presence-20261126/review/wind-231849-ordinary.mp4",
+      "review_media_sha256": "a2463dd0a717b1600135e20f6b7f74507494a419a9a52ff62f0b93c3fdb858b9",
+      "actions": [
+        {
+          "action_id": "WC-R09-L1-pet-resuscitates-owner",
+          "sample_id": "WC-M23",
+          "event_type": "USE_MEDICINE",
+          "effect": "MEDICINE_REVIVAL",
+          "actor_id": "L1_PET",
+          "owner_id": "L1",
+          "target_id": "L1",
+          "formation_slots": {"actor": 1, "owner": 1, "target": 1},
+          "observed_recovery": 835,
+          "first_visible_ms": 231831.322,
+          "action_review_status": "confirmed_by_user",
+          "counter_link_status": "verified",
+          "native_counter_observation": {
+            "source_asset": "detailed-224507",
+            "source_sha256": "6ca3e1b7ae59512122682889e0bbbc0b2b08d2d2b76c490bf70b6ac1c133213b",
+            "first_green_at_ms": 231701.178,
+            "detailed_interval_ms": [231717.933, 231734.322],
+            "before": "4/10",
+            "after": "5/10"
+          }
+        }
+      ],
+      "feedback": "明明就是左1的宠物施药把左1人物复活了",
+      "evidence": [
+        "outputs/phase-06/medicine-pet-presence-20261126/review/wind-231849-native.jpg",
+        "outputs/phase-06/medicine-pet-presence-20261126/review/wind-231849-detailed-native.jpg",
+        "outputs/phase-06/medicine-pet-presence-20261126/review/action-review-leads-replay.json"
+      ],
+      "status": "reviewed"
+    }
+  ]
+}

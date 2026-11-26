@@ -1,0 +1,77 @@
+{
+  "version": "human-review-14",
+  "feedback_source": "用户复核风扬对云垂第 18 回合 825 普通版短片",
+  "cases": [
+    {
+      "case_id": "WC-R18-double-revival",
+      "battle_id": "replay-2026-11-19-wind-cloud",
+      "dataset_split": "test",
+      "round": 18,
+      "source_video_id": "clean-223619",
+      "source_sha256": "8ef5cb5a06704c97e8dc0b0ebc52c3f083f1798e285433179653b62be8a621f5",
+      "source_window_ms": [466700, 470100],
+      "review_media": "outputs/phase-06/medicine-review-20261125/review/wind-468-ordinary.mp4",
+      "review_media_sha256": "9f4c862d13c8ec3612f1b02202e4023782b896d0eea444f1ce8dea1526910121",
+      "actions": [
+        {
+          "action_id": "WC-R18-R2-revival",
+          "sample_id": null,
+          "event_type": "USE_MEDICINE",
+          "effect": "MEDICINE_REVIVAL",
+          "actor_id": "R2_PET",
+          "owner_id": "R2",
+          "target_id": "R2",
+          "observed_recovery": 590,
+          "first_visible_ms": 467435.533,
+          "action_review_status": "confirmed_by_user",
+          "counter_link_status": "unresolved_counter_owner_conflict",
+          "actor_model_confirmation": "用户复核后指认「小星星」旁边的金色宠物。",
+          "visual_observations": {
+            "moving_model_name": "小星星",
+            "moving_model_configured_slot": "R4_PET",
+            "caster_model": "「小星星」旁边的金色宠物",
+            "caster_model_configured_slot": "R2_PET",
+            "note": "普通版右 2 人物出现绿色 590。右 4 伴战槽的「小星星」有大幅挥动，程序的最高动作分来自该槽。用户复核指认相邻右 2 宠位的金色宠物施药。"
+          },
+          "nearby_counter_observations": {
+            "detailed_interval_ms": [467699.444, 467716.089],
+            "R2": {"before": "5/10", "after": "5/10"},
+            "R4": {"before": "0/10", "after": "1/10"},
+            "unlinked_counter_reference": "WC-M54"
+          }
+        },
+        {
+          "action_id": "WC-R18-L2-revival",
+          "sample_id": "WC-M55",
+          "event_type": "USE_MEDICINE",
+          "effect": "MEDICINE_REVIVAL",
+          "actor_id": "L5_PET",
+          "owner_id": "L5",
+          "target_id": "L2",
+          "observed_recovery": 825,
+          "first_visible_ms": 468285.722,
+          "action_review_status": "confirmed_by_user",
+          "counter_link_status": "verified",
+          "native_counter_observation": {
+            "detailed_interval_ms": [468532.444, 468548.900],
+            "before": "7/10",
+            "after": "8/10"
+          }
+        }
+      ],
+      "feedback": "825 短片中，右 2 宠物施药复活了右 2 人物。左 5 宠物施药复活了左 2 人物。用户复核右 2 宠物的模型为「小星星」旁边的金色宠物。",
+      "evidence": [
+        "outputs/phase-06/medicine-review-20261125/review/wind-468-provenance.json",
+        "outputs/phase-06/medicine-review-20261125/review/wind-468-ordinary-native.jpg",
+        "outputs/phase-06/medicine-review-20261125/review/wind-468-detailed-native.jpg",
+        "outputs/phase-06/medicine-review-20261125/review/wind-468-action-audit.json",
+        "outputs/phase-06/medicine-feedback-20261125/right/ordinary-590-native.jpg",
+        "outputs/phase-06/medicine-feedback-20261125/right/ordinary-slots-native.jpg",
+        "outputs/phase-06/medicine-feedback-20261125/right/detailed-counter-native.jpg",
+        "outputs/phase-06/medicine-feedback-20261125/right/detailed-revive-native.jpg",
+        "outputs/phase-06/medicine-feedback-20261125/right/right-revive-visual-audit.json"
+      ],
+      "status": "reviewed"
+    }
+  ]
+}
